@@ -19,10 +19,12 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
          DB::table('twill_users')->insert([
-             'name' => 'Test User',
-             'email' => 'test@example.com',
+             'name' => 'admin',
+             'email' => 'admin@example.com',
              'password' => Hash::make('1234'),
-             'role' => 'admin'
+             'role' => 'SUPERADMIN',
+             'published' => true,
+
          ]);
     }
 }
