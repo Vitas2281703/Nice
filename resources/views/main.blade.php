@@ -349,7 +349,7 @@ height: 30px;" alt=""></h1>
     <span style="margin-left: 70px;">НУ ВЫ ЗАБЕГАЙТЕ В ГОСТИ, ЕСЛИ ЧТО</span>
     <span style="margin-left: 70px;">НУ ВЫ ЗАБЕГАЙТЕ В ГОСТИ, ЕСЛИ ЧТО</span>
     <span style="margin-left: 70px;">НУ ВЫ ЗАБЕГАЙТЕ В ГОСТИ, ЕСЛИ ЧТО</span>
-    <span style="margin-left: 70px;">НУ ВЫ ЗАБЕГАЙТЕ В ГОСТИ, ЕСЛИ ЧТО</span>
+    <span style="margin-left: 70px;">НУ ВЫ ЗАБЕГАЙЕ В ГОСТИ, ЕСЛИ ЧТО</span>
     <span style="margin-left: 70px;">НУ ВЫ ЗАБЕГАЙТЕ В ГОСТИ, ЕСЛИ ЧТО</span>
     <span style="margin-left: 70px;">НУ ВЫ ЗАБЕГАЙТЕ В ГОСТИ, ЕСЛИ ЧТО</span>
 </div>
