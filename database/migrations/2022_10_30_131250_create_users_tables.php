@@ -10,7 +10,7 @@ class CreateUsersTables extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             // this will create an id, a "published" column, and soft delete and timestamps columns
-            $table->id('client_id');
+            createDefaultTableFields($table);
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

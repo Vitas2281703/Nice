@@ -9,7 +9,7 @@ class CreateOrdersTables extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            createDefaultTableFields($table, $softDeletes = true, $published = false);
+            createDefaultTableFields($table);
 
             $table->string('fio', 100)->nullable();
             $table->text('description')->nullable();

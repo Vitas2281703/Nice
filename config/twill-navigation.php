@@ -1,48 +1,63 @@
 <?php
 
 return [
-    'users' => [
-        'title' => 'Users',
-        'module' => true,
+    'user-groups' => [
+        'title' => 'Пользователи',
+        'route' => 'admin.user-groups.users.index',
+        'primary_navigation' => [
+            'users' => [
+                'title' => 'Пользователи',
+                'module' => true,
+            ],
+            'workers' => [
+                'title' => 'Сотрудники',
+                'module' => true,
+            ],
+            'ourClients' => [
+                'title' => 'Клиенты',
+                'module' => true,
+            ],
+        ],
     ],
+    'products' => [
+        'title' => 'Каталог',
+        'route' => 'admin.products.categories.index',
+        'primary_navigation' => [
+            'categories' => [
+                'title' => 'Категории',
+                'module' => true,
+            ],
+            'fabricators' => [
+                'title' => 'Производители',
+                'module' => true,
+            ],
+            'devices' => [
+                'title' => 'Устройства',
+                'module' => true,
+            ],
+            'services' => [
+                'title' => 'Услуги',
+                'module' => true,
+            ],
+        ],
+    ],
+
     'requests' => [
-        'title' => 'Users',
+        'title' => 'Заявки',
         'module' => true,
     ],
-    'categories' => [
-        'title' => 'Categories',
-        'module' => true,
-    ],
-    'fabricators' => [
-        'title' => 'Fabricators',
-        'module' => true,
-    ],
-    'devices' => [
-        'title' => 'Devices',
-        'module' => true,
-    ],
-    'services' => [
-        'title' => 'Services',
-        'module' => true,
-    ],
+
     'promotions' => [
-        'title' => 'Promotions',
+        'title' => 'Акции',
         'module' => true,
     ],
     'news' => [
-        'title' => 'News',
+        'title' => 'Новости',
         'module' => true,
     ],
-    'workers' => [
-        'title' => 'Workers',
-        'module' => true,
-    ],
-    'ourClients' => [
-        'title' => 'OurClients',
-        'module' => true,
-    ],
+
     'orders' => [
-        'title' => 'Orders',
+        'title' => 'Заказы',
         'module' => true,
     ],
 ];

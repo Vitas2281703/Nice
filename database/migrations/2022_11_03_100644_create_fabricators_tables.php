@@ -9,7 +9,7 @@ class CreateFabricatorsTables extends Migration
     public function up()
     {
         Schema::create('fabricators', function (Blueprint $table) {
-           createDefaultTableFields($table, $softDeletes = true, $published = false);
+           createDefaultTableFields($table);
 
            $table->string('title', 200)->nullable();
 

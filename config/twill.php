@@ -7,7 +7,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'locale' => config('app.locale'),
+    'locale' => 'ru',
     'fallback_locale' => config('app.fallback_locale'),
     'available_user_locales' => [
         'ru',

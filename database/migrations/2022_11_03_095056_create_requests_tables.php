@@ -10,7 +10,7 @@ class CreateRequestsTables extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             // this will create an id, a "published" column, and soft delete and timestamps columns
-            createDefaultTableFields($table, $softDeletes = true, $published = false);
+            createDefaultTableFields($table);
             $table->string('fio')->nullable();
             $table->string('email')->nullable();
             $table->char('phone', 11);
