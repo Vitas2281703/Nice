@@ -10,7 +10,7 @@ class CreateDevicesTables extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             // this will create an id, a "published" column, and soft delete and timestamps columns
-            createDefaultTableFields($table, $softDeletes = true, $published = true);
+            createDefaultTableFields($table);
             $table->foreignId('fabricator_id')->constrained()->restrictOnDelete();
             $table->string('title', 200)->nullable();
             $table->text('description')->nullable();
