@@ -8,12 +8,14 @@ Route::group(['prefix' => 'user-groups'], function () {
     Route::module('users');
     Route::module('workers');
     Route::module('ourClients');
+
 });
 Route::group(['prefix' => 'products'], function () {
     Route::module('categories');
     Route::module('fabricators');
     Route::module('devices');
     Route::module('services');
+    Route::module('orderServices');
 });
 
 Route::module('requests');

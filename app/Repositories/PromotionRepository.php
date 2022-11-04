@@ -7,7 +7,7 @@ use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Promotion;
 
-class PromotionRepository extends ModuleRepository
+class PromotionRepository extends ModuleRepository implements Contracts\PromotionRepository
 {
     use HandleSlugs, HandleMedias;
 

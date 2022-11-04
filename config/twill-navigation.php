@@ -17,6 +17,7 @@ return [
                 'title' => 'Клиенты',
                 'module' => true,
             ],
+
         ],
     ],
     'products' => [
@@ -37,6 +38,10 @@ return [
             ],
             'services' => [
                 'title' => 'Услуги',
+                'module' => true,
+            ],
+            'orderServices' => [
+                'title' => 'Прайс-лист',
                 'module' => true,
             ],
         ],
