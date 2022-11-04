@@ -6,7 +6,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
 
-class Promotion extends Model 
+class Promotion extends Model
 {
     use HasSlug, HasMedias;
 
@@ -14,12 +14,15 @@ class Promotion extends Model
         'published',
         'title',
         'description',
+        'seo_title',
+        'seo_description',
+        'discount'
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [

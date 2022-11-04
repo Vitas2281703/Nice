@@ -2,8 +2,30 @@
 
 @section('contentFields')
     @formField('input', [
-        'name' => 'description',
-        'label' => 'Description',
-        'maxlength' => 100
+        'name' => 'title',
+        'label' => 'Заголовок',
+        'maxlength' => 200
+    ])
+    @formField('input', [
+    'name' => 'description',
+    'type' => 'textarea',
+    'label' => 'Описание',
+    'maxlength' => 1000
+    ])
+    @formField('input', [
+    'name' => 'seo_title',
+    'label' => 'СЕО заголовок',
+    'maxlength' => 200
+    ])
+    @formField('input', [
+    'name' => 'seo_description',
+    'type' => 'textarea',
+    'label' => 'СЕО описание',
+    'maxlength' => 1000
+    ])
+    @formField('input', [
+    'name' => 'discount',
+    'type' => 'number',
+    'label' => 'Размер скидки (%)',
     ])
 @stop
