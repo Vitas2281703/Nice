@@ -7,7 +7,7 @@ use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Category;
 
-class CategoryRepository extends ModuleRepository
+class CategoryRepository extends ModuleRepository implements Contracts\CategoryRepository
 {
     use HandleSlugs, HandleMedias;
 
@@ -15,4 +15,5 @@ class CategoryRepository extends ModuleRepository
     {
         $this->model = $model;
     }
+
 }

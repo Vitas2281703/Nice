@@ -10,9 +10,9 @@ class CreateOrderServicesTables extends Migration
     {
         Schema::create('order_services', function (Blueprint $table) {
             createDefaultTableFields($table);
-            $table->foreignId('service_id')->constrained()->restrictOnDelete();
-            $table->foreignId('device_id')->constrained()->restrictOnDelete();
-            $table->foreignId('promotion_id')->constrained()->restrictOnDelete();
+            $table->foreignId('service_id')->nullable()->constrained()->restrictOnDelete();
+            $table->foreignId('device_id')->nullable()->constrained()->restrictOnDelete();
+            $table->foreignId('promotion_id')->nullable()->constrained()->restrictOnDelete();
             $table->integer('price')->nullable();
         });
 

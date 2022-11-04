@@ -14,7 +14,7 @@ class CreatePromotionsTables extends Migration
             $table->text('description')->nullable();
             $table->string('seo_title')->nullable();
             $table->string('seo_description')->nullable();
-            $table->integer('discount');
+            $table->integer('discount')->default(0);
         });
 
         Schema::create('promotion_slugs', function (Blueprint $table) {

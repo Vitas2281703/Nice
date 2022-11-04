@@ -7,7 +7,7 @@ use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Service;
 
-class ServiceRepository extends ModuleRepository
+class ServiceRepository extends ModuleRepository implements Contracts\ServiceRepository
 {
     use HandleSlugs, HandleMedias;
 

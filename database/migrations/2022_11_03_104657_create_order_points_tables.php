@@ -15,12 +15,6 @@ class CreateOrderPointsTables extends Migration
             $table->foreignId('user_id')->constrained()->restrictOnDelete();
             $table->integer('amount');
         });
-
-
-
-
-
-
     }
 
     public function down()
