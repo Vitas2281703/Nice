@@ -46,7 +46,7 @@
 
                     <nav class="header__nav">
                         <ul class="header-links">
-                            <li><a href="#contacts" class="header-link">о нас</a></li>
+                            <li><a href="{{ route('about-us') }}" class="header-link">о нас</a></li>
                             <li><a href="#projects" class="header-link">услуги</a></li>
                             <li><a href="#about" class="header-link">новости</a></li>
                             <li>
