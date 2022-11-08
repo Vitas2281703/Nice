@@ -236,7 +236,7 @@ footer {
     text-decoration: none;
 }
 
-@media screen and (max-device-width: 900px) {
+@media screen and (max-device-width: 1080px) {
     .container {
         max-width: 320px;
     }
