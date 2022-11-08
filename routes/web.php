@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\Web\MainController::class, 'getSteps']);
 
+Route::get('/about-us', function () {
+    return view('aboutUs');
+})->name('about-us');

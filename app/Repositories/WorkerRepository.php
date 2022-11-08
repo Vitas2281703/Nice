@@ -6,7 +6,7 @@ use A17\Twill\Repositories\Behaviors\HandleFiles;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Worker;
 
-class WorkerRepository extends ModuleRepository
+class WorkerRepository extends ModuleRepository implements Contracts\WorkerRepository
 {
     use HandleFiles;
 
