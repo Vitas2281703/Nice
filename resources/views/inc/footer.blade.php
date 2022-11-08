@@ -6,16 +6,30 @@
                     <a href="tel:89234826100" class="number">8 (923) 482-61-00</a>
                 </div>
                 <div class="footer-brand">
-                    <img src="images\Логотип.svg" alt="NICE" class="footer-logo" />
+                    <img src="assets\images\footerLogo.svg"
+                         alt="NICE"
+                         class="footer-logo"
+                    />
                 </div>
                 <div class="telephone mobile-telephone">
                     <a href="tel:89234826100" class="number">8 (923) 482-61-00</a>
                 </div>
                 <div class="social">
-                    <a href="email:hello@nice42.ru" style = "margin-right: 24px;" class="social-link-email">hello@nice42.ru</a>
-                    <div class="social-seti">
-                        <a href="#" class="social-link-inst" style = "margin-right: 10px;"></a>
-                        <a href="#" class="social-link-vk"></a>
+                    <a href="email:hello@nice42.ru"
+                       class="social-link-email"
+                    >
+                        hello@nice42.ru
+                    </a>
+                    <div class="social-seti_footer">
+                        <a href="#" >
+                            <img src="assets\images\vk.svg" alt="">
+                        </a>
+                        <a href="#" >
+                            <img src="assets\images\whatsapp.svg" alt="">
+                        </a>
+                        <a href="#" >
+                            <img src="assets\images\instagram.svg" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -35,7 +49,11 @@
 
 
 @foreach($scripts as $script)
-    <script src="assets/js/{{ $script }}.js"></script>
+    @if($script == 'swiperSlider')
+        <script type="module" src="assets/js/{{ $script }}.js"></script>
+    @else
+        <script src="assets/js/{{ $script }}.js"></script>
+    @endif
 @endforeach
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

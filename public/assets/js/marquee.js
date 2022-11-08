@@ -24,7 +24,7 @@ $(function () {
         delayBeforeStart: 1000,
         direction: 'left',
         duplicated: true,
-        duration: 14000,
+        duration: 25000,
         gap: 70,
         pauseOnCycle: false,
         pauseOnHover: false,

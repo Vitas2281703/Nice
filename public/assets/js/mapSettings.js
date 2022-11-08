@@ -2,10 +2,11 @@ function initMap() {
 
     // Метка на карте + координаты
     var myLatLng = { lat: 55.345263, lng: 86.106925 };
+    var myLatLng2 = {lat: 55.349435, lng: 86.065716};
 
     // Настройки карты
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
+        zoom: 14,
         center: myLatLng, // Координаты и центрирование по метке
         disableDefaultUI: true,
         mapTypeControl: false,
@@ -192,13 +193,20 @@ function initMap() {
     // Настройки метки
 
     var image = new google.maps.MarkerImage(
-        'images/Location.svg',
+        'assets/images/mapLocation.svg',
         new google.maps.Size(37, 45), //размер изображения иконки в пикселях
 
     );
 
     var marker = new google.maps.Marker({
         position: myLatLng,
+        icon: image,
+        map: map,
+        title: 'Наш сервис'
+    });
+
+    var marker2 = new google.maps.Marker({
+        position: myLatLng2,
         icon: image,
         map: map,
         title: 'Наш сервис'
