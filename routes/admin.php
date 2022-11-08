@@ -16,9 +16,11 @@ Route::group(['prefix' => 'products'], function () {
     Route::module('devices');
     Route::module('services');
     Route::module('orderServices');
-});
 
+});
 Route::module('requests');
 Route::module('promotions');
 Route::module('news');
 Route::module('orders');
+Route::module('jobSteps');
+

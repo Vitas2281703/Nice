@@ -19,6 +19,7 @@ class ServiceServiceProvider extends ServiceProvider
         \App\Services\Contracts\ServiceService::class => \App\Services\ServiceService::class,
         \App\Services\Contracts\PromotionService::class => \App\Services\PromotionService::class,
         \App\Services\Contracts\WorkerService::class => \App\Services\WorkerService::class,
+        \App\Services\Contracts\JobStepService::class => \App\Services\JobStepService::class,
     ];
 
 

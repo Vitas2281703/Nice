@@ -65,4 +65,9 @@ return [
         'title' => 'Заказы',
         'module' => true,
     ],
+    'jobSteps' => [
+        'title' => 'Этапы',
+        'module' => true,
+    ],
+
 ];
