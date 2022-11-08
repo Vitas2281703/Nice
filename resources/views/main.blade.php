@@ -221,65 +221,19 @@
 
 <div class="howWeWork_block">
     <div class="container">
-        <div class="howWeWork-item_wrapper">
-            <div class="howWeWork-item">
-                <span class="howWeWork-item_step">1</span>
-                <p class="howWeWork-item_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet atque eaque illo incidunt nam nihil, numquam tempore
-                    ullam voluptatibus. Aliquid cumque esse exercitationem illo
-                    ipsum magnam nesciunt officia quas tempore?
-                </p>
-            </div>
-        </div>
+        <?php $i = 1 ?>
+        @foreach($steps as $step)
 
-        <div class="howWeWork-item_wrapper">
-            <div class="howWeWork-item">
-                <span class="howWeWork-item_step">2</span>
-                <p class="howWeWork-item_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet atque eaque illo incidunt nam nihil, numquam tempore
-                    ullam voluptatibus. Aliquid cumque esse exercitationem illo
-                    ipsum magnam nesciunt officia quas tempore?
-                </p>
+            <div class="howWeWork-item_wrapper">
+                <div class="howWeWork-item">
+                    <span class="howWeWork-item_step">{{ $i }}</span>
+                    <p class="howWeWork-item_text">
+                        {{$step->description}}
+                    </p>
+                </div>
             </div>
-        </div>
-
-        <div class="howWeWork-item_wrapper">
-            <div class="howWeWork-item">
-                <span class="howWeWork-item_step">3</span>
-                <p class="howWeWork-item_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet atque eaque illo incidunt nam nihil, numquam tempore
-                    ullam voluptatibus. Aliquid cumque esse exercitationem illo
-                    ipsum magnam nesciunt officia quas tempore?
-                </p>
-            </div>
-        </div>
-
-        <div class="howWeWork-item_wrapper">
-            <div class="howWeWork-item">
-                <span class="howWeWork-item_step">4</span>
-                <p class="howWeWork-item_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet atque eaque illo incidunt nam nihil, numquam tempore
-                    ullam voluptatibus. Aliquid cumque esse exercitationem illo
-                    ipsum magnam nesciunt officia quas tempore?
-                </p>
-            </div>
-        </div>
-
-        <div class="howWeWork-item_wrapper">
-            <div class="howWeWork-item">
-                <span class="howWeWork-item_step">5</span>
-                <p class="howWeWork-item_text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Amet atque eaque illo incidunt nam nihil, numquam tempore
-                    ullam voluptatibus. Aliquid cumque esse exercitationem illo
-                    ipsum magnam nesciunt officia quas tempore?
-                </p>
-            </div>
-        </div>
+                <?php $i++ ?>
+        @endforeach
     </div>
 </div>
 
