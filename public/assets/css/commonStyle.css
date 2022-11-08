@@ -250,9 +250,8 @@ footer {
         display: block;
     }
 
-    .header-links li {
-        margin-bottom: 90px;
-        margin-right: 100px;
+    .header-links li:last-child {
+        margin-bottom: 5vh;
     }
     .header__nav {
         display: block;
@@ -275,6 +274,9 @@ footer {
         justify-content: flex-end;
         align-items: flex-end;
         height: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        gap: 50px;
     }
     .header__nav.open-menu {
         left: 0;
