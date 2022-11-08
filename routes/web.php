@@ -15,6 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\Web\MainController::class, 'getSteps']);
 
-Route::get('/about-us', function () {
-    return view('aboutUs');
-})->name('about-us');
+Route::get('/about-us', [\App\Http\Controllers\Web\AboutController::class, 'index'])->name('about-us');
