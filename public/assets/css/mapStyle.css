@@ -1,0 +1,136 @@
+#map {
+    width: 100%;
+    height: 600px;
+}
+.block-map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 340px;
+}
+.map-rasp{
+    pointer-events: auto;
+    border-radius: 5px;
+    background-color:#fff;
+    height: 125px;
+    width: 300px;
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+}
+.map-rasp p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.05em;
+
+    color: #35302f;
+}
+.map-obr-svz {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 300px;
+    height: 70px;
+    border-radius: 5px;
+    margin-bottom: 55px;
+    pointer-events: auto;
+}
+.map-obr-svz-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+}
+.map-obr-svz-link span {
+
+}
+.map-obr-svz-link-truba{
+    border-radius: 0px 5px 5px 0px;
+    margin-left: 21px;
+    background-color: #5888EA;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    transition: .3s;
+}
+.map-obr-svz-link-truba:hover{
+    border-radius: 0px 5px 5px 0px;
+    margin-left: 21px;
+    background-color: #35302f;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    transition: .3s;
+}
+
+@media screen and (max-device-width: 900px) {
+    #map{
+        height: 375px !important;
+    }
+    .block-map {
+        display: flex;
+        flex-direction: row;
+        width: 320px;
+        margin: 0 auto;
+    }
+
+    .mobile-back-for-slider2 {
+        background-color: #E6EBF1;
+    }
+
+    .map-rasp {
+        width: 251px !important;
+        border-radius: 5px 0px 0px 5px !important;
+        margin-top: 130px;
+        height: 100px;
+    }
+
+    .map-rasp p {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 160%;
+        letter-spacing: 0.05em;
+        color: #35302F;
+    }
+
+    .map-rasp p img {
+        margin-bottom: -3px !important;
+    }
+
+    .map-obr-svz {
+        background-color: transparent;
+        height: 0px;
+        width: 0px;
+        margin-bottom: 110px;
+    }
+
+    .map-obr-svz span {
+        display: none;
+    }
+
+    .map-obr-svz-link{
+        height: 0px;
+    }
+
+    .map-obr-svz-link-truba {
+        height: 100px !important;
+        margin-left: 0px !important;
+        position: absolute;
+        top: 470px;
+    }
+
+    .map-obr-svz-link-truba:hover {
+        height: 100px !important;
+    }
+}
