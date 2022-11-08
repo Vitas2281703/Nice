@@ -306,7 +306,7 @@
     letter-spacing: 0.05em;
     padding: 50px 75px;
 }
-@media screen and (max-device-width: 900px) {
+@media screen and (max-device-width: 1080px) {
     .swiper-container {
         margin-top: 0px !important;
     }

@@ -72,7 +72,7 @@
     transition: .3s;
 }
 
-@media screen and (max-device-width: 900px) {
+@media screen and (max-device-width: 1080px) {
     #map{
         height: 375px !important;
     }
