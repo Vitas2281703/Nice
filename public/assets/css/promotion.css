@@ -1,0 +1,36 @@
+.promo-title{
+    margin-top: 50px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+.promo_info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.promo-text{
+    width: 600px;
+    letter-spacing: 0.03em;
+    font-size: 20px;
+    line-height: 1.5em;
+}
+.promo-img{
+    width: 500px;
+}
+@media screen and (max-device-width: 1080px) {
+    .promo-title{
+        line-height: 1.5em;
+        margin-bottom: 20px;
+    }
+    .promo_info{
+        flex-direction: column;
+    }
+    .promo-text{
+        max-width: 320px;
+        margin-bottom: 25px;
+    }
+    .promo-img{
+        width: 320px;
+    }
+}

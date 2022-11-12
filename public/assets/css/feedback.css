@@ -1,0 +1,68 @@
+.aboutUs-title{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 0.05em;
+}
+.clients_block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 120px;
+    margin-bottom: 50px;
+}
+.client{
+    width: 320px;
+    display: flex;
+    background-color: var(--blue);
+    border-radius: 10px;
+    box-shadow: 5px 1px 10px 0px rgb(0 0 0 / 20%);
+    flex-direction: column;
+}
+.client_title{
+    display: flex;
+}
+.client-img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    padding: 10px;
+}
+.client-info{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.client-info_p-name{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    margin-top: 35px;
+    margin-left: 25px;
+}
+.client-info_p-post{
+    font-size: 16px;
+}
+.client-info_p{
+    color: #FFFFFF;
+    letter-spacing: 0.03em;
+    line-height: 1.25em;
+}
+.otherFeedback{
+    margin-bottom: 100px;
+}
+.otherFeedback-link{
+    margin-left: 20px;
+    color: var(--blue);
+    transition: .2s;
+}
+.otherFeedback-link:hover{
+    color: var(--black);
+}
+
+@media screen and (max-device-width: 1080px) {
+    clients_block{
+        gap: 50px;
+    }
+}

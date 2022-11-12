@@ -5,16 +5,16 @@ namespace App\Models;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
 
-class OurClient extends Model 
+class OurClient extends Model
 {
     use HasMedias;
 
     protected $fillable = [
         'published',
-        'title',
+        'name',
         'description',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [

@@ -1,0 +1,216 @@
+@import "auth.css";
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(88, 136, 234, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(88, 136, 234, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(88, 136, 234, 0);
+    }
+}
+@keyframes trrr {
+    0%{
+        transform: rotate(10deg);
+    }
+    5%{
+        transform: rotate(-10deg);
+    }
+    10%{
+        transform: rotate(10deg);
+    }
+    15%{
+        transform: rotate(-10deg);
+    }
+    20%{
+        transform: rotate(10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+
+}
+
+.feedbackForm_link{
+    background-color: var(--blue);
+    position: fixed;
+    right: 35px;
+    bottom: 75px;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    animation: pulse 3s infinite;
+    transition: .3s;
+}
+.feedbackForm_link:hover{
+    animation: none;
+    width: 90px;
+    height: 90px;
+    right: 40px;
+    background-color: #3176fd;
+}
+.feedbackForm_link img{
+    width: 25px;
+    animation: trrr 3s infinite;
+}
+
+
+/*модалка*/
+
+.overlay {
+
+    /* Скрываем подложку  */
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #cad8e7;
+    z-index: 100000;
+    transition: .3s all;
+}
+
+
+/* Стили для модальных окон */
+
+.modal {
+
+    /* Скрываем окна  */
+    display: none;
+
+
+    /*  Установаем ширину окна  */
+    width: 100%;
+    max-width: 730px;
+
+    /*  Центрируем и задаем z-index */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100001; /* Должен быть выше чем у подложки*/
+
+    /*  Побочные стили   */
+    border-radius: 3px;
+    background-color: #fff;
+    transition: 0.3s all;
+}
+
+
+/* Стили для активных классов подложки и окна */
+
+.modal.active,
+.overlay.active{
+    display: inherit;
+}
+
+
+/* Стили для кнопки закрытия */
+
+.modal__cross {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    fill: #444;
+    cursor: pointer;
+}
+
+.modal-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.feedbackForm-img{
+    width: 350px;
+    height: 730px;
+    background-color: var(--grey-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.feedbackForm-img img:last-child{
+    display: none;
+}
+.feedbackForm-img img{
+    width: 250px;
+    height: 334px;
+}
+
+.feedbackForm-form_block{
+    width: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 0px;
+}
+.feedbackForm-form_block>*{
+    max-width: 280px;
+}
+.feedbackForm-form_title{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 42px;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+.feedbackForm-form_title img{
+    margin-bottom: -5px;
+}
+.feedbackForm-form_p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 170.4%;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+.feedbackForm-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+@media screen and (max-device-width: 1080px) {
+    .modal{
+        max-width: 100%;
+        height: 100%;
+    }
+    .modal-content{
+        flex-direction: column;
+    }
+    .feedbackForm-img{
+        width: 100%;
+        height: 20%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .feedbackForm-img img{
+        width: 204px;
+        height: 82px;
+    }
+    .feedbackForm-form_block{
+        height: 80%;
+    }
+    .feedbackForm-img img:first-child{
+        display: none;
+    }
+    .feedbackForm-img img:last-child{
+        display: inherit;
+    }
+    .feedbackForm-form textarea{
+        display: none;
+    }
+}
