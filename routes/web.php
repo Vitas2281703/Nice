@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\Web\MainController::class, 'getSteps']);
+Route::get('/', [\App\Http\Controllers\Web\MainController::class, 'index'])->name('home');
 
 Route::get('/about-us', [\App\Http\Controllers\Web\AboutController::class, 'index'])->name('about-us');
+
+Route::get('/promo', [\App\Http\Controllers\Web\PromotionController::class, 'index'])->name('promo');
+
+Route::get('/all-news', [\App\Http\Controllers\Web\NewsController::class, 'allNews'])->name('all-news');
+Route::get('/news', [\App\Http\Controllers\Web\NewsController::class, 'news'])->name('news');
+
+Route::get('/service', [\App\Http\Controllers\Web\ServiceController::class, 'index'])->name('service');
+
+Route::get('/login', [\App\Http\Controllers\Web\AuthController::class, 'login'])->name('login');
+Route::get('/registration', [\App\Http\Controllers\Web\AuthController::class, 'registration'])->name('registration');

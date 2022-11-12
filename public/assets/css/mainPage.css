@@ -104,7 +104,7 @@
     border: 1px solid #35302f;
     height: 6px !important;
     width: 6px !important;
-    margin-bottom: -1px !important;
+    margin-bottom: -0.5px !important;
 }
 .swiper-pagination-bullet-active:hover {
     background-color: #35302f !important;
@@ -157,12 +157,6 @@
 .marquee-item:last-child{
     margin-right: 0px;
 }
-.promo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 .banners {
     display: flex;
     justify-content: space-between;
@@ -190,22 +184,6 @@
 .container-text {
     max-width: 1000px;
     margin: auto;
-}
-.otz-h1 {
-    max-width: 401px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: 42px;
-    letter-spacing: 0.05em;
-    color: #35302f;
-    margin-top: 101px;
-}
-.otz-h1 img {
-    margin-bottom: -9px;
-}
-.otz {
-    border-bottom: 1px solid #e6ebf1;
 }
 .rks {
     display: flex;
@@ -244,27 +222,7 @@
 .rks-mobile{
     display: none;
 }
-.otz {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.otz-column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 45%;
-    padding-bottom: 50px;
-}
-.otz-column p {
-    max-width: 467px;
-    font-size: 14px;
-    line-height: 170.4%;
-    color: #35302f;
-    margin-top: 50px;
-}
-.otz-column a:hover {
-    text-decoration: none;
-}
+
 .howWeWork_block{
     background-color: var(--grey-white);
     padding-top: 100px;
@@ -472,41 +430,4 @@
         padding: 30px 35px !important;
     }
 
-    .otziv_first {
-        display: none;
-    }
-    #otziv{
-        max-width: 320px;
-    }
-    .otz-h1 {
-        font-style: normal;
-        font-weight: normal;
-        font-size: 23px;
-        line-height: 140.4%;
-        margin-top: 50px;
-        /* or 32px */
-        letter-spacing: 0.05em;
-        width: 303px;
-        color: #35302f;
-    }
-    .otz-h1 img {
-        width: 30px;
-        height: 30px;
-    }
-    .otz-column {
-
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 170.4%;
-
-        /* or 24px */
-
-        color: #35302f;
-        width: 320px;
-        flex-basis: 100%;
-    }
-    .otz-column p{
-        margin-top: 32px;
-    }
 }
