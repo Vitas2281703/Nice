@@ -6,6 +6,7 @@
         'commonStyle',
         'mainPage',
         'mapStyle',
+        'feedback',
         ]
         ])
 @endsection
@@ -114,22 +115,9 @@
     @endfor
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container">
-    <div class="promo">
         <div class="banners">
-            <a href="#" class="banner-link">
+            <a href="{{ route('promo') }}" class="banner-link">
                 <img src="assets\images\banner-1.png" alt="" class="banner">
                 <div class="banner-hover"></div>
             </a>
@@ -139,7 +127,6 @@
             </a>
         </div>
 
-    </div>
 </div>
 
 
@@ -242,26 +229,8 @@
 
 
 
-
-<div class="container-text" id="otziv">
-    <h1 class="otz-h1"> — А как же отзывы? <br> — Здесь их не будет <img src="assets\images\monkey.svg"></h1>
-    <div class="otz">
-        <div class="otz-column otziv_first">
-            <p>
-                Мы привыкли, что у любого сервиса должен быть блок
-                с яркими и положительными отзывами, который должен
-                убедить вас выбрать именно его.
-            </p>
-        </div>
-        <div class="otz-column">
-            <p>
-                Если мы смогли заинтересовать вас, предлагаем прийти
-                к нам в гости и оценить все своими глазами. Будем рады
-                вам и вашему мнению на <a href="#" style="color: #5888EA;">фламп</a>. :)
-            </p>
-        </div>
-
-    </div>
+<div class="container">
+    @include('inc/feedback')
 </div>
 
 

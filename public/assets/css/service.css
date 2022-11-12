@@ -1,0 +1,117 @@
+.service-title{
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.service_block{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+aside{
+    position: sticky;
+    top: 145px;
+    width: 320px;
+    height: 210px;
+}
+.service-filter{
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: 1px 1px 10px 5px var(--grey-white);
+    border-radius: 10px;
+}
+select{
+    background: url("/assets/images/arrowDown.png");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 15px);
+    background-position-y: 50%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+select:focus{
+    outline: none;
+}
+.service-list{
+    list-style: none;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.service-list_item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--grey-white);
+    padding: 10px;
+    letter-spacing: 0.03em;
+}
+.service-list_item-name{
+    font-weight: 500;
+    font-size: 20px;
+    width: 320px;
+}
+.service-list_item-price{
+    font-weight: 500;
+    font-size: 20px;
+    width: 240px;
+    display: flex;
+}
+.service-list_item-price_new,
+.service-list_item-price_old{
+    width: 120px;
+}
+.service-list_item-price_old{
+    color: gray;
+    text-decoration: line-through;
+}
+.service-list_item-btn{
+    font-weight: 500;
+    font-size: 14px;
+    width: 160px;
+    height: 45px;
+    outline: none;
+    border: none;
+    letter-spacing: 0.03em;
+}
+.service-list_item-btn{
+    cursor: pointer;
+}
+@media screen and (max-device-width: 1080px) {
+    .service_block{
+        margin-top: 50px;
+        flex-direction: column;
+    }
+    aside{
+        position: relative;
+        top: 0;
+    }
+    select{
+        font-size: 14px;
+    }
+    .service-list{
+        margin-top: 50px;
+        width: 320px;
+    }
+    .service-list_item{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .service-list_item-name{
+        text-align: center;
+    }
+    .service-list_item-price{
+        flex-direction: column-reverse;
+        gap: 5px;
+        align-items: center;
+        text-align: center;
+    }
+}

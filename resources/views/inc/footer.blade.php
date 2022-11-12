@@ -20,7 +20,7 @@
                     >
                         hello@nice42.ru
                     </a>
-                    <div class="social-seti_footer">
+                    <div class="social-seti_block">
                         <a href="#" >
                             <img src="assets\images\vk.svg" alt="">
                         </a>
@@ -37,9 +37,8 @@
     </div>
     <div class="container">
         <div class="footer-bottom">
-            <p>ИП Иванов Иванович Иванович ИНН: 174553822815</p>
             <a href="" class="footer-link ps-mob">Пользовательское соглашение</a>
-            <p class="copyright" >Copyright © 2012 - 2020</p>
+            <p class="copyright" >Copyright © 2012 - 2022</p>
             <a href="Пользовательское соглашение.pdf" class="footer-link ps-desk">Пользовательское соглашение</a>
         </div>
     </div>

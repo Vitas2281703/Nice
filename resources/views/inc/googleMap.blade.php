@@ -8,7 +8,7 @@
                 <img style="
                                         margin-right: 14px;
                                         margin-left: 4px;
-                                        margin-bottom: -18px;
+                                        margin-bottom: -3px;
                                       " src="assets\images\geoBlack.svg" alt="" />
                 Кемерово, пр. Ленина 64А <br>
                 ул. Рукавишникова, 9А
