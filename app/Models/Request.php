@@ -5,14 +5,14 @@ namespace App\Models;
 
 use A17\Twill\Models\Model;
 
-class Request extends Model 
+class Request extends Model
 {
-    
 
+    /** @var string[] $fillable */
     protected $fillable = [
-        'published',
-        'title',
-        'description',
+        'fio',
+        'email',
+        'message'
     ];
-    
+
 }

@@ -52,6 +52,7 @@
 {{--</div>--}}
 
 
+@php use Illuminate\Support\Facades\Auth; @endphp
 <div class="modal" data-modal="1">
     <span class="header-link_functional">
         <svg class="modal__cross js-modal-close "
@@ -77,14 +78,18 @@
             </p>
             <form action="" class="feedbackForm-form">
                 @csrf
-                <input type="text" name="name" class="form-auth_input" placeholder="Как вас зовут">
-                <input type="tel" name="telephone" class="form-auth_input" placeholder="Телефон">
+                @if(empty(Auth::user()))
+                    <input type="text" name="name" class="form-auth_input" placeholder="Как вас зовут">
+                    <input type="tel" name="telephone" class="form-auth_input" placeholder="Телефон">
+                @endif
                 <textarea class="form-auth_input"
                           name="comment"
                           cols="30" rows="5"
                 >
                 </textarea>
-                <button class="form-auth_btn HOVER"><span></span><text>Позвоните мне!</text></button>
+                <button class="form-auth_btn HOVER"><span></span>
+                    <text>Позвоните мне!</text>
+                </button>
                 <p class="form-auth_p">Нажимая кнопку вы подтверждаете свое согласие с
                     <a href="" class="form-auth_link">
                         пользовательским соглашением
@@ -100,8 +105,8 @@
 </div>
 <div class="overlay js-overlay-modal"></div>
 
-    <a href="" class="feedbackForm_link js-open-modal" data-modal = "1">
-        <img src="assets\images\oldPhone.svg" alt="">
-    </a>
+<a href="" class="feedbackForm_link js-open-modal" data-modal="1">
+    <img src="assets\images\oldPhone.svg" alt="">
+</a>
 
 
