@@ -7,8 +7,8 @@
 }
 .clients_block{
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-start;
+    position: relative;
     gap: 120px;
     margin-bottom: 50px;
 }
@@ -19,6 +19,7 @@
     border-radius: 10px;
     box-shadow: 5px 1px 10px 0px rgb(0 0 0 / 20%);
     flex-direction: column;
+    flex-shrink: 0;
 }
 .client_title{
     display: flex;

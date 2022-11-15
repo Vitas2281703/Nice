@@ -4,29 +4,127 @@
     @include('inc/header', [
     'styles'=>[
         'commonStyle',
-        'promotion'
+        'service',
+        'account',
+        'auth'
         ]
         ])
 @endsection
 
 @section('content')
     <div class="container">
-        <h1 class="promo-title">Бесплатная диагностика</h1>
-        <div class="promo_info">
-            <p class="promo-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi atque aut
-                blanditiis deleniti dolorem ea eaque est id ipsam ipsum magni officiis, porro qui
-                quos soluta tenetur unde veniam?
-            </p>
-            <img src="assets\images\banner-1.png" alt="" class="promo-img">
-        </div>
+        <form class="preorder-form" action="">
+
+            <div class="order-block">
+                <div class="service-list_item-order">
+                    <div class="service-list_item-order_title">
+                        <a class="service-list_item-name">Заказ №120321</a>
+                    </div>
+                </div>
+
+                <ul class="service-list order-list ">
+                    <li class="service-list_item preorder_title">
+                        <h2 class="service-list_item-name">Название</h2>
+                        <div class="service-list_item-amount">Количество</div>
+                        <p class="service-list_item-price">
+                            <span class="service-list_item-price_new">Цена</span>
+                            <span class="service-list_item-price_new">Старая цена</span>
+                        </p>
+                        <p class="service-list_item-subtotal">Подитог</p>
+                    </li>
+                    <li class="service-list_item">
+                        <h2 class="service-list_item-name">Замена экрана</h2>
+                        <p class="service-list_item-amount amount-input_block">
+                            <a class="amount-input_btn amount-input_btn-minus">-</a>
+                            <input
+                                class="form-auth_input amount-input"
+                                min="1"
+                                max="10"
+                                name="amount"
+                                type="number"
+                            >
+                            <a class="amount-input_btn amount-input_btn-plus">+</a>
+                        </p>
+                        <p class="service-list_item-price">
+                            <span class="service-list_item-price_new">9000 ₽</span>
+                        </p>
+                        <p class="service-list_item-subtotal">9000 ₽</p>
+                    </li>
+                    <li class="service-list_item">
+                        <h2 class="service-list_item-name">Замена матрицы</h2>
+                        <p class="service-list_item-amount amount-input_block">
+                            <a class="amount-input_btn amount-input_btn-minus">-</a>
+                            <input
+                                class="form-auth_input amount-input"
+                                min="1"
+                                max="10"
+                                name="amount"
+                                type="number"
+                            >
+                            <a class="amount-input_btn amount-input_btn-plus">+</a>
+                        </p>
+                        <p class="service-list_item-price">
+                            <span class="service-list_item-price_new">9000 ₽</span>
+                            <span class="service-list_item-price_old">903200 ₽</span>
+                        </p>
+                        <p class="service-list_item-subtotal">9000 ₽</p>
+                    </li>
+                    <li class="service-list_item">
+                        <h2 class="service-list_item-name">Установка операционной системы</h2>
+                        <p class="service-list_item-amount amount-input_block">
+                            <a class="amount-input_btn amount-input_btn-minus">-</a>
+                            <input
+                                class="form-auth_input amount-input"
+                                min="1"
+                                max="10"
+                                name="amount"
+                                type="number"
+                            >
+                            <a class="amount-input_btn amount-input_btn-plus">+</a>
+                        </p>
+                        <p class="service-list_item-price">
+                            <span class="service-list_item-price_new">3500 ₽</span>
+                        </p>
+                        <p class="service-list_item-subtotal">9000 ₽</p>
+                    </li>
+
+                    <li class="service-list_item">
+                        <h2 class="service-list_item-name">Замена экрана</h2>
+                        <p class="service-list_item-amount amount-input_block">
+                            <a class="amount-input_btn amount-input_btn-minus">-</a>
+                            <input
+                                class="form-auth_input amount-input"
+                                min="1"
+                                max="10"
+                                name="amount"
+                                type="number"
+                            >
+                            <a class="amount-input_btn amount-input_btn-plus">+</a>
+                        </p>
+                        <p class="service-list_item-price">
+                            <span class="service-list_item-price_new">9000 ₽</span>
+                        </p>
+                        <p class="service-list_item-subtotal">9000 ₽</p>
+                    </li>
+                </ul>
+                <p class="order-total">Итого: 9430219 ₽</p>
+                <div class="order-arrange_link-block">
+                    <a href="{{ route('preorder') }}" style="font-size: 13px;" class="HOVER preorder_btn">
+                        <span></span>
+                        <text>Оформить</text>
+                    </a>
+                </div>
+            </div>
+        </form>
     </div>
+
 @endsection
 
 @section('footer')
     @include('inc/footer', [
     'scripts'=>[
-        'menuBurger'
+        'menuBurger',
+        'amount'
         ]
         ])
 @endsection

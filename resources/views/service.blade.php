@@ -4,7 +4,9 @@
     @include('inc/header', [
     'styles'=>[
         'commonStyle',
-        'service'
+        'service',
+        'feedbackForm',
+        'auth'
         ]
         ])
 @endsection
@@ -42,7 +44,9 @@
         <ul class="service-list">
             <li class="service-list_item">
                 <h2 class="service-list_item-name">Замена экрана</h2>
-                <p class="service-list_item-price">10000 ₽</p>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">9000 ₽</span>
+                </p>
                 <button class="service-list_item-btn HOVER">
                     <span></span>
                     <text>Заказать</text>
@@ -61,7 +65,9 @@
             </li>
             <li class="service-list_item">
                 <h2 class="service-list_item-name">Установка операционной системы</h2>
-                <p class="service-list_item-price">3500 ₽</p>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">3500 ₽</span>
+                </p>
                 <button class="service-list_item-btn HOVER">
                     <span></span>
                     <text>Заказать</text>
@@ -70,7 +76,9 @@
 
             <li class="service-list_item">
                 <h2 class="service-list_item-name">Замена экрана</h2>
-                <p class="service-list_item-price">10000 ₽</p>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">9000 ₽</span>
+                </p>
                 <button class="service-list_item-btn HOVER">
                     <span></span>
                     <text>Заказать</text>
@@ -89,7 +97,9 @@
             </li>
             <li class="service-list_item">
                 <h2 class="service-list_item-name">Установка операционной системы</h2>
-                <p class="service-list_item-price">3500 ₽</p>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">3500 ₽</span>
+                </p>
                 <button class="service-list_item-btn HOVER">
                     <span></span>
                     <text>Заказать</text>
@@ -98,7 +108,9 @@
 
             <li class="service-list_item">
                 <h2 class="service-list_item-name">Замена экрана</h2>
-                <p class="service-list_item-price">10000 ₽</p>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">9000 ₽</span>
+                </p>
                 <button class="service-list_item-btn HOVER">
                     <span></span>
                     <text>Заказать</text>
@@ -117,7 +129,73 @@
             </li>
             <li class="service-list_item">
                 <h2 class="service-list_item-name">Установка операционной системы</h2>
-                <p class="service-list_item-price">3500 ₽</p>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">3500 ₽</span>
+                </p>
+                <button class="service-list_item-btn HOVER">
+                    <span></span>
+                    <text>Заказать</text>
+                </button>
+            </li>
+
+            <li class="service-list_item">
+                <h2 class="service-list_item-name">Замена экрана</h2>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">9000 ₽</span>
+                </p>
+                <button class="service-list_item-btn HOVER">
+                    <span></span>
+                    <text>Заказать</text>
+                </button>
+            </li>
+            <li class="service-list_item">
+                <h2 class="service-list_item-name">Замена матрицы</h2>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">9000 ₽</span>
+                    <span class="service-list_item-price_old">903200 ₽</span>
+                </p>
+                <button class="service-list_item-btn HOVER">
+                    <span></span>
+                    <text>Заказать</text>
+                </button>
+            </li>
+            <li class="service-list_item">
+                <h2 class="service-list_item-name">Установка операционной системы</h2>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">3500 ₽</span>
+                </p>
+                <button class="service-list_item-btn HOVER">
+                    <span></span>
+                    <text>Заказать</text>
+                </button>
+            </li>
+
+            <li class="service-list_item">
+                <h2 class="service-list_item-name">Замена экрана</h2>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">9000 ₽</span>
+                </p>
+                <button class="service-list_item-btn HOVER">
+                    <span></span>
+                    <text>Заказать</text>
+                </button>
+            </li>
+            <li class="service-list_item">
+                <h2 class="service-list_item-name">Замена матрицы</h2>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">9000 ₽</span>
+                    <span class="service-list_item-price_old">903200 ₽</span>
+                </p>
+                <button class="service-list_item-btn HOVER">
+                    <span></span>
+                    <text>Заказать</text>
+                </button>
+            </li>
+            <li class="service-list_item">
+                <h2 class="service-list_item-name">Установка операционной системы</h2>
+                <p class="service-list_item-price">
+                    <span class="service-list_item-price_new">3500 ₽</span>
+                </p>
                 <button class="service-list_item-btn HOVER">
                     <span></span>
                     <text>Заказать</text>
@@ -126,12 +204,14 @@
         </ul>
 
     </div>
+    @include('inc/feedbackForm')
 @endsection
 
 @section('footer')
     @include('inc/footer', [
     'scripts'=>[
         'menuBurger',
+        'feedbackForm'
         ]
         ])
 @endsection

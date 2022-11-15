@@ -6,13 +6,12 @@
 .service_block{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 100px;
+    margin-bottom: 310px;
 }
 aside{
     position: sticky;
     top: 145px;
     width: 320px;
-    height: 210px;
 }
 .service-filter{
     display: flex;
@@ -32,12 +31,26 @@ select{
     -moz-appearance: none;
     padding: 10px 15px;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.03em;
+    cursor: pointer;
 }
 select:focus{
     outline: none;
+}
+select option{
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+select option:hover,
+select option:active{
+    background-color: var(--blue);
+    color: #FFFFFF;
+}
+.order-list{
+    width: 1000px !important;
 }
 .service-list{
     list-style: none;
@@ -59,11 +72,87 @@ select:focus{
     font-size: 20px;
     width: 320px;
 }
+.order-arrange_link-block{
+    display: flex;
+    justify-content: flex-end;
+    width: 1000px;
+}
+.order-link{
+    color: var(--black);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.order-link:hover{
+    color: var(--blue);
+}
+.order-total{
+    font-size: 24px;
+    font-weight: 600;
+    display: flex;
+    width: 1000px;
+    justify-content: flex-end;
+    letter-spacing: 0.03em;
+}
 .service-list_item-price{
     font-weight: 500;
     font-size: 20px;
     width: 240px;
     display: flex;
+    align-items: center;
+}
+.service-list_item-amount,
+.service-list_item-subtotal{
+    width: 80px;
+    font-size: 20px;
+}
+.service-list_item-amount{
+    font-weight: 500;
+}
+.amount-input_block{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.amount-input{
+    width: 20px !important;
+    padding: 10px !important;
+    pointer-events: none;
+    border: none !important;
+    font-size: 20px !important;
+    font-weight: 500;
+    text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.amount-input_btn{
+    background-color: var(--blue);
+    color: #fff;
+    line-height: 20px;
+    font-size: 35px;
+    letter-spacing: 0px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: .3s;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+.amount-input_btn:first-child{
+    padding-right: 13.375px;
+    padding-left: 13.375px;
+    padding-bottom: 10px;
+}
+.amount-input_btn:hover{
+    cursor: pointer;
+    background-color: var(--black);
+}
+.service-list_item-subtotal{
+    font-weight: 600;
 }
 .service-list_item-price_new,
 .service-list_item-price_old{
@@ -73,6 +162,32 @@ select:focus{
     color: gray;
     text-decoration: line-through;
 }
+
+
+.service-list_item-order_title,
+.service-list_item-status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.service-list_item-order,
+.service-list_item-status_item{
+    width: 100%;
+    display: flex;
+}
+.service-list_item-status_item{
+    gap: 10px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.service-list_item-status_item:last-child{
+    justify-content: flex-end;
+}
+.service-list_item-order{
+    display: flex;
+    flex-direction: column;
+}
+
 .service-list_item-btn{
     font-weight: 500;
     font-size: 14px;
@@ -94,11 +209,12 @@ select:focus{
         position: relative;
         top: 0;
     }
-    select{
-        font-size: 14px;
-    }
     .service-list{
         margin-top: 50px;
+        width: 320px !important;
+    }
+    .order-total,
+    .order-arrange_link-block{
         width: 320px;
     }
     .service-list_item{
@@ -113,5 +229,28 @@ select:focus{
         gap: 5px;
         align-items: center;
         text-align: center;
+    }
+    .service-list_item-order_title,
+    .service-list_item-status{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .service-list_item-status_item,
+    .service-list_item-status_item:last-child{
+        justify-content: center;
+    }
+    .service-list_item-status_item:last-child{
+        margin-bottom: 10px;
+    }
+    .service-list_item-amount,
+    .service-list_item-price_new,
+    .service-list_item-subtotal{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .preorder_title{
+        display: none;
     }
 }

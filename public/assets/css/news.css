@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 120px;
-    margin-bottom: 100px;
+    margin-bottom: 310px;
 }
 .all-news_item{
     box-shadow: 1px 1px 10px 5px var(--grey-white);
@@ -32,7 +32,13 @@
     max-width: 294px;
     font-weight: 500;
     font-size: 18px;
-    height: 84px;
+    padding: 13px;
+}
+.all-news_item-date{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 13px;
+    letter-spacing: 0.05em;
     padding: 13px;
 }
 .news_content{

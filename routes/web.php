@@ -26,3 +26,9 @@ Route::get('/service', [\App\Http\Controllers\Web\ServiceController::class, 'ind
 
 Route::get('/login', [\App\Http\Controllers\Web\AuthController::class, 'login'])->name('login');
 Route::get('/registration', [\App\Http\Controllers\Web\AuthController::class, 'registration'])->name('registration');
+
+Route::get('/account', [\App\Http\Controllers\Web\AccountController::class, 'account'])->name('account');
+
+Route::get('/cart', [\App\Http\Controllers\Web\OrderController::class, 'cart'])->name('cart');
+Route::get('/order', [\App\Http\Controllers\Web\OrderController::class, 'order'])->name('order');
+Route::get('/preorder', [\App\Http\Controllers\Web\OrderController::class, 'preorder'])->name('preorder');

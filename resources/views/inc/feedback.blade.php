@@ -1,8 +1,8 @@
 <h1 class="aboutUs-title">Уста клиента глаголят истину</h1>
 
-<div class="clients_block">
+<div class="clients_block carousel-block">
     @foreach($clients as $client)
-        <div class="client">
+        <div class="client carousel-item">
             <div class="client_title">
                 <img src="assets\images\yarik.jpg" alt="" class="client-img">
                 <p class="client-info_p client-info_p-name">

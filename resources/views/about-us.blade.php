@@ -38,9 +38,9 @@
 
 
         <h1 class="aboutUs-title">У нас работают самые крутые специалисты!</h1>
-        <div class="workers_block">
+        <div class="workers_block carousel-block">
             @foreach($workers as $worker)
-                <div class="worker">
+                <div class="worker carousel-item">
                     <img src="assets\images\yarik.jpg" alt="" class="worker-img">
                     <div class="worker-info">
                         <p class="worker-info_p worker-info_p-name">{{ $worker->name }}</p>
@@ -64,7 +64,7 @@
     'scripts'=>[
         'menuBurger',
         'mapSettings',
-        'feedbackForm'
+        'feedbackForm',
         ]
         ])
 @endsection
