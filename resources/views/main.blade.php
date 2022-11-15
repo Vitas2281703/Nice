@@ -7,6 +7,8 @@
         'mainPage',
         'mapStyle',
         'feedback',
+        'feedbackForm',
+        'auth'
         ]
         ])
 @endsection
@@ -111,7 +113,7 @@
 
 <div class="marquee-right">
     @for($i=0;$i<9;$i++)
-        <span class="marquee-item">СКИДКА 30% НА ДИАГНОСТИКУ</span>
+        <span class="marquee-item">БЕСПЛАТНАЯ ДИАГНОСТИКА</span>
     @endfor
 </div>
 
@@ -256,7 +258,7 @@
 @include('inc/googleMap')
 
 
-
+@include('inc/feedbackForm')
 @endsection
 
 @section('footer')
@@ -265,7 +267,8 @@
         'accordion',
         'swiperSlider',
         'marquee',
-        'menuBurger'
+        'menuBurger',
+        'feedbackForm'
         ]
         ])
 @endsection

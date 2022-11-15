@@ -4,7 +4,9 @@
     @include('inc/header', [
     'styles'=>[
         'commonStyle',
-        'news'
+        'news',
+        'feedbackForm',
+        'auth'
         ]
         ])
 @endsection
@@ -62,12 +64,14 @@
 
 
     </div>
+    @include('inc/feedbackForm')
 @endsection
 
 @section('footer')
     @include('inc/footer', [
     'scripts'=>[
-        'menuBurger'
+        'menuBurger',
+        'feedbackForm'
         ]
         ])
 @endsection

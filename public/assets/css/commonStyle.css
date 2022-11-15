@@ -3,6 +3,8 @@
     --black: #35302f;
     --grey-white: #e6ebf1;
     --grey-dark: #9b9b9b;
+    --green: #169600;
+    --red: #ad0000;
 }
 
 * {
@@ -10,7 +12,12 @@
     padding: 0;
     margin: 0;
 }
+html {
+    position: relative;
+    min-height: 100%;
+}
 body{
+    margin-bottom: 210px;
     color: var(--black);
 }
 .container{
@@ -226,12 +233,6 @@ header{
 .auth-links li{
     display: inherit !important;
 }
-.auth-links li:first-child a{
-    border-radius: 10px 10px 0px 0px;
-}
-.auth-links li:last-child a{
-    border-radius: 0px 0px 10px 10px;
-}
 .auth-link{
     padding: 15px 10px;
     color: #fff;
@@ -263,6 +264,9 @@ header{
 footer {
     height: 210px;
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 .footer-logo {
     width: 170px;

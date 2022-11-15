@@ -4,7 +4,9 @@
     @include('inc/header', [
     'styles'=>[
         'commonStyle',
-        'promotion'
+        'promotion',
+        'feedbackForm',
+        'auth'
         ]
         ])
 @endsection
@@ -21,12 +23,14 @@
             <img src="assets\images\banner-1.png" alt="" class="promo-img">
         </div>
     </div>
+    @include('inc/feedbackForm')
 @endsection
 
 @section('footer')
     @include('inc/footer', [
     'scripts'=>[
-        'menuBurger'
+        'menuBurger',
+        'feedbackForm'
         ]
         ])
 @endsection

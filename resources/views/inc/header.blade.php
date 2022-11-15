@@ -79,7 +79,7 @@
                             <li><a href="{{ route('all-news') }}" class="header-link">новости</a></li>
                             <div class="functional-links">
                             <li>
-                                <a href="" class="header-link header-link_functional header-link_functional-auth">
+                                <a href="{{ route('account') }}" class="header-link header-link_functional header-link_functional-auth">
                                     <svg
                                         width="25px"
                                         height="25px"
@@ -105,7 +105,7 @@
                             </li>
 
                             <li>
-                                <a href="" class="header-link header-link_functional">
+                                <a href="{{ route('cart') }}" class="header-link header-link_functional">
                                     <svg width="25px"
                                          height="25px"
                                          viewBox="0 0 21 21"

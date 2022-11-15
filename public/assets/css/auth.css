@@ -1,6 +1,3 @@
-html, body{
-    height: 100%;
-}
 .form-auth_block{
     display: flex;
     align-items: center;
