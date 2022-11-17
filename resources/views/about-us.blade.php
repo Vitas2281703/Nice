@@ -15,7 +15,7 @@
 @section('content')
     <div class="container">
 
-        <h1 class="aboutUs-title">Давайте знакомиться ;)</h1>
+        <h1 class="aboutUs-title">Давайте знаrомиться ;)</h1>
 
         <div class="aboutUs">
             <p class="aboutUs_p">
