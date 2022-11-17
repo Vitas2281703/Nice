@@ -9,5 +9,7 @@ interface UserService
     public function registration(array $data);
 
     public function authorization(array $data);
+
+    public function logout();
 }
 

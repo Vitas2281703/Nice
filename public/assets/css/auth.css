@@ -41,6 +41,10 @@
     padding-top: 15px;
     padding-bottom: 15px;
 }
+.disabled-btn{
+    background-color: var(--grey-dark);
+    pointer-events: none;
+}
 .form-auth_p{
     text-align: center;
     font-style: normal;

@@ -24,8 +24,12 @@ Route::get('/news', [\App\Http\Controllers\Web\NewsController::class, 'news'])->
 
 Route::get('/service', [\App\Http\Controllers\Web\ServiceController::class, 'index'])->name('service');
 
-Route::get('/login', [\App\Http\Controllers\Web\AuthController::class, 'login'])->name('login');
-Route::get('/registration', [\App\Http\Controllers\Web\AuthController::class, 'registration'])->name('registration');
+Route::view('/login', 'login')->name('login');
+Route::view('/registration', 'registration')->name('registration');
+Route::post('/login', [\App\Http\Controllers\Web\AuthController::class, 'login'])->name('login-post');
+Route::post('/registration', [\App\Http\Controllers\Web\AuthController::class, 'registration'])->name('registration-post');
+Route::get('/logout', [\App\Http\Controllers\Web\AuthController::class, 'logout'])->name('logout');
+
 
 Route::get('/account', [\App\Http\Controllers\Web\AccountController::class, 'account'])->name('account');
 

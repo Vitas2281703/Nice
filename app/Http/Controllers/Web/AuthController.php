@@ -3,24 +3,28 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use Illuminate\View\View;
+use App\Http\Requests\AuthRequest;
+use App\Http\Requests\RegistrationRequest;
+use App\Services\UserService;
 
 class AuthController extends Controller
 {
     public function __construct(
+        public UserService $userService,
     )
     {
     }
 
-    /**
-     * @return View
-     */
-    public function login(): View
+
+    public function login(AuthRequest $request)
     {
-        return view('login');
+        return $this->userService->authorization($request->validated());
     }
-    public function registration(): View
+    public function registration(RegistrationRequest $request)
     {
-        return view('registration');
+        return $this->userService->registration($request->validated());
+    }
+    public function logout(){
+        return $this->userService->logout();
     }
 }

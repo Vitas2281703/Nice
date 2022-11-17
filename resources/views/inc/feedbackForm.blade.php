@@ -24,7 +24,7 @@
             <form action="" class="feedbackForm-form">
                 @csrf
                 <input type="text" name="name" class="form-auth_input" placeholder="Как вас зовут?">
-                <input type="tel" name="telephone" class="form-auth_input" placeholder="Телефон">
+                <input type="tel" name="phone" class="form-auth_input form-auth_input-telephone" placeholder="Телефон">
                 <textarea class="form-auth_input"
                           name="comment"
                           cols="30" rows="5"
