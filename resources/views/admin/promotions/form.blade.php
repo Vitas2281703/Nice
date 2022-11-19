@@ -49,7 +49,6 @@
     'required' => true,
     ])
 
-
     @section('sideFieldsets')
         <a17-fieldset title="SEO" id="seo">
             @formField('input', [
@@ -67,5 +66,4 @@
             ])
         </a17-fieldset>
     @endsection
-
 @stop
