@@ -119,7 +119,6 @@
 <div class="container">
         <div class="banners">
             @foreach($promotions as $promotion)
-                {{dd($promotion->id)}}
                 <a href="{{ route('promo', [
                                 'slug'=>$promotion->slugs->first()->slug,
                                 'id'=>$promotion->id,

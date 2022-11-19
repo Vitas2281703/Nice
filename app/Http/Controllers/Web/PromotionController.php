@@ -23,4 +23,5 @@ class PromotionController extends Controller
         dd($request);
         return $this->promotionService->showPromo($slug);
     }
+
 }
