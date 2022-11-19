@@ -19,7 +19,8 @@ class UserService implements Contracts\UserService
 
     public function registration(array $data) {
         $user = $this->userRepository->getUser($data);
-        if(empty(Auth::user())) {
+
+        if(!Auth::user()) {
             if(!isset($user)) {
                 $newUser = $this->userRepository->create([
                     'name' => $data['name'],

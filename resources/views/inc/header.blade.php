@@ -1,10 +1,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @if(isset($seoDescription))
+        <meta name="description" content="{{ $seoDescription }}" />
+    @else
+        <meta name="description" content="Для наших клиентов диагностика бесплатная. Гарантия до 365 дней. Срочный ремонт смартфонов от 15 минут. 8 (906) 922-91-61" />
+    @endif
     <link rel="icon" href="/favicon.ico" type="image/ico" />
 
     @foreach($styles as $style)
-        <link rel="stylesheet" href="assets\css\{{ $style }}.css" />
+        <link rel="stylesheet" href="\assets\css\{{ $style }}.css" />
     @endforeach
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link
@@ -21,8 +26,11 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <title>Nice Service</title>
+    @if(isset($seoTitle))
+        <title>{{ $seoTitle }}</title>
+    @else
+        <title>NICE — Ремонт компьютеров и телефонов в Кемерово</title>
+    @endif
 </head>
 <body>
 
@@ -37,19 +45,19 @@
                 </a>
                 <a href="tel:89234826100" class="number">8 (923) 482-61-00</a>
                 <div class="social-seti_block">
-                    <a href=""><img src="assets\images\vk.svg" alt=""></a>
-                    <a href=""><img src="assets\images\whatsapp.svg" alt=""></a>
-                    <a href=""><img src="assets\images\instagram.svg" alt=""></a>
+                    <a href=""><img src="\assets\images\vk.svg" alt=""></a>
+                    <a href=""><img src="\assets\images\whatsapp.svg" alt=""></a>
+                    <a href=""><img src="\assets\images\instagram.svg" alt=""></a>
                 </div>
             </div>
             <div class="header__top-info_block">
                 <div class="header__top-info_item">
-                    <img src="assets\images\geo.svg" alt="">
+                    <img src="\assets\images\geo.svg" alt="">
                     <p>Кемерово, пр. Ленина 64А <br>
                         ул. Рукавишникова, 9А</p>
                 </div>
                 <div class="header__top-info_item">
-                    <img src="assets\images\time.svg" alt="">
+                    <img src="\assets\images\time.svg" alt="">
                     <p>Пн-Пт 10-19:00 | Сб 11-14:00</p>
                 </div>
 
@@ -63,10 +71,10 @@
                 <div class="header__bottom">
                     <div class="brand">
                         <a href="{{ route('home') }}">
-                            <img src="assets\images\logo.svg"
+                            <img src="\assets\images\logo.svg"
                                  alt="Nice"
                                  class="brand-logo">
-                            <img src="assets\images\mobileLogo.svg"
+                            <img src="\assets\images\mobileLogo.svg"
                                  alt="Nice"
                                  class="brand-logoMobile">
                         </a>
@@ -145,9 +153,9 @@
                                     </a>
                                     <a href="tel:89234826100" class="number">8 (923) 482-61-00</a>
                                     <div class="social-seti_block">
-                                        <a href=""><img src="assets\images\vk.svg" alt=""></a>
-                                        <a href=""><img src="assets\images\whatsapp.svg" alt=""></a>
-                                        <a href=""><img src="assets\images\instagram.svg" alt=""></a>
+                                        <a href=""><img src="\assets\images\vk.svg" alt=""></a>
+                                        <a href=""><img src="\assets\images\whatsapp.svg" alt=""></a>
+                                        <a href=""><img src="\assets\images\instagram.svg" alt=""></a>
                                     </div>
                                 </div>
                             </li>

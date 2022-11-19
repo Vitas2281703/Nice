@@ -3,6 +3,8 @@ var carouselItems = [];
 var slides = [];
 var activeSlides = [];
 var left = [];
+const windowWidth = window.screen.width;
+
 for(let i = 0; i<carouselBlocks.length; i++){
     let carouselItemsBuf = carouselBlocks[i].querySelectorAll('.carousel-item');
     carouselItems.push(carouselItemsBuf);
@@ -11,33 +13,22 @@ for(let i = 0; i<carouselBlocks.length; i++){
     activeSlides.push(1);
 }
 
-function slideLeft(el, slide, timePassed){
-    el.style.left = (-1 * slide) * timePassed + 'px'
+function slideLeft(el, slide, width){
+    console.log((-1 * slide))
+    el.style.left = (-1 * slide * width)  + 'px'
 }
 
 function carousel(){
-    for(let i = 0; i < carouselBlocks.length; i++){
-        console.log('active: i' + i + ' ' + activeSlides[i]);
-        console.log('slide: i' + i + ' ' + slides[i]);
-        let viewport = carouselBlocks[i].offsetWidth;
-        let start = Date.now();
-        let timer = setInterval(function (){
-
-            let timePassed = Date.now() - start;
-
-            if (timePassed >= (viewport + 140)) {
-                clearInterval(timer);
-                return;
+    let widthSlide = 1320;
+    if (windowWidth > 900){
+        for (let i = 1; i < carouselBlocks.length; i++){
+            for (let j = 0; j < carouselItems.length; j++) {
+                console.log('j' + j);
+                console.log(carouselItems.length);
+                slideLeft(carouselBlocks[i], j, widthSlide);
             }
-
-            slideLeft(carouselBlocks[i], j, timePassed);
-            activeSlides[i] += 1;
-            if (activeSlides[i] >= slides[i]){
-                activeSlides[i] = 0;
-            }
-
-        }, 5000)
+        }
     }
 }
 
-setInterval(carousel, 5000);
+setInterval(carousel, 2000);

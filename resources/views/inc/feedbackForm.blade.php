@@ -9,13 +9,13 @@
     </span>
     <div class="modal-content">
         <div class="feedbackForm-img">
-            <img src="assets\images\logoWithHand.svg" alt="">
-            <img src="assets\images\logoWithHandMobile.svg" alt="">
+            <img src="\assets\images\logoWithHand.svg" alt="">
+            <img src="\assets\images\logoWithHandMobile.svg" alt="">
         </div>
         <div class="feedbackForm-form_block">
             <h2 class="feedbackForm-form_title">
                 Очень рады, что выбрали нас!
-                <img src="assets\images\goatHand.svg" alt="">
+                <img src="\assets\images\goatHand.svg" alt="">
             </h2>
             <p class="feedbackForm-form_p">
                 Мы свяжемся в вами в ближайшее время и обсудим ваш вопрос.
@@ -47,7 +47,7 @@
 <div class="overlay js-overlay-modal"></div>
 
     <a href="" class="feedbackForm_link js-open-modal" data-modal = "1">
-        <img src="assets\images\oldPhone.svg" alt="">
+        <img src="\assets\images\oldPhone.svg" alt="">
     </a>
 
 
