@@ -15,4 +15,11 @@ class PromotionRepository extends ModuleRepository implements Contracts\Promotio
     {
         $this->model = $model;
     }
+
+    public function getOnePromo($slug){
+        $promo = $this->model->newQuery();
+        dd($promo->with('promotion_slugs')->where('slug', $slug)->first());
+        return $promo->with('slugs')->first();
+    }
+
 }

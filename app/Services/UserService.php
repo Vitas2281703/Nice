@@ -4,8 +4,8 @@ namespace App\Services;
 
 
 
+use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
-use App\Repositories\Contracts\WorkerRepository;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,27 +19,45 @@ class UserService implements Contracts\UserService
 
     public function registration(array $data) {
         $user = $this->userRepository->getUser($data);
-        if(empty(Auth::user())) {
-            if(isset($user)) {
-                $this->userRepository->create([
-                    'phone' => $data['phone'],
+
+        if(!Auth::user()) {
+            if(!isset($user)) {
+                $newUser = $this->userRepository->create([
+                    'name' => $data['name'],
                     'email' => $data['email'],
+                    'phone' => $data['phone'],
                     'password' => Hash::make($data['password']),
                     'role_id' => 1
                 ]);
-                return true;
+                /**
+                 * @var User $newUser
+                 */
+                Auth::login($newUser);
+                return redirect()->route('account');
             } else {
-                return "Пользователь с такой почтой или телефоном уже существует";
+                return view('registration', ['error'=>"Пользователь с таким email или телефоном уже существует"]);
             }
+        } else {
+            return view('registration', ['error'=>"Вы уже авторизированны"]);
         }
     }
     public function authorization(array $data) {
         $user = $this->userRepository->authorization($data);
         if(isset($user)) {
-            Auth::login($user);
-            return Auth::user();
+            if(Hash::check($data['password'], $user->password)) {
+                Auth::login($user);
+                return redirect()->route('account');
+            }
+            else {
+                return view('login', ['error'=>"Пароль введён неправильно"]);
+            }
         } else {
-            return "Логин или пароль введён неправильно";
+            return view('login', ['error'=>"Email не найден"]);
         }
+    }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->route('home');
     }
 }

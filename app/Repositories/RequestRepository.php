@@ -6,9 +6,9 @@ namespace App\Repositories;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Request;
 
-class RequestRepository extends ModuleRepository
+class RequestRepository extends ModuleRepository implements Contracts\RequestRepository
 {
-    
+
 
     public function __construct(Request $model)
     {

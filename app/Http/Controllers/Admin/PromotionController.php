@@ -9,5 +9,6 @@ class PromotionController extends BaseModuleController
     protected $moduleName = 'promotions';
 
     protected $indexOptions = [
+        'permalink' => false,
     ];
 }

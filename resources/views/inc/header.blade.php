@@ -1,10 +1,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @if(isset($seoDescription))
+        <meta name="description" content="{{ $seoDescription }}" />
+    @else
+        <meta name="description" content="Для наших клиентов диагностика бесплатная. Гарантия до 365 дней. Срочный ремонт смартфонов от 15 минут. 8 (906) 922-91-61" />
+    @endif
     <link rel="icon" href="/favicon.ico" type="image/ico" />
 
     @foreach($styles as $style)
-        <link rel="stylesheet" href="assets\css\{{ $style }}.css" />
+        <link rel="stylesheet" href="\assets\css\{{ $style }}.css" />
     @endforeach
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link
@@ -21,8 +26,11 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <title>Nice Service</title>
+    @if(isset($seoTitle))
+        <title>{{ $seoTitle }}</title>
+    @else
+        <title>NICE — Ремонт компьютеров и телефонов в Кемерово</title>
+    @endif
 </head>
 <body>
 
@@ -37,19 +45,19 @@
                 </a>
                 <a href="tel:89234826100" class="number">8 (923) 482-61-00</a>
                 <div class="social-seti_block">
-                    <a href=""><img src="assets\images\vk.svg" alt=""></a>
-                    <a href=""><img src="assets\images\whatsapp.svg" alt=""></a>
-                    <a href=""><img src="assets\images\instagram.svg" alt=""></a>
+                    <a href=""><img src="\assets\images\vk.svg" alt=""></a>
+                    <a href=""><img src="\assets\images\whatsapp.svg" alt=""></a>
+                    <a href=""><img src="\assets\images\instagram.svg" alt=""></a>
                 </div>
             </div>
             <div class="header__top-info_block">
                 <div class="header__top-info_item">
-                    <img src="assets\images\geo.svg" alt="">
+                    <img src="\assets\images\geo.svg" alt="">
                     <p>Кемерово, пр. Ленина 64А <br>
                         ул. Рукавишникова, 9А</p>
                 </div>
                 <div class="header__top-info_item">
-                    <img src="assets\images\time.svg" alt="">
+                    <img src="\assets\images\time.svg" alt="">
                     <p>Пн-Пт 10-19:00 | Сб 11-14:00</p>
                 </div>
 
@@ -63,10 +71,10 @@
                 <div class="header__bottom">
                     <div class="brand">
                         <a href="{{ route('home') }}">
-                            <img src="assets\images\logo.svg"
+                            <img src="\assets\images\logo.svg"
                                  alt="Nice"
                                  class="brand-logo">
-                            <img src="assets\images\mobileLogo.svg"
+                            <img src="\assets\images\mobileLogo.svg"
                                  alt="Nice"
                                  class="brand-logoMobile">
                         </a>
@@ -79,7 +87,11 @@
                             <li><a href="{{ route('all-news') }}" class="header-link">новости</a></li>
                             <div class="functional-links">
                             <li>
-                                <a href="{{ route('account') }}" class="header-link header-link_functional header-link_functional-auth">
+                                @if(Auth::user())
+                                    <a href="{{ route('account') }}" class="header-link header-link_functional header-link_functional-auth">
+                                @else
+                                            <a href="{{ route('login') }}" class="header-link header-link_functional header-link_functional-auth">
+                                @endif
                                     <svg
                                         width="25px"
                                         height="25px"
@@ -88,18 +100,26 @@
                                         <path
                                             d="M50.4 54.5c10.1 0 18.2-8.2 18.2-18.2S60.5 18 50.4 18s-18.2 8.2-18.2 18.2 8.1 18.3 18.2 18.3zm0-31.7c7.4 0 13.4 6 13.4 13.4s-6 13.4-13.4 13.4S37 43.7 37 36.3s6-13.5 13.4-13.5zM18.8 83h63.4c1.3 0 2.4-1.1 2.4-2.4 0-12.6-10.3-22.9-22.9-22.9H39.3c-12.6 0-22.9 10.3-22.9 22.9 0 1.3 1.1 2.4 2.4 2.4zm20.5-20.5h22.4c9.2 0 16.7 6.8 17.9 15.7H21.4c1.2-8.9 8.7-15.7 17.9-15.7z"/>
                                     </svg>
-                                </a>
+                                    </a>
                                 <ul class="auth-links">
-                                    <li>
-                                        <a href="{{ route('login') }}" class="auth-link">
-                                            Войти
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('registration') }}" class="auth-link">
-                                            Зарегистрироваться
-                                        </a>
-                                    </li>
+                                    @if(Auth::user())
+                                        <li>
+                                            <a href="{{ route('logout') }}" class="auth-link">
+                                                Выйти
+                                            </a>
+                                        </li>
+                                    @else
+                                        <li>
+                                            <a href="{{ route('login') }}" class="auth-link">
+                                                Войти
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('registration') }}" class="auth-link">
+                                                Зарегистрироваться
+                                            </a>
+                                        </li>
+                                    @endif
                                 </ul>
 
                             </li>
@@ -133,9 +153,9 @@
                                     </a>
                                     <a href="tel:89234826100" class="number">8 (923) 482-61-00</a>
                                     <div class="social-seti_block">
-                                        <a href=""><img src="assets\images\vk.svg" alt=""></a>
-                                        <a href=""><img src="assets\images\whatsapp.svg" alt=""></a>
-                                        <a href=""><img src="assets\images\instagram.svg" alt=""></a>
+                                        <a href=""><img src="\assets\images\vk.svg" alt=""></a>
+                                        <a href=""><img src="\assets\images\whatsapp.svg" alt=""></a>
+                                        <a href=""><img src="\assets\images\instagram.svg" alt=""></a>
                                     </div>
                                 </div>
                             </li>

@@ -6,7 +6,7 @@
                     <a href="tel:89234826100" class="number">8 (923) 482-61-00</a>
                 </div>
                 <div class="footer-brand">
-                    <img src="assets\images\footerLogo.svg"
+                    <img src="\assets\images\footerLogo.svg"
                          alt="NICE"
                          class="footer-logo"
                     />
@@ -22,13 +22,13 @@
                     </a>
                     <div class="social-seti_block">
                         <a href="#" >
-                            <img src="assets\images\vk.svg" alt="">
+                            <img src="\assets\images\vk.svg" alt="">
                         </a>
                         <a href="#" >
-                            <img src="assets\images\whatsapp.svg" alt="">
+                            <img src="\assets\images\whatsapp.svg" alt="">
                         </a>
                         <a href="#" >
-                            <img src="assets\images\instagram.svg" alt="">
+                            <img src="\assets\images\instagram.svg" alt="">
                         </a>
                     </div>
                 </div>
@@ -49,9 +49,9 @@
 
 @foreach($scripts as $script)
     @if($script == 'swiperSlider')
-        <script type="module" src="assets/js/{{ $script }}.js"></script>
+        <script type="module" src="/assets/js/{{ $script }}.js"></script>
     @else
-        <script src="assets/js/{{ $script }}.js"></script>
+        <script src="/assets/js/{{ $script }}.js"></script>
     @endif
 @endforeach
 
@@ -62,5 +62,7 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+<script src="https://unpkg.com/imask"></script>
+<script src="assets/js/maskTelephoneInput.js"></script>
 
 

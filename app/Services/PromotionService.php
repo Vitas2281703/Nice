@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\Contracts\PromotionRepository;
+use Illuminate\View\View;
 
 class PromotionService implements Contracts\PromotionService
 {
@@ -20,4 +21,14 @@ class PromotionService implements Contracts\PromotionService
         }
         return $promotionOptions;
     }
+
+    public function getPromo(){
+        return $this->repository->get();
+    }
+
+    public function showPromo($slug): View {
+        return view('promotion', ['promotion'=>$this->repository->getOnePromo($slug)]);
+    }
+
+
 }

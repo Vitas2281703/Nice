@@ -8,6 +8,6 @@ interface UserRepository
 {
     public function getUser(array $data);
 
-    public function authorization($data);
+    public function authorization(array $data);
 }
 

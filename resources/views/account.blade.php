@@ -13,7 +13,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="account-title">Привет, <span>имя!</span></h1>
+        <h1 class="account-title">Привет, <span>{{ $name }}!</span></h1>
         <p>Здесь ты можешь посмотреть свою персональную скидку по реферальной
             программе и отслеживать свои заказы <img src="assets\images\okHand.svg" alt=""></p>
         <div class="service_block">

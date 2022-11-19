@@ -163,6 +163,8 @@
     margin-top: 120px;
     margin-bottom: 50px;
     width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .banner {
     position: absolute;

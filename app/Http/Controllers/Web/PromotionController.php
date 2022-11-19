@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
-use App\Services\Contracts\JobStepService;
-use App\Services\OurClientService;
+use App\Models\Request;
+use App\Services\Contracts\PromotionService;
 use Illuminate\View\View;
 
 class PromotionController extends Controller
 {
     public function __construct(
+        public PromotionService $promotionService,
     )
     {
     }
@@ -17,8 +18,10 @@ class PromotionController extends Controller
     /**
      * @return View
      */
-    public function index(): View
+    public function index($request): View
     {
-        return view('promotion');
+        dd($request);
+        return $this->promotionService->showPromo($slug);
     }
+
 }

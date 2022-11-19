@@ -17,15 +17,19 @@ Route::get('/', [\App\Http\Controllers\Web\MainController::class, 'index'])->nam
 
 Route::get('/about-us', [\App\Http\Controllers\Web\AboutController::class, 'index'])->name('about-us');
 
-Route::get('/promo', [\App\Http\Controllers\Web\PromotionController::class, 'index'])->name('promo');
+Route::get('/promotion/{slug}', [\App\Http\Controllers\Web\PromotionController::class, 'index'])->name('promo');
 
 Route::get('/all-news', [\App\Http\Controllers\Web\NewsController::class, 'allNews'])->name('all-news');
 Route::get('/news', [\App\Http\Controllers\Web\NewsController::class, 'news'])->name('news');
 
 Route::get('/service', [\App\Http\Controllers\Web\ServiceController::class, 'index'])->name('service');
 
-Route::get('/login', [\App\Http\Controllers\Web\AuthController::class, 'login'])->name('login');
-Route::get('/registration', [\App\Http\Controllers\Web\AuthController::class, 'registration'])->name('registration');
+Route::view('/login', 'login')->name('login');
+Route::view('/registration', 'registration')->name('registration');
+Route::post('/login', [\App\Http\Controllers\Web\AuthController::class, 'login'])->name('login-post');
+Route::post('/registration', [\App\Http\Controllers\Web\AuthController::class, 'registration'])->name('registration-post');
+Route::get('/logout', [\App\Http\Controllers\Web\AuthController::class, 'logout'])->name('logout');
+
 
 Route::get('/account', [\App\Http\Controllers\Web\AccountController::class, 'account'])->name('account');
 

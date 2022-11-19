@@ -4,8 +4,7 @@ namespace App\Repositories\Contracts;
 
 use Illuminate\Http\Client\RequestException;
 
-interface PromotionRepository
+interface RequestRepository
 {
-    public function getOnePromo($slug);
 }
 

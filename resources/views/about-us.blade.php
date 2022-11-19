@@ -65,6 +65,7 @@
         'menuBurger',
         'mapSettings',
         'feedbackForm',
+        'carousel',
         ]
         ])
 @endsection
