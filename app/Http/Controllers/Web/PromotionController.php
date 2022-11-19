@@ -18,9 +18,8 @@ class PromotionController extends Controller
     /**
      * @return View
      */
-    public function index($request): View
+    public function index($slug): View
     {
-        dd($request);
         return $this->promotionService->showPromo($slug);
     }
 }

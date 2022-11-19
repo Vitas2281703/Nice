@@ -6,6 +6,9 @@ use A17\Twill\Repositories\Behaviors\HandleSlugs;
 use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\Promotion;
+/**
+ * @extends ModuleRepository<Promotion>
+ */
 
 class PromotionRepository extends ModuleRepository implements Contracts\PromotionRepository
 {
@@ -16,10 +19,10 @@ class PromotionRepository extends ModuleRepository implements Contracts\Promotio
         $this->model = $model;
     }
 
-    public function getOnePromo($slug){
-        $promo = $this->model->newQuery();
-        dd($promo->with('promotion_slugs')->where('slug', $slug)->first());
-        return $promo->with('slugs')->first();
+    public function getOnePromo($slug)
+    {
+        return $this->model->newQuery()
+            ->whereRelation('slugs', 'slug', '=', $slug)->first();
     }
 
 }
