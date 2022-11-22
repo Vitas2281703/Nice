@@ -16,7 +16,7 @@
                 @csrf
                 <h2 class="form-auth_title">Регистрация</h2>
                 @if(isset($error))
-                    <span>{{ $error }}</span>
+                    <span class="auth-error">{{ $error }}</span>
                 @endif
                 <input type="text" name="name" class="form-auth_input" placeholder="Как вас зовут">
                 <input type="tel" name="phone" class="form-auth_input form-auth_input-telephone" placeholder="Телефон">

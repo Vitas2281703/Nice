@@ -41,7 +41,7 @@
         <div class="workers_block carousel-block">
             @foreach($workers as $worker)
                 <div class="worker carousel-item">
-                    <img src="assets\images\yarik.jpg" alt="" class="worker-img">
+                    <img src="{{ $worker->image('cover') }}" alt="" class="worker-img">
                     <div class="worker-info">
                         <p class="worker-info_p worker-info_p-name">{{ $worker->name }}</p>
                         <p class="worker-info_p worker-info_p-post">{{ $worker->post }}</p>

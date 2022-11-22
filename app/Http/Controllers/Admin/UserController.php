@@ -9,6 +9,24 @@ class UserController extends BaseModuleController
 {
     protected $moduleName = 'users';
 
+    protected $titleColumnKey = 'name';
+
+    protected $indexColumns = [
+        'name' => [ // field column
+            'title' => 'Имя',
+            'field' => 'name',
+        ],
+        'phone' => [
+            'title' => 'Телефон',
+            'field' => 'phone', // will be available from the columns settings dropdown
+        ],
+        'email' => [ // relation column
+            // Take a look at the example in the next section fot the implementation of the sort
+            'title' => 'Email',
+            'field' => 'email'
+        ]
+    ];
+
     /**
      * @var array<string, bool>
      */

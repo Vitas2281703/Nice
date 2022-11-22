@@ -11,5 +11,9 @@
         'label' => 'Отзыв',
         'maxlength' => 100
     ])
-
+    @formField('medias', [
+    'name' => 'cover',
+    'label' => 'Изображение',
+    'required' => true,
+    ])
 @stop
