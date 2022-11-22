@@ -121,7 +121,6 @@
             @foreach($promotions as $promotion)
                 <a href="{{ route('promo', [
                                 'slug'=>$promotion->slugs->first()->slug,
-                                'id'=>$promotion->id,
                             ]) }}" class="banner-link">
                     <img src="{{ $promotion->image('cover') }}" alt="" class="banner">
                     <div class="banner-hover"></div>

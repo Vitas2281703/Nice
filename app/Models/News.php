@@ -6,7 +6,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
 
-class News extends Model 
+class News extends Model
 {
     use HasSlug, HasMedias;
 
@@ -14,18 +14,20 @@ class News extends Model
         'published',
         'title',
         'description',
+        'seo_title',
+        'seo_description',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [
                 [
                     'name' => 'default',
-                    'ratio' => 16 / 9,
+                    'ratio' => 0,
                 ],
             ],
             'mobile' => [

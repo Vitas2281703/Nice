@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Models\Promotion;
 use App\Repositories\Contracts\PromotionRepository;
 use Illuminate\View\View;
 

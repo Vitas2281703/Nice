@@ -1,8 +1,3 @@
-.news_title{
-    font-weight: 500;
-    margin-top: 50px;
-    margin-bottom: 75px;
-}
 .all-news_block{
     display: flex;
     flex-wrap: wrap;
@@ -10,6 +5,12 @@
     justify-content: flex-start;
     gap: 120px;
     margin-bottom: 310px;
+}
+.all-news_title{
+    font-size: 34px;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .all-news_item{
     box-shadow: 1px 1px 10px 5px var(--grey-white);
@@ -42,22 +43,95 @@
     padding: 13px;
 }
 .news_content{
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    margin-bottom: 310px;
+
+}
+.news-title_block{
+    position: relative;
+}
+.news_title{
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 34px;
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    background-color: var(--blue);
+    padding: 20px 40px 20px 20px;
+    bottom: 20%;
+    border-radius: 0px 10px 10px 0px;
 }
 .news_text{
     font-size: 20px;
     letter-spacing: 0.05em;
     line-height: 1.3em;
+    font-weight: 400;
 }
+.news_text strong{
+    font-weight: 500;
+}
+.news_text h2,
+.news_text h3,
+.news_text h4,
+.news_text h5,
+.news_text h6{
+    margin-bottom: 25px;
+}
+.news_text h2{
+    font-size: 30px;
+}
+.news_text h3{
+    font-size: 28px;
+}
+.news_text h4{
+    font-size: 26px;
+}
+.news_text h5{
+    font-size: 24px;
+}
+.news_text h6{
+    font-size: 22px;
+}
+.news_text p{
+    margin-bottom: 25px;
+}
+.news_text ul,
+.news_text ol{
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
 .news_img{
-    max-width: 100%;
+    width: 100%;
     margin-bottom: 100px;
+    position: relative;
+    z-index: 0;
+    border-radius: 0px 0px 10px 10px;
 }
 @media screen and (max-device-width: 1080px) {
     .news_title{
-        margin-bottom: 50px;
+        margin-top: 0px;
+        border-radius: 0px 0px 10px 10px;
+        font-size: 26px;
+    }
+    .news_text h2{
+        font-size: 24px;
+    }
+    .news_text h3{
+        font-size: 22px;
+    }
+    .news_text h4{
+        font-size: 20px;
+    }
+    .news_text h5{
+        font-size: 18px;
+    }
+    .news_text h6{
+        font-size: 16px;
     }
     .all-news_block{
         gap: 50px;
@@ -68,8 +142,20 @@
     }
     .news_img{
         margin-bottom: 0px;
+        border-radius: 0px
     }
     .news_text{
         margin-bottom: 50px;
+        font-size: 16px;
+    }
+
+    .news-title_block,
+    .news_img,
+    .news_title{
+        position: inherit;
+    }
+    .news-title_block{
+        display: flex;
+        flex-direction: column-reverse;
     }
 }

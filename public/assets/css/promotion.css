@@ -6,7 +6,7 @@
 .promo_info{
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 50px;
 }
 .promo-text{
@@ -17,6 +17,7 @@
 }
 .promo-img{
     width: 500px;
+    pointer-events: none;
 }
 @media screen and (max-device-width: 1080px) {
     .promo-title{

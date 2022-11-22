@@ -20,7 +20,7 @@ Route::get('/about-us', [\App\Http\Controllers\Web\AboutController::class, 'inde
 Route::get('/promotion/{slug}', [\App\Http\Controllers\Web\PromotionController::class, 'index'])->name('promo');
 
 Route::get('/all-news', [\App\Http\Controllers\Web\NewsController::class, 'allNews'])->name('all-news');
-Route::get('/news', [\App\Http\Controllers\Web\NewsController::class, 'news'])->name('news');
+Route::get('/news/{slug}', [\App\Http\Controllers\Web\NewsController::class, 'news'])->name('news');
 
 Route::get('/service', [\App\Http\Controllers\Web\ServiceController::class, 'index'])->name('service');
 

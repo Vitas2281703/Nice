@@ -7,7 +7,9 @@
         'promotion',
         'feedbackForm',
         'auth'
-        ]
+        ],
+    'seoTitle'=>$promotion->seo_title,
+    'seoDescription'=>$promotion->seo_description,
         ])
 @endsection
 
@@ -15,9 +17,9 @@
     <div class="container">
         <h1 class="promo-title">{{ $promotion->title }}</h1>
         <div class="promo_info">
-            <p class="promo-text">
+            <div class="promo-text">
                 {!! $promotion?->description !!}
-            </p>
+            </div>
             <img src="{{ $promotion->image('cover') }}" alt="" class="promo-img">
         </div>
     </div>

@@ -17,6 +17,7 @@ class RepositoryServiceProvider extends ServiceProvider
         \App\Repositories\Contracts\FabricatorRepository::class => \App\Repositories\FabricatorRepository::class,
         \App\Repositories\Contracts\CategoryRepository::class => \App\Repositories\CategoryRepository::class,
         \App\Repositories\Contracts\ServiceRepository::class => \App\Repositories\ServiceRepository::class,
+        \App\Repositories\Contracts\NewsRepository::class => \App\Repositories\NewsRepository::class,
         \App\Repositories\Contracts\PromotionRepository::class => \App\Repositories\PromotionRepository::class,
         \App\Repositories\Contracts\WorkerRepository::class => \App\Repositories\WorkerRepository::class,
         \App\Repositories\Contracts\JobStepRepository::class => \App\Repositories\JobStepRepository::class,
