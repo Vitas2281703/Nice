@@ -61,3 +61,6 @@
 .form-auth_link:hover{
     color: var(--blue);
 }
+.auth-error{
+    color: var(--red);
+}

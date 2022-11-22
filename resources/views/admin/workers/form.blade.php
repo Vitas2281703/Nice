@@ -9,12 +9,17 @@
     @formField('input', [
     'name' => 'post',
     'label' => 'Должность ',
-    'maxlength' => 150
+    'maxlength' => 100
     ])
     @formField('input', [
     'type' => 'textarea',
     'name' => 'education',
-    'label' => 'Имя',
-    'maxlength' => 200
+    'label' => 'Образование',
+    'maxlength' => 100
+    ])
+    @formField('medias', [
+    'name' => 'cover',
+    'label' => 'Изображение',
+    'required' => true,
     ])
 @stop

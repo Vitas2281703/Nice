@@ -4,7 +4,7 @@
     @foreach($clients as $client)
         <div class="client carousel-item">
             <div class="client_title">
-                <img src="assets\images\yarik.jpg" alt="" class="client-img">
+                <img src="{{ $client->image('cover') }}" alt="" class="client-img">
                 <p class="client-info_p client-info_p-name">
                     {{ $client->name }}
                 </p>

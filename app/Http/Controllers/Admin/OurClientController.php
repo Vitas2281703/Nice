@@ -8,6 +8,8 @@ class OurClientController extends BaseModuleController
 {
     protected $moduleName = 'ourClients';
 
+    protected $titleColumnKey = 'name';
+
     protected $indexOptions = [
         'permalink' => false,
     ];

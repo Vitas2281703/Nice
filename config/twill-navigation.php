@@ -14,7 +14,7 @@ return [
                 'module' => true,
             ],
             'ourClients' => [
-                'title' => 'Клиенты',
+                'title' => 'Отзывы',
                 'module' => true,
             ],
 

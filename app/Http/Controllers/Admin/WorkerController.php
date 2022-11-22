@@ -8,6 +8,8 @@ class WorkerController extends BaseModuleController
 {
     protected $moduleName = 'workers';
 
+    protected $titleColumnKey = 'name';
+
     protected $indexOptions = [
         'permalink' => false,
     ];
