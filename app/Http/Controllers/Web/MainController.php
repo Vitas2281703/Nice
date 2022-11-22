@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Services\Contracts\JobStepService;
-use App\Services\OurClientService;
-use App\Services\PromotionService;
+use App\Services\Contracts\OurClientService;
+use App\Services\Contracts\PromotionService;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
 

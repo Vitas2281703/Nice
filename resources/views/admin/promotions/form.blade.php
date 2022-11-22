@@ -4,7 +4,7 @@
     @formField('input', [
         'name' => 'title',
         'label' => 'Заголовок',
-        'maxlength' => 50,
+        'maxlength' => 60,
         'required' => true,
     ])
     @formField('wysiwyg', [
@@ -54,7 +54,7 @@
             @formField('input', [
             'name' => 'seo_title',
             'label' => 'Title',
-            'maxlength' => 50,
+            'maxlength' => 60,
             'required' => true,
             ])
 

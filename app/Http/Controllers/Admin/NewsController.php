@@ -9,5 +9,6 @@ class NewsController extends BaseModuleController
     protected $moduleName = 'news';
 
     protected $indexOptions = [
+        'permalink' => false,
     ];
 }
