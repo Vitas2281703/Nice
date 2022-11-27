@@ -10,5 +10,8 @@ interface CategoryService
      * @return array<int, array{label: string, value: integer}>
      */
     public function getCategories(): array;
+
+    public function getAllCategories();
+
 }
 

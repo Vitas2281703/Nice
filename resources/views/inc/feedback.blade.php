@@ -1,6 +1,7 @@
 <h1 class="aboutUs-title">Уста клиента глаголят истину</h1>
 
-<div class="clients_block carousel-block">
+<div class="clients_block carousel-block" id="clients_carousel-block">
+    <div class="clients-content carousel-content" id="clients_carousel-content">
     @foreach($clients as $client)
         <div class="client carousel-item">
             <div class="client_title">
@@ -17,6 +18,31 @@
             </div>
         </div>
     @endforeach
+    </div>
+</div>
+<div class="carousel-paginator_block">
+    <button class="carousel-paginator carousel-paginator_prev" id="clients_carousel-paginator_prev">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+        >
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+        </svg>
+    </button>
+    <button class="carousel-paginator carousel-paginator_next" id="clients_carousel-paginator_next">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+        >
+            <path fill="none" d="M0 0h24v24H0V0z" />
+            <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+        </svg>
+    </button>
 </div>
 
 

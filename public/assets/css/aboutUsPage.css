@@ -22,8 +22,8 @@
 .aboutUs_img_for-mobile{
     display: none;
 }
-.workers_block{
-    margin-bottom: 100px;
+.worker-content{
+    margin-bottom: 25px;
     display: flex;
     justify-content: flex-start;
     align-items: center;

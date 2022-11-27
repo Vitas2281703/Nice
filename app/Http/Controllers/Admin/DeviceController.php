@@ -33,4 +33,19 @@ class DeviceController extends BaseModuleController
             'categories' => $this->category->getCategories(),
         ];
     }
+
+    protected $indexColumns = [
+        'title' => [ // field column
+            'title' => 'Устройство',
+            'field' => 'title',
+        ],
+        'category' => [
+            'title' => 'Категория',
+            'field' => 'category_id',
+        ],
+        'fabricator' => [
+            'title' => 'Производитель',
+            'field' => 'fabricator_id'
+        ],
+    ];
 }

@@ -22,7 +22,7 @@
             </p>
         </div>
         <div class="map-obr-svz">
-            <a href="#iw-modal-mobile-obrsv" class="map-obr-svz-link">
+            <a href="tel:89234826100" class="map-obr-svz-link">
                 <span class="number">8 (923) 482-61-00</span>
                 <div class="map-obr-svz-link-truba">
                     <img src="assets\images\oldPhone.svg" alt="">
