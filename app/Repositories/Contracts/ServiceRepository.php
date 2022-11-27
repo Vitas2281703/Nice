@@ -6,5 +6,6 @@ use Illuminate\Http\Client\RequestException;
 
 interface ServiceRepository
 {
+
 }
 

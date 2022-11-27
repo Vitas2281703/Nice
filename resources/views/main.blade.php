@@ -266,7 +266,8 @@
         'swiperSlider',
         'marquee',
         'menuBurger',
-        'feedbackForm'
+        'feedbackForm',
+        'feedbackCarousel'
         ]
         ])
 @endsection

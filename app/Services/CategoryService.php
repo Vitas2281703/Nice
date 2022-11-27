@@ -23,4 +23,9 @@ class CategoryService implements Contracts\CategoryService
         }
         return $categoriesOptions;
     }
+
+    public function getAllCategories(){
+        return $this->repository->get();
+    }
+
 }

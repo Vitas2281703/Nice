@@ -6,7 +6,7 @@ namespace App\Repositories;
 use A17\Twill\Repositories\ModuleRepository;
 use App\Models\OrderService;
 
-class OrderServiceRepository extends ModuleRepository
+class OrderServiceRepository extends ModuleRepository implements Contracts\OrderServiceRepository
 {
 
 
@@ -25,4 +25,10 @@ class OrderServiceRepository extends ModuleRepository
             $object->update(['promotion_id' => $fields['promotion_id']]);
         }
     }
+
+    public function getAllOrderServices()
+    {
+        return $this->model->newQuery()->paginate(3);
+    }
+
 }

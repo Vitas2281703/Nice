@@ -24,9 +24,6 @@ body{
     max-width: 1200px;
     margin: 0 auto;
 }
-/*.wrapper{*/
-/*    min-height: calc(100vh - 109px - 125px - 210px);*/
-/*}*/
 button{
     outline: none;
     border: none;
@@ -383,7 +380,45 @@ footer {
 .desktop-telephone a{
     margin-left: 0px;
 }
-
+.carousel-block{
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    pointer-events: none;
+}
+.carousel-block::-webkit-scrollbar {
+    height: 0;
+}
+.carousel-paginator_block{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+}
+.carousel-paginator{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: var(--blue);
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    bottom: 0;
+    transition: .3s;
+    pointer-events: auto;
+}
+.carousel-paginator:hover{
+    background: var(--black);
+}
+.carousel-paginator_prev{
+    visibility: hidden;
+}
+.carousel-paginator svg{
+    fill: #FFFFFF;
+}
 @media screen and (max-device-width: 1080px) {
     .container {
         max-width: 320px;

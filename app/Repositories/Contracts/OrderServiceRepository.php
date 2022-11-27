@@ -4,8 +4,8 @@ namespace App\Repositories\Contracts;
 
 use Illuminate\Http\Client\RequestException;
 
-interface FabricatorRepository
+interface OrderServiceRepository
 {
-    public function getFabricatorByCategory($categoryID);
+
 }
 

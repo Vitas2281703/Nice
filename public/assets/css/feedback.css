@@ -5,7 +5,7 @@
     font-size: 25px;
     letter-spacing: 0.05em;
 }
-.clients_block{
+.clients-content{
     display: flex;
     justify-content: flex-start;
     position: relative;
@@ -52,6 +52,7 @@
 }
 .otherFeedback{
     margin-bottom: 100px;
+    margin-top: 25px;
 }
 .otherFeedback-link{
     margin-left: 20px;

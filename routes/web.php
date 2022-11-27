@@ -23,6 +23,8 @@ Route::get('/all-news', [\App\Http\Controllers\Web\NewsController::class, 'allNe
 Route::get('/news/{slug}', [\App\Http\Controllers\Web\NewsController::class, 'news'])->name('news');
 
 Route::get('/service', [\App\Http\Controllers\Web\ServiceController::class, 'index'])->name('service');
+Route::post('/service', [\App\Http\Controllers\Web\ServiceController::class, 'serviceFilter'])->name('service-filter');
+
 
 Route::view('/login', 'login')->name('login');
 Route::view('/registration', 'registration')->name('registration');
