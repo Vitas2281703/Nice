@@ -6,6 +6,7 @@ use Illuminate\Http\Client\RequestException;
 
 interface DeviceRepository
 {
+    public function getDevicesByCategory($categoryID);
 
 }
 

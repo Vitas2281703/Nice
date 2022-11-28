@@ -15,6 +15,4 @@ class ServiceRepository extends ModuleRepository implements Contracts\ServiceRep
     {
         $this->model = $model;
     }
-
-
 }

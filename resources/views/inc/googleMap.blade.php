@@ -22,8 +22,8 @@
             </p>
         </div>
         <div class="map-obr-svz">
-            <a href="tel:89234826100" class="map-obr-svz-link">
-                <span class="number">8 (923) 482-61-00</span>
+            <a href="" class="map-obr-svz-link js-open-modal" data-modal = "1">
+                <span class="number">8 (906) 922-91-61</span>
                 <div class="map-obr-svz-link-truba">
                     <img src="assets\images\oldPhone.svg" alt="">
                 </div>

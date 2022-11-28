@@ -19,4 +19,14 @@ class OrderService extends Model
         'price'
     ];
 
+    public function device(){
+        return $this->belongsTo(Device::class);
+    }
+    public function service(){
+        return $this->belongsTo(Service::class);
+    }
+    public function promotion(){
+        return $this->belongsTo(Promotion::class);
+    }
+
 }

@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Services\Contracts\CategoryService;
-use App\Services\Contracts\ServiceService;
+use App\Services\Contracts\DeviceService;
+use App\Services\Contracts\OrderServiceService;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -12,29 +13,46 @@ class ServiceController extends Controller
 {
     public function __construct(
         public CategoryService $categoryService,
-        public ServiceService $serviceService,
+        public OrderServiceService $orderServiceService,
+        public DeviceService $deviceService,
     )
     {
     }
 
-    /**
-     * @return View
-     */
-    public function index(): View
-    {
-        return view('service', [
-            'services'=>$this->serviceService->getAllServices(),
-            'categories'=>$this->categoryService->getAllCategories(),
-        ]);
-    }
+    public function index(Request $request){
 
-    public function serviceFilter(Request $request){
-        return view('service', [
-            'services'=>$this->serviceService->getAllServices(),
-            'categories'=>$this->categoryService->getAllCategories(),
-            'activeServiceDirectory'=> $request->serviceCategory,
+        if (isset($request)){
+            if (isset($request->serviceService)){
+                return true;
+            }
+            else{
+                if (isset($request->serviceDevice)){
+                    return true;
+                }else{
+                    if (isset($request->serviceFabricator)){
+                        return true;
+                    }else{
+                        if(isset($request->serviceCategory)){
+                            $devices = $this->deviceService->getDevicesByCategory($request->serviceCategory);
+                            dd($devices->fabricator->unique());
+                            return view('service', [
+                                'orderServices'=>$this->orderServiceService->getAllOrderService(),
+                                'categories'=>$this->categoryService->getAllCategories(),
+                                'activeServiceDirectory'=> $request->serviceCategory,
+                                'fabricators'=> $devices->fabricator->unique(),
+                            ]);
+                        }
+                    }
+                }
+            }
 
-        ]);
+        }else{
+            return view('service', [
+                'orderServices'=>$this->orderServiceService->getAllOrderService(),
+                'categories'=>$this->categoryService->getAllCategories(),
+            ]);
+        }
+
     }
 
 }

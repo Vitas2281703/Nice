@@ -6,6 +6,6 @@ use Illuminate\Http\Client\RequestException;
 
 interface FabricatorRepository
 {
-    public function getFabricatorByCategory($categoryID);
+
 }
 

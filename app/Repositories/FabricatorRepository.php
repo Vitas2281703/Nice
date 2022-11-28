@@ -15,7 +15,5 @@ class FabricatorRepository extends ModuleRepository implements Contracts\Fabrica
     {
         $this->model = $model;
     }
-    public function getFabricatorByCategory($categoryID){
-        return $this->model->newQuery()->where('');
-    }
+
 }

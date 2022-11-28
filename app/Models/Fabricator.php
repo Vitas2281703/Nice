@@ -6,7 +6,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
 
-class Fabricator extends Model 
+class Fabricator extends Model
 {
     use HasSlug, HasMedias;
 
@@ -15,11 +15,11 @@ class Fabricator extends Model
         'title',
         'description',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [
@@ -50,4 +50,8 @@ class Fabricator extends Model
             ],
         ],
     ];
+
+    public function devices(){
+        return $this->hasMany(Device::class);
+    }
 }

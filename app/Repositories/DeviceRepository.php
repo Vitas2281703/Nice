@@ -24,8 +24,11 @@ class DeviceRepository extends ModuleRepository implements Contracts\DeviceRepos
 
             $object->update(['fabricator_id' => $fabricator, 'category_id' => $category]);
         }
+    }
 
-
+    public function getDevicesByCategory($categoryID){
+        return $this->model->newQuery()
+            ->where('category_id', $categoryID)->get();
     }
 
 }

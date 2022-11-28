@@ -6,7 +6,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
 
-class Category extends Model 
+class Category extends Model
 {
     use HasSlug, HasMedias;
 
@@ -15,11 +15,11 @@ class Category extends Model
         'title',
         'description',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [
@@ -50,4 +50,9 @@ class Category extends Model
             ],
         ],
     ];
+
+    public function device(){
+        return $this->hasMany(Device::class);
+    }
+
 }

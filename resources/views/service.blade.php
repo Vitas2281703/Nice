@@ -6,7 +6,8 @@
         'commonStyle',
         'service',
         'feedbackForm',
-        'auth'
+        'auth',
+        'paginate'
         ]
         ])
 @endsection
@@ -14,10 +15,10 @@
 @section('content')
     <div class="container">
         <h1 class="service-title">Что у вас сломалось?</h1>
-        {{ dd($services) }}
+
         <div class="service_block">
             <aside>
-                <form method="POST" action="{{ route('service-filter') }}" id="serviceFilterForm" class="service-filter">
+                <form method="GET" action="{{ route('service') }}" id="serviceFilterForm" class="service-filter">
                     @csrf
                     <select name="serviceCategory" id="serviceCategory">
                         @if(isset($activeServiceDirectory))
@@ -47,190 +48,61 @@
                         <option value="3">gf63 thin 8rcs</option>
                         <option value="4">300</option>
                     </select>
+                    <select name="serviceService" id="serviceService" disabled>
+                        <option value="0" disabled selected>Выберите услугу</option>
+                        <option value="1">12</option>
+                        <option value="2">2321</option>
+                        <option value="3">gf63 thin 8rcs</option>
+                        <option value="4">300</option>
+                    </select>
                 </form>
             </aside>
 
         <ul class="service-list">
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена экрана</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена матрицы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                    <span class="service-list_item-price_old">903200 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Установка операционной системы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">3500 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
+            @foreach($orderServices as $orderService)
+                <li class="service-list_item">
+                    <div class="service-list_item-service-info">
+                        <h2 class="service-list_item-name">{{ $orderService->title }}</h2>
+                        <p class="service-list_item-price">
+                            <span class="service-list_item-price_new">{{ $orderService->price }} ₽</span>
+                        </p>
+                        <button class="service-list_item-btn HOVER">
+                            <span></span>
+                            <text>Заказать</text>
+                        </button>
+                    </div>
+                    <div class="service-list_item-device-info">
+                        <span>Категория: {{ $orderService->device->category->title }}</span>
+                        <span>Производитель: {{ $orderService->device->fabricator->title }}</span>
+                        <span>Модель: {{ $orderService->device->title }}</span>
+                    </div>
+                </li>
+            @endforeach
 
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена экрана</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена матрицы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                    <span class="service-list_item-price_old">903200 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Установка операционной системы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">3500 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
 
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена экрана</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена матрицы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                    <span class="service-list_item-price_old">903200 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Установка операционной системы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">3500 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена экрана</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена матрицы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                    <span class="service-list_item-price_old">903200 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Установка операционной системы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">3500 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена экрана</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Замена матрицы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">9000 ₽</span>
-                    <span class="service-list_item-price_old">903200 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
-            <li class="service-list_item">
-                <h2 class="service-list_item-name">Установка операционной системы</h2>
-                <p class="service-list_item-price">
-                    <span class="service-list_item-price_new">3500 ₽</span>
-                </p>
-                <button class="service-list_item-btn HOVER">
-                    <span></span>
-                    <text>Заказать</text>
-                </button>
-            </li>
         </ul>
 
     </div>
-
+        {{ $orderServices->links('inc/paginate') }}
         <script>
             $("#serviceFilterForm").submit(function (e) { // Устанавливаем событие отправки для формы с id=form
                 let serviceCategory = $('#serviceCategory').val().toInteger();
-                let serviceBrand = $('#serviceFabicator').val().toString();
+                let serviceFabricator = $('#serviceFabicator').val().toString();
                 let serviceDevice = $('#serviceDevice').val().toString();
+                let serviceService = $('#serviceService').val().toString();
 
                 console.log(serviceCategory);
                 $.ajax({
-                    type: "POST", // Метод отправки
-                    url: url, // Путь до php файла отправителя
+                    type: "GET", // Метод отправки
+                    url: {{ route('service-filter') }}, // Путь до php файла отправителя
                     headers: {
                         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
                     },
                     data: {
                         serviceCategory: serviceCategory,
-                        serviceBrand: serviceBrand,
+                        serviceFabricator: serviceFabricator,
                         serviceDevice: serviceDevice,
+                        serviceService: serviceService,
                     },
                     success: function () {
                         // Код в этом блоке выполняется при успешной отправке сообщения

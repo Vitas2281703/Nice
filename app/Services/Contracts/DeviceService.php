@@ -10,5 +10,8 @@ interface DeviceService
      * @return array
      */
     public function getDevices(): array;
+
+    public function getDevicesByCategory($categoryID);
+
 }
 
