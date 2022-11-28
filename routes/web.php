@@ -39,3 +39,5 @@ Route::get('/order', [\App\Http\Controllers\Web\OrderController::class, 'order']
 Route::get('/preorder', [\App\Http\Controllers\Web\OrderController::class, 'preorder'])->name('preorder');
 
 Route::view('/user-agreement', 'user-agreement')->name('user-agreement');
+
+Route::get('/add-order', [\App\Http\Controllers\Web\OrderController::class, 'addOrder'])->name('add-order');
