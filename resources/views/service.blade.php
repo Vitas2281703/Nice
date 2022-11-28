@@ -94,7 +94,7 @@
                 console.log(serviceCategory);
                 $.ajax({
                     type: "GET", // Метод отправки
-                    url: {{ route('service-filter') }}, // Путь до php файла отправителя
+                    url: {{ route('service') }}, // Путь до php файла отправителя
                     headers: {
                         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
                     },
