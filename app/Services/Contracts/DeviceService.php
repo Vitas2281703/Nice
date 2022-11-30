@@ -11,6 +11,8 @@ interface DeviceService
      */
     public function getDevices(): array;
 
+    public function getDevicesByCategory($categoryID);
+
     public function list();
 
     public function getFilteredDevices($data);
