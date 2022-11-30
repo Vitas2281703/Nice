@@ -31,17 +31,9 @@ class OrderServiceRepository extends ModuleRepository implements Contracts\Order
            ->orderBy('title')->paginate(3);
     }
 
-    public function getOrderServiceByCategory($categoryID){
+    public function getOrderServiceByDevices($devicesIds){
         return $this->model->newQuery()
-            ->with('device')->where('category_id', $categoryID)->orderBy('title')->paginate(3);
-    }
-
-    public function getOrderServiceByFabricator($fabricatorID){
-        return true;
-    }
-
-    public function getOrderServiceByDevice($deviceID)
-    {
-        return true;
+            ->whereIn('device_id', $devicesIds)->orderBy('title')
+            ->paginate(3);
     }
 }

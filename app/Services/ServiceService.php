@@ -24,4 +24,8 @@ class ServiceService implements Contracts\ServiceService
         return $serviceOptions;
     }
 
+    public function getAllServices(){
+        return $this->repository->get();
+    }
+
 }

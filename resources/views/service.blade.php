@@ -21,97 +21,76 @@
                 <form method="GET" action="{{ route('service') }}" id="serviceFilterForm" class="service-filter">
                     @csrf
                     <select name="serviceCategory" id="serviceCategory">
-                        @if(isset($activeServiceDirectory))
-                            <option value="0" disabled>Выберите категорию</option>
-                        @else
-                            <option value="0" selected disabled>Выберите категорию</option>
-                        @endif
+                        <option value="0" disabled @if(!isset($activeServiceCategory)) selected @endif>Выберите категорию</option>
                         @foreach($categories as $category)
-                            @if(isset($activeServiceDirectory) && $activeServiceDirectory == $category->id)
+                            @if(isset($activeServiceCategory) && $activeServiceCategory == $category->id)
                                 <option value="{{ $category->id }}" selected>{{ $category->title }}</option>
                             @else
                                 <option value="{{ $category->id }}">{{ $category->title }}</option>
                             @endif
                         @endforeach
                     </select>
-                    <select name="serviceFabricator" id="serviceFabricator" disabled>
-                        <option value="0" disabled selected>Выберите производителя</option>
-                        <option value="1">Apple</option>
-                        <option value="2">Acer</option>
-                        <option value="3">MSI</option>
-                        <option value="4">Siemens</option>
+
+                    <select name="serviceFabricator" id="serviceFabricator" @if(!isset($fabricators)) disabled @endif>
+                        <option value="0" disabled @if(!isset($activeServiceFabricator)) selected @endif>Выберите производителя</option>
+                        @if(isset($fabricators))
+                            @foreach($fabricators as $fabricator)
+                                @if(isset($activeServiceFabricator) && $activeServiceFabricator == $fabricator->id)
+                                    <option value="{{ $fabricator->id }}" selected>{{ $fabricator->title }}</option>
+                                @else
+                                    <option value="{{ $fabricator->id }}">{{ $fabricator->title }}</option>
+                                @endif
+                            @endforeach
+                        @endif
                     </select>
-                    <select name="serviceDevice" id="serviceDevice" disabled>
-                        <option value="0" disabled selected>Выберите модель</option>
-                        <option value="1">12</option>
-                        <option value="2">2321</option>
-                        <option value="3">gf63 thin 8rcs</option>
-                        <option value="4">300</option>
+
+                    <select name="serviceDevice" id="serviceDevice" @if(!isset($activeServiceFabricator)) disabled @endif>
+                        <option value="0" disabled @if(!isset($activeServiceDevice)) selected @endif>Выберите модель</option>
+                        @if(isset($devices))
+                           @foreach($devices as $device)
+                                @if(isset($activeServiceDevice) && $activeServiceDevice == $device->id)
+                                    <option value="{{ $device->id }}" selected>{{ $device->title }}</option>
+                                @else
+                                    <option value="{{ $device->id }}">{{ $device->title }}</option>
+                                @endif
+                            @endforeach
+                        @endif
                     </select>
-                    <select name="serviceService" id="serviceService" disabled>
-                        <option value="0" disabled selected>Выберите услугу</option>
-                        <option value="1">12</option>
-                        <option value="2">2321</option>
-                        <option value="3">gf63 thin 8rcs</option>
-                        <option value="4">300</option>
-                    </select>
+                    <a id="reset-filter-btn" class="reset-filter-btn HOVER"><span></span><text>Сбросить фильтр</text></a>
                 </form>
             </aside>
 
-        <ul class="service-list">
-            @foreach($orderServices as $orderService)
-                <li class="service-list_item">
-                    <div class="service-list_item-service-info">
-                        <h2 class="service-list_item-name">{{ $orderService->title }}</h2>
-                        <p class="service-list_item-price">
-                            <span class="service-list_item-price_new">{{ $orderService->price }} ₽</span>
-                        </p>
-                        <button class="service-list_item-btn HOVER">
-                            <span></span>
-                            <text>Заказать</text>
-                        </button>
-                    </div>
-                    <div class="service-list_item-device-info">
-                        <span>Категория: {{ $orderService->device->category->title }}</span>
-                        <span>Производитель: {{ $orderService->device->fabricator->title }}</span>
-                        <span>Модель: {{ $orderService->device->title }}</span>
-                    </div>
-                </li>
-            @endforeach
 
+            @if(isset($orderServices))
+                <ul class="service-list">
+                    @foreach($orderServices as $orderService)
+                        <li class="service-list_item">
+                            <div class="service-list_item-service-info">
+                                <h2 class="service-list_item-name">{{ $orderService->title }}</h2>
+                                <p class="service-list_item-price">
+                                    <span class="service-list_item-price_new">{{ $orderService->price }} ₽</span>
+                                </p>
+                                <button class="service-list_item-btn HOVER">
+                                    <span></span>
+                                    <text>Заказать</text>
+                                </button>
+                            </div>
+                            <div class="service-list_item-device-info">
+                                <span>Категория: {{ $orderService->device->category->title }}</span>
+                                <span>Производитель: {{ $orderService->device->fabricator->title }}</span>
+                                <span>Модель: {{ $orderService->device->title }}</span>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            @else
+                <span class="service-message">Нет результатов</span>
+            @endif
 
-        </ul>
 
     </div>
         {{ $orderServices->links('inc/paginate') }}
-        <script>
-            $("#serviceFilterForm").submit(function (e) { // Устанавливаем событие отправки для формы с id=form
-                let serviceCategory = $('#serviceCategory').val().toInteger();
-                let serviceFabricator = $('#serviceFabicator').val().toString();
-                let serviceDevice = $('#serviceDevice').val().toString();
-                let serviceService = $('#serviceService').val().toString();
 
-                console.log(serviceCategory);
-                $.ajax({
-                    type: "GET", // Метод отправки
-                    url: {{ route('service') }}, // Путь до php файла отправителя
-                    headers: {
-                        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    data: {
-                        serviceCategory: serviceCategory,
-                        serviceFabricator: serviceFabricator,
-                        serviceDevice: serviceDevice,
-                        serviceService: serviceService,
-                    },
-                    success: function () {
-                        // Код в этом блоке выполняется при успешной отправке сообщения
-                        alert("Ваше сообщение отправлено!");
-                        console.log(data);
-                    }
-                });
-            });
-        </script>
 
     @include('inc/feedbackForm')
 @endsection

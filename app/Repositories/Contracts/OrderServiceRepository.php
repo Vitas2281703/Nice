@@ -8,10 +8,7 @@ interface OrderServiceRepository
 {
     public function getAllOrderService();
 
-    public function getOrderServiceByCategory($categoryID);
+    public function getOrderServiceByDevices($devicesIds);
 
-    public function getOrderServiceByFabricator($fabricatorID);
-
-    public function getOrderServiceByDevice($deviceID);
 }
 

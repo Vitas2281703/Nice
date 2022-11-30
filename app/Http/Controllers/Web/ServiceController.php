@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FilterRequest;
 use App\Services\Contracts\CategoryService;
 use App\Services\Contracts\DeviceService;
 use App\Services\Contracts\OrderServiceService;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
+use App\Services\FabricatorService;
 
 class ServiceController extends Controller
 {
@@ -19,32 +19,40 @@ class ServiceController extends Controller
     {
     }
 
-    public function index(Request $request){
+    public function index(FilterRequest $request){
 
-        if (isset($request)){
-            if (isset($request->serviceService)){
-                return true;
+        $data = $request->validated();
+        if(!empty($data)){
+
+            $devices = $this->deviceService->getFilteredDevices($data);
+
+            $fabricators = $this->fabricatorService->list();
+
+
+            $fabricatorsIds = [];
+            $devicesIds = [];
+            $dataBuffer = ['serviceCategory'=>$data['serviceCategory']];
+            $devicesBuffer = $this->deviceService->getFilteredDevices($dataBuffer);
+            foreach ($devicesBuffer as $deviceBuffer) {
+                $fabricatorsIds[] = $deviceBuffer->fabricator->id;
             }
-            else{
-                if (isset($request->serviceDevice)){
-                    return true;
-                }else{
-                    if (isset($request->serviceFabricator)){
-                        return true;
-                    }else{
-                        if(isset($request->serviceCategory)){
-                            $devices = $this->deviceService->getDevicesByCategory($request->serviceCategory);
-                            dd($devices->fabricator->unique());
-                            return view('service', [
-                                'orderServices'=>$this->orderServiceService->getAllOrderService(),
-                                'categories'=>$this->categoryService->getAllCategories(),
-                                'activeServiceDirectory'=> $request->serviceCategory,
-                                'fabricators'=> $devices->fabricator->unique(),
-                            ]);
-                        }
-                    }
-                }
+//            dd($dataBuffer);
+            $devicesModels = $this->deviceService->list();
+
+            foreach ($devices as $device) {
+                $devicesIds[] = $device->id;
             }
+
+        }else{
+            return view('service', [
+                'orderServices'=>$this->orderServiceService->getOrderServiceByDevices($devicesIds),
+                'categories'=>$this->categoryService->getAllCategories(),
+                'activeServiceCategory'=> $data['serviceCategory'] ?? null,
+                'fabricators'=> $fabricators->whereIn('id', $fabricatorsIds),
+                'activeServiceFabricator' => $data['serviceFabricator'] ?? null,
+                'devices' => $devices,
+                'activeServiceDevice'=> $data['serviceDevice'] ?? null,
+            ]);
 
         }else{
             return view('service', [
@@ -53,6 +61,30 @@ class ServiceController extends Controller
             ]);
         }
 
+
+//        if (isset($request->serviceService)){
+//                return true;
+//            }
+//            else{
+//                if (isset($request->serviceDevice)){
+//                    return true;
+//                }else{
+//                    if (isset($request->serviceFabricator)){
+//                        return true;
+//                    }else{
+//                        if(isset($request->serviceCategory)){
+//
+//                            return view('service', [
+//                                'orderServices'=>$this->orderServiceService->getOrderServiceByDevices($devicesIds),
+//                                'categories'=>$this->categoryService->getAllCategories(),
+//                                'activeServiceCategory'=> $request->serviceCategory,
+//                                'fabricators'=> $fabricators->whereIn('id', $fabricatorsIds),
+//                                'devices' => $devices
+//                            ]);
+//                        }
+//                    }
+//                }
+//            }
     }
 
 }

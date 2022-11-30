@@ -26,9 +26,18 @@ class DeviceRepository extends ModuleRepository implements Contracts\DeviceRepos
         }
     }
 
-    public function getDevicesByCategory($categoryID){
-        return $this->model->newQuery()
-            ->where('category_id', $categoryID)->get();
+    public function getFilteredDevices($data){
+        $filter = $this->model->newQuery();
+        if(isset($data['serviceCategory'])){
+            $filter->where('category_id', $data['serviceCategory']);
+        }
+        if(isset($data['serviceFabricator'])){
+            $filter->where('fabricator_id', $data['serviceFabricator']);
+        }
+        if(isset($data['serviceDevice'])){
+            $filter->where('id', $data['serviceDevice']);
+        }
+        return $filter->get();
     }
 
 }

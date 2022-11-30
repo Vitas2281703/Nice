@@ -18,17 +18,8 @@ class OrderServiceService implements Contracts\OrderServiceService
         return $this->repository->getAllOrderService();
     }
 
-    public function getOrderServiceByCategory($categoryID){
-        return $this->repository->getOrderServiceByCategory($categoryID);
-    }
-
-    public function getOrderServiceByFabricator($fabricatorID){
-        return true;
-    }
-
-    public function getOrderServiceByDevice($deviceID)
-    {
-        return true;
+    public function getOrderServiceByDevices($devicesIds){
+        return $this->repository->getOrderServiceByDevices($devicesIds);
     }
 
 }
