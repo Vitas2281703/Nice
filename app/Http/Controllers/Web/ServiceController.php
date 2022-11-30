@@ -15,6 +15,7 @@ class ServiceController extends Controller
         public CategoryService $categoryService,
         public OrderServiceService $orderServiceService,
         public DeviceService $deviceService,
+        public FabricatorService $fabricatorService,
     )
     {
     }
@@ -43,7 +44,6 @@ class ServiceController extends Controller
                 $devicesIds[] = $device->id;
             }
 
-        }else{
             return view('service', [
                 'orderServices'=>$this->orderServiceService->getOrderServiceByDevices($devicesIds),
                 'categories'=>$this->categoryService->getAllCategories(),
