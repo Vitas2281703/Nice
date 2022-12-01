@@ -26,9 +26,14 @@ class OrderServiceRepository extends ModuleRepository implements Contracts\Order
         }
     }
 
-    public function getAllOrderServices()
-    {
-        return $this->model->newQuery()->paginate(3);
+    public function getAllOrderService(){
+        return $this->model->newQuery()
+           ->orderBy('title')->paginate(3);
     }
 
+    public function getOrderServiceByDevices($devicesIds){
+        return $this->model->newQuery()
+            ->whereIn('device_id', $devicesIds)->orderBy('title')
+            ->paginate(3);
+    }
 }

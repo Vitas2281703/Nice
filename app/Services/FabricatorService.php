@@ -22,4 +22,8 @@ class FabricatorService implements Contracts\FabricatorService
         }
         return $fabricatorsOptions;
     }
+
+    public function list() {
+        return $this->repository->get();
+    }
 }

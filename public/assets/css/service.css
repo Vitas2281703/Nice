@@ -6,7 +6,7 @@
 .service_block{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 310px;
+    margin-bottom: 80px;
 }
 aside{
     position: sticky;
@@ -58,14 +58,37 @@ select option:active{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-height: 400px;
 }
 .service-list_item{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
     border-bottom: 1px solid var(--grey-white);
     padding: 10px;
     letter-spacing: 0.03em;
+    gap: 20px;
+}
+.service-list_item-device-info,
+.service-list_item-service-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.service-list_item-service-info{
+
+}
+.service-list_item-device-info{
+    gap: 20px;
+}
+.service-list_item-device-info span{
+    font-size: 14px;
+    width: 200px;
+}
+.service-list_item-device-info span:last-child{
+    text-align: right;
 }
 .service-list_item-name{
     font-weight: 500;

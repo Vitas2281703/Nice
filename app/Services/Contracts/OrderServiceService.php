@@ -4,13 +4,10 @@ namespace App\Services\Contracts;
 
 use Illuminate\Http\Client\RequestException;
 
-interface ServiceService
+interface OrderServiceService
 {
-    /**
-     * @return array<int, array{label: string, value: integer}>
-     */
-    public function getServices(): array;
+    public function getAllOrderService();
 
-    public function getAllServices();
+    public function getOrderServiceByDevices($devicesIds);
 }
 

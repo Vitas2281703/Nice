@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: flex-start;
     gap: 120px;
-    margin-bottom: 310px;
 }
 .all-news_title{
     font-size: 34px;
@@ -51,8 +50,6 @@
 }
 .news_title{
     font-weight: 500;
-    margin-top: 50px;
-    margin-bottom: 50px;
     font-size: 34px;
     position: absolute;
     z-index: 1;
@@ -76,7 +73,8 @@
 .news_text h4,
 .news_text h5,
 .news_text h6{
-    margin-bottom: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 .news_text h2{
     font-size: 30px;
@@ -94,7 +92,7 @@
     font-size: 22px;
 }
 .news_text p{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 .news_text ul,
 .news_text ol{
@@ -107,7 +105,7 @@
 
 .news_img{
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     position: relative;
     z-index: 0;
     border-radius: 0px 0px 10px 10px;

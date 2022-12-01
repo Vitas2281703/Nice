@@ -12,5 +12,6 @@ interface ServiceService
     public function getServices(): array;
 
     public function getAllServices();
+
 }
 

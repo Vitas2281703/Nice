@@ -17,6 +17,7 @@ class ServiceServiceProvider extends ServiceProvider
         \App\Services\Contracts\CategoryService::class => \App\Services\CategoryService::class,
         \App\Services\Contracts\DeviceService::class => \App\Services\DeviceService::class,
         \App\Services\Contracts\ServiceService::class => \App\Services\ServiceService::class,
+        \App\Services\Contracts\OrderServiceService::class => \App\Services\OrderServiceService::class,
         \App\Services\Contracts\NewsService::class => \App\Services\NewsService::class,
         \App\Services\Contracts\PromotionService::class => \App\Services\PromotionService::class,
         \App\Services\Contracts\WorkerService::class => \App\Services\WorkerService::class,

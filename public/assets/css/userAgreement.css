@@ -1,0 +1,25 @@
+.user-agreement_block{
+    margin-bottom: 260px;
+}
+.user-agreement_block h2{
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    letter-spacing: 0.07em;
+}
+.user-agreement_block p{
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+}
+.user-agreement_block ul{
+    font-size: 20px;
+    padding-left: 60px;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}

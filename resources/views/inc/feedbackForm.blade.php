@@ -32,11 +32,11 @@
                 ></textarea>
                 <button class="form-auth_btn HOVER"><span></span><text>Позвоните мне!</text></button>
                 <p class="form-auth_p">Нажимая кнопку вы подтверждаете свое согласие с
-                    <a href="" class="form-auth_link">
+                    <a href="{{ route('user-agreement') }}" class="form-auth_link">
                         пользовательским соглашением
                     </a>
                     и
-                    <a href="" class="form-auth_link">
+                    <a href="{{ route('user-agreement') }}" class="form-auth_link">
                         политикой обработки персональных данных
                     </a>
                 </p>

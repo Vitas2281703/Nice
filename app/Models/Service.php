@@ -6,7 +6,7 @@ use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
 
-class Service extends Model 
+class Service extends Model
 {
     use HasSlug, HasMedias;
 
@@ -15,11 +15,11 @@ class Service extends Model
         'title',
         'description',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [
@@ -50,4 +50,9 @@ class Service extends Model
             ],
         ],
     ];
+
+    public function orderService(){
+        return $this->hasMany(OrderService::class);
+    }
+
 }

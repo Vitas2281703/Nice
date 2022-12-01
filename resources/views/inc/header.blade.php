@@ -43,11 +43,11 @@
                 <a href="email:Master@rempc42.ru" class="social-link-email">
                     Master@rempc42.ru
                 </a>
-                <a href="tel:89234826100" class="number">8 (923) 482-61-00</a>
+                <a href="tel:89069229161" class="number">8 (906) 922-91-61</a>
                 <div class="social-seti_block">
-                    <a href=""><img src="\assets\images\vk.svg" alt=""></a>
-                    <a href=""><img src="\assets\images\whatsapp.svg" alt=""></a>
-                    <a href=""><img src="\assets\images\instagram.svg" alt=""></a>
+                    <a href="https://vk.com/nicekemerovo" target="_blank"><img src="\assets\images\vk.svg" alt=""></a>
+                    <a href="https://goo.su/4cDI" target="_blank"><img src="\assets\images\whatsapp.svg" alt=""></a>
+                    <a href="https://www.instagram.com/nice_service42/" target="_blank"><img src="\assets\images\instagram.svg" alt=""></a>
                 </div>
             </div>
             <div class="header__top-info_block">

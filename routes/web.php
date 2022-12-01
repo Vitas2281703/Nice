@@ -23,7 +23,6 @@ Route::get('/all-news', [\App\Http\Controllers\Web\NewsController::class, 'allNe
 Route::get('/news/{slug}', [\App\Http\Controllers\Web\NewsController::class, 'news'])->name('news');
 
 Route::get('/service', [\App\Http\Controllers\Web\ServiceController::class, 'index'])->name('service');
-Route::post('/service', [\App\Http\Controllers\Web\ServiceController::class, 'serviceFilter'])->name('service-filter');
 
 
 Route::view('/login', 'login')->name('login');
@@ -38,3 +37,5 @@ Route::get('/account', [\App\Http\Controllers\Web\AccountController::class, 'acc
 Route::get('/cart', [\App\Http\Controllers\Web\OrderController::class, 'cart'])->name('cart');
 Route::get('/order', [\App\Http\Controllers\Web\OrderController::class, 'order'])->name('order');
 Route::get('/preorder', [\App\Http\Controllers\Web\OrderController::class, 'preorder'])->name('preorder');
+
+Route::view('/user-agreement', 'user-agreement')->name('user-agreement');

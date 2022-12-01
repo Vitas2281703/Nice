@@ -10,5 +10,7 @@ interface FabricatorService
      * @return array<int, array{label: string, value: integer}>
      */
     public function getFabricators(): array;
+
+    public function list();
 }
 

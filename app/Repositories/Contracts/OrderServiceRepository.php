@@ -6,6 +6,9 @@ use Illuminate\Http\Client\RequestException;
 
 interface OrderServiceRepository
 {
+    public function getAllOrderService();
+
+    public function getOrderServiceByDevices($devicesIds);
 
 }
 
