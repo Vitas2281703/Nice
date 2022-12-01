@@ -43,21 +43,24 @@ class ServiceController extends Controller
             foreach ($devices as $device) {
                 $devicesIds[] = $device->id;
             }
+            if(isset($data['serviceFabricator'])){
+                $devicesModels = $devicesModels->where('fabricator_id', $data['serviceFabricator']);
+            }
 
             return view('service', [
-                'orderServices'=>$this->orderServiceService->getOrderServiceByDevices($devicesIds),
-                'categories'=>$this->categoryService->getAllCategories(),
-                'activeServiceCategory'=> $data['serviceCategory'] ?? null,
-                'fabricators'=> $fabricators->whereIn('id', $fabricatorsIds),
+                'orderServices' => $this->orderServiceService->getOrderServiceByDevices($devicesIds),
+                'categories' => $this->categoryService->getAllCategories(),
+                'activeServiceCategory' => $data['serviceCategory'] ?? null,
+                'fabricators' => $fabricators->whereIn('id', $fabricatorsIds),
                 'activeServiceFabricator' => $data['serviceFabricator'] ?? null,
-                'devices' => $devices,
+                'devices' => $devicesModels,
                 'activeServiceDevice'=> $data['serviceDevice'] ?? null,
             ]);
 
         }else{
             return view('service', [
-                'orderServices'=>$this->orderServiceService->getAllOrderService(),
-                'categories'=>$this->categoryService->getAllCategories(),
+                'orderServices' => $this->orderServiceService->getAllOrderService(),
+                'categories' => $this->categoryService->getAllCategories(),
             ]);
         }
 

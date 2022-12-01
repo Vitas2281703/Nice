@@ -61,7 +61,7 @@
             </aside>
 
 
-            @if(isset($orderServices))
+            @if($orderServices->first() !== null)
                 <ul class="service-list">
                     @foreach($orderServices as $orderService)
                         <li class="service-list_item">
