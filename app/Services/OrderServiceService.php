@@ -28,7 +28,7 @@ class OrderServiceService implements Contracts\OrderServiceService
     }
 
 
-    public function addOrder(User|null $user, $serviceId)
+    public function addOrder(User|null $user, $serviceId, $amount = null)
     {
         if(isset($user)) {
             $order = $this->orderRepository->model
@@ -49,7 +49,7 @@ class OrderServiceService implements Contracts\OrderServiceService
                 ->first();
             if(isset($point)) {
                 $point->update([
-                    'amount' => $point->amount + 1,
+                    'amount' => $amount ?? $point->amount + 1,
                 ]);
             } else {
                 $this->orderPointRepository->create([

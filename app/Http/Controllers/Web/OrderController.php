@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AddOrderRequest;
 use App\Models\User;
+use App\Repositories\OrderRepository;
 use App\Services\Contracts\OrderServiceService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,8 @@ class OrderController extends Controller
 {
     public function __construct(
 
-        public OrderServiceService $service
+        public OrderServiceService $service,
+        public OrderRepository $repository,
     )
     {
     }
@@ -40,7 +42,10 @@ class OrderController extends Controller
         /** @var User $user */
         $user = Auth::user();
 
-        $this->service->addOrder($user, $data['service_id']);
+        $amount = $data['amount'] ?? null;
+
+        $this->service->addOrder($user, $data['service_id'], $amount);
 
     }
+
 }
