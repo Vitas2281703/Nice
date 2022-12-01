@@ -4,12 +4,17 @@ namespace App\Services;
 
 
 
+use App\Models\User;
 use App\Repositories\Contracts\OrderServiceRepository;
+use App\Repositories\OrderPointRepository;
+use App\Repositories\OrderRepository;
 
 class OrderServiceService implements Contracts\OrderServiceService
 {
     public function __construct(
-        public OrderServiceRepository $repository
+        public OrderServiceRepository $repository,
+        public OrderPointRepository $orderPointRepository,
+        public OrderRepository $orderRepository
     ) {
     }
 
@@ -22,4 +27,50 @@ class OrderServiceService implements Contracts\OrderServiceService
         return $this->repository->getOrderServiceByDevices($devicesIds);
     }
 
+
+    public function addOrder(User|null $user, $serviceId)
+    {
+        if(isset($user)) {
+            $order = $this->orderRepository->model
+                ->newQuery()
+                ->where('user_id', $user->id)
+                ->where('status', 'Создан')
+                ->first();
+        } else {
+            return new \Exception("Соси хуйца", 401);
+        }
+        if(isset($order)) {
+
+            $point = $this->orderPointRepository
+                ->model
+                ->newQuery()
+                ->where('order_id', $order->id)
+                ->where('order_service_id', $serviceId)
+                ->first();
+            if(isset($point)) {
+                $point->update([
+                    'amount' => $point->amount + 1,
+                ]);
+            } else {
+                $this->orderPointRepository->create([
+                    'user_id' => $user->id,
+                    'order_service_id' => $serviceId,
+                    'amount' => 1,
+                    'order_id' => $order->id
+                ]);
+            }
+        } else {
+
+            $order = $this->orderRepository->create([
+                'user_id' => $user->id
+            ]);
+
+            $this->orderPointRepository->create([
+                'user_id' => $user->id,
+                'order_service_id' => $serviceId,
+                'amount' => 1,
+                'order_id' => $order->id
+            ]);
+        }
+    }
 }
