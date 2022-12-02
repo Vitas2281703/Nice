@@ -35,7 +35,7 @@ Route::get('/logout', [\App\Http\Controllers\Web\AuthController::class, 'logout'
 Route::get('/account', [\App\Http\Controllers\Web\AccountController::class, 'account'])->name('account');
 
 Route::get('/cart', [\App\Http\Controllers\Web\OrderController::class, 'cart'])->name('cart');
-Route::get('/order', [\App\Http\Controllers\Web\OrderController::class, 'order'])->name('order');
+Route::get('/order/{order_id}', [\App\Http\Controllers\Web\OrderController::class, 'getOrder'])->name('order');
 Route::get('/preorder', [\App\Http\Controllers\Web\OrderController::class, 'preorder'])->name('preorder');
 
 Route::view('/user-agreement', 'user-agreement')->name('user-agreement');

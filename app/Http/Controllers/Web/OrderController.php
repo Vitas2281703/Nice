@@ -48,4 +48,10 @@ class OrderController extends Controller
 
     }
 
+    public function getOrder(int $order_id) {
+        return view('order', [
+            'order' => $this->service->getOrder($order_id)
+        ]);
+    }
+
 }

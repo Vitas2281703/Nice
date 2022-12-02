@@ -73,4 +73,8 @@ class OrderServiceService implements Contracts\OrderServiceService
             ]);
         }
     }
+
+    public function getOrder($order_id) {
+        return $this->orderRepository->getById($order_id);
+    }
 }
