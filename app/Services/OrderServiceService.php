@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Repositories\Contracts\OrderServiceRepository;
 use App\Repositories\OrderPointRepository;
 use App\Repositories\OrderRepository;
+use Illuminate\Support\Facades\Auth;
 
 class OrderServiceService implements Contracts\OrderServiceService
 {
@@ -75,7 +76,12 @@ class OrderServiceService implements Contracts\OrderServiceService
     }
 
     public function getOrder($order_id) {
-        return $this->orderRepository->getById($order_id);
+        return $this->orderRepository
+            ->model
+            ->newQuery()
+            ->where('id', $order_id)
+            ->where('user_id', Auth::user()->id)
+            ->first();
     }
 
     public function getOrderByUser(int|null $userId) {
