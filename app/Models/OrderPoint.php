@@ -7,7 +7,9 @@ use A17\Twill\Models\Model;
 
 class OrderPoint extends Model
 {
-
+    protected $with = [
+      'orderService'
+    ];
 
     protected $fillable = [
         'published',
@@ -18,4 +20,7 @@ class OrderPoint extends Model
         'amount'
     ];
 
+    public function orderService() {
+        return $this->belongsTo(OrderService::class);
+    }
 }

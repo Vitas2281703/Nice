@@ -47,7 +47,7 @@
                     <li class="service-list_item">
                         <div class="service-list_item-order">
                             <div class="service-list_item-order_title">
-                                <a href="{{ route('order') }}" class="service-list_item-name order-link">
+                                <a href="{{ route('order', ['order_id' => $order->id]) }}" class="service-list_item-name order-link">
                                     Заказ №{{ $order->id }}
                                 </a>
                                 <button class="service-list_item-btn HOVER">

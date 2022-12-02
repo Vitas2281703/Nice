@@ -12,5 +12,9 @@ interface OrderServiceService
     public function getOrderServiceByDevices($devicesIds);
 
     public function addOrder(User|null $user, $serviceId, $amount = null);
+
+    public function getOrder($order_id);
+
+    public function getOrderByUser(int $userId);
 }
 

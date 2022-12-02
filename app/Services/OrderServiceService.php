@@ -73,4 +73,17 @@ class OrderServiceService implements Contracts\OrderServiceService
             ]);
         }
     }
+
+    public function getOrder($order_id) {
+        return $this->orderRepository->getById($order_id);
+    }
+
+    public function getOrderByUser(int|null $userId) {
+        return $this->orderRepository
+            ->model
+            ->newQuery()
+            ->where('user_id', $userId)
+            ->where('status', 'Создан')
+            ->first();
+    }
 }
