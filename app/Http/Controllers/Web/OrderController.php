@@ -22,7 +22,14 @@ class OrderController extends Controller
 
     public function cart()
     {
-        return view('cart');
+        /** @var User $user */
+        $user = Auth::user();
+
+        $this->service->getOrderByUser($user->id);
+
+        return view('cart', [
+            'order' => $this->service->getOrderByUser($user->id)
+        ]);
     }
 
     public function order()
@@ -45,6 +52,7 @@ class OrderController extends Controller
         $amount = $data['amount'] ?? null;
 
         $this->service->addOrder($user, $data['service_id'], $amount);
+        return back();
 
     }
 
