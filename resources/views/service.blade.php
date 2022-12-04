@@ -62,7 +62,7 @@
 
 
             @if($orderServices->first() !== null)
-                <ul class="service-list">
+                <ul class="service-list" id="service-list">
                     @foreach($orderServices as $orderService)
                         <li class="service-list_item">
                             <div class="service-list_item-service-info">
@@ -70,10 +70,10 @@
                                 <p class="service-list_item-price">
                                     <span class="service-list_item-price_new">{{ $orderService->price }} ₽</span>
                                 </p>
-                                <a href="{{!in_array($orderService->id, ($servicesIds == 0 ? [] : $servicesIds) ) ? route('add-order', ['service_id' => $orderService->id]) : ''}}">
-                                    <button class="service-list_item-btn HOVER">
+                                <a class="service-list_item-btn-a" href="{{!in_array($orderService->id, ($servicesIds == 0 ? [] : $servicesIds) ) ? route('add-order', ['service_id' => $orderService->id]) : ''}}">
+                                    <button id="inCartBtn" class="service-list_item-btn HOVER">
                                         <span></span>
-                                        <text>{{in_array($orderService->id, ($servicesIds == 0 ? [] : $servicesIds)) ? 'В_корзине' : 'Заказать'}}</text>
+                                        <text>{{in_array($orderService->id, ($servicesIds == 0 ? [] : $servicesIds)) ? 'В корзине' : 'Заказать'}}</text>
                                     </button>
                                 </a>
                             </div>
@@ -102,7 +102,8 @@
     'scripts'=>[
         'menuBurger',
         'feedbackForm',
-        'sendServiceFilterForm'
+        'sendServiceFilterForm',
+        'serviceInCartBtn'
         ]
         ])
 @endsection

@@ -10,7 +10,7 @@ class OrderPointRepository extends ModuleRepository
 {
 
 
-    public OrderPoint $model;
+
 
     public function __construct(OrderPoint $model)
     {
