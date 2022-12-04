@@ -183,7 +183,11 @@
     justify-content: center;
     gap: 10px;
 }
-
+#feedbackForm_success-message{
+    font-size: 32px;
+    letter-spacing: 0.05em;
+    line-height: 1.25em;
+}
 
 @media screen and (max-device-width: 1080px) {
     .modal{
@@ -247,5 +251,8 @@
     }
     .feedbackForm_link img{
         width: 20px;
+    }
+    #feedbackForm_success-message{
+        text-align: center;
     }
 }

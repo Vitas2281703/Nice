@@ -11,8 +11,14 @@ class Request extends Model
     /** @var string[] $fillable */
     protected $fillable = [
         'fio',
-        'email',
-        'message'
+        'phone',
+        'message',
+        'status'
     ];
+
+    public function getFormattedCreatedAtAttribute()
+    {
+        return $this->created_at->format('d.m.Y H:i');
+    }
 
 }

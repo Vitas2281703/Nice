@@ -6,6 +6,6 @@ use App\Models\User;
 
 interface RequestService
 {
-    public function createRequest(?User $user, array $data): string;
+    public function createRequest(array $data): void;
 }
 

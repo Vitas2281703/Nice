@@ -29,7 +29,7 @@
                         Найдем проблему, устраним поломку почистим и смажем, обновим
                         железо
                     </p>
-                    <a class="HOVER" href="#usl"><span></span><text>Узнать стоимость</text></a>
+                    <a class="HOVER" href="{{ route('service') }}"><span></span><text>Узнать стоимость</text></a>
                 </div>
                 <div class="slide-img" style = "margin-left: 150px;">
                     <img
@@ -49,7 +49,7 @@
                         <span style="font-weight: 500">ноутбуке</span>
                     </h1>
                     <p>Улучшим производительность, заменим матрицу, поставим SSD.</p>
-                    <a class="HOVER" href="#usl"><span></span><text>Узнать стоимость</text></a>
+                    <a class="HOVER" href="{{ route('service') }}"><span></span><text>Узнать стоимость</text></a>
                 </div>
                 <div class="slide-img" style = "margin-left: 130px;">
                     <img
@@ -71,7 +71,7 @@
                         Заменим экран, устраним внутренние проблемы и сделаем это
                         быстро.
                     </p>
-                    <a class="HOVER" href="#usl"><span></span><text>Узнать стоимость</text></a>
+                    <a class="HOVER" href="{{ route('service') }}"><span></span><text>Узнать стоимость</text></a>
 
                 </div>
                 <div class="slide-img">
@@ -94,7 +94,7 @@
                         Подберем мощное железо для вашего устройства, доставим и
                         установим.
                     </p>
-                    <a class="HOVER"  href="#usl"><span></span><text>Узнать стоимость</text></a>
+                    <a class="HOVER"  href="{{ route('service') }}"><span></span><text>Узнать стоимость</text></a>
                 </div>
                 <div class="slide-img" style = "margin-left: 150px;">
                     <img

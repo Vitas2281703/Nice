@@ -23,12 +23,6 @@ class DeviceService implements Contracts\DeviceService
         return $deviceOptions;
     }
 
-
-    public function getDevicesByCategory($categoryID)
-    {
-//        return $this->repository->getDevicesByCategory($categoryID);
-    }
-
     public function list(){
         return $this->repository->get();
     }

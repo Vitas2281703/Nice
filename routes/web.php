@@ -39,3 +39,5 @@ Route::get('/order', [\App\Http\Controllers\Web\OrderController::class, 'order']
 Route::get('/preorder', [\App\Http\Controllers\Web\OrderController::class, 'preorder'])->name('preorder');
 
 Route::view('/user-agreement', 'user-agreement')->name('user-agreement');
+
+Route::post('request-for-consultation', [\App\Http\Controllers\Web\RequestController::class, 'index'])->name('request-for-consultation');

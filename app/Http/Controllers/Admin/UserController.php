@@ -18,10 +18,9 @@ class UserController extends BaseModuleController
         ],
         'phone' => [
             'title' => 'Телефон',
-            'field' => 'phone', // will be available from the columns settings dropdown
+            'field' => 'phone',
         ],
-        'email' => [ // relation column
-            // Take a look at the example in the next section fot the implementation of the sort
+        'email' => [
             'title' => 'Email',
             'field' => 'email'
         ]

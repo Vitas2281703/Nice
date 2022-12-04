@@ -3,10 +3,9 @@
 namespace App\Services;
 
 
-
 use App\Models\User;
 use App\Repositories\Contracts\RequestRepository;
-use App\Repositories\Contracts\WorkerRepository;
+use Illuminate\Support\Facades\Auth;
 
 class RequestService implements Contracts\RequestService
 {
@@ -16,21 +15,22 @@ class RequestService implements Contracts\RequestService
     {
     }
 
-    public function createRequest(?User $user, array $data): string {
-        if(isset($user)) {
+    public function createRequest(array $data): void {
+        /** @var User $user **/
+        $user = Auth::user();
+        if(isset($user)){
             $name = $user->name;
-            $email = $user->email;
-        } else {
+            $phone = $user->phone;
+        }else{
             $name = $data['name'];
-            $email = $data['email'];
+            $phone = $data['phone'];
         }
 
         $this->repository->create([
             'fio' => $name,
-            'email' => $email,
-            'message' => $data['message']
+            'phone' => $phone,
+            'message' => $data['message'],
         ]);
 
-        return "Заявка успешно отправлена";
     }
 }
