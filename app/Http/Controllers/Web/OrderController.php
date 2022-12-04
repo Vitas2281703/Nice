@@ -24,11 +24,15 @@ class OrderController extends Controller
     {
         /** @var User $user */
         $user = Auth::user();
+        if(isset($user)) {
+            $order = $this->service->getOrderByUser($user->id);
+        } else {
+            $order = null;
+        }
 
-        $this->service->getOrderByUser($user->id);
 
         return view('cart', [
-            'order' => $this->service->getOrderByUser($user->id)
+            'order' => $order
         ]);
     }
 

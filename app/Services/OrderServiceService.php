@@ -4,6 +4,8 @@ namespace App\Services;
 
 
 
+use App\Models\Order;
+use App\Models\OrderPoint;
 use App\Models\User;
 use App\Repositories\Contracts\OrderServiceRepository;
 use App\Repositories\OrderPointRepository;
@@ -32,8 +34,7 @@ class OrderServiceService implements Contracts\OrderServiceService
     public function addOrder(User|null $user, $serviceId, $amount = null)
     {
         if(isset($user)) {
-            $order = $this->orderRepository->model
-                ->newQuery()
+            $order = Order::query()
                 ->where('user_id', $user->id)
                 ->where('status', 'Создан')
                 ->first();
@@ -42,8 +43,7 @@ class OrderServiceService implements Contracts\OrderServiceService
         }
         if(isset($order)) {
 
-            $point = $this->orderPointRepository
-                ->model
+            $point = OrderPoint::query()
                 ->newQuery()
                 ->where('order_id', $order->id)
                 ->where('order_service_id', $serviceId)
@@ -76,17 +76,14 @@ class OrderServiceService implements Contracts\OrderServiceService
     }
 
     public function getOrder($order_id) {
-        return $this->orderRepository
-            ->model
-            ->newQuery()
+        return Order::query()
             ->where('id', $order_id)
             ->where('user_id', Auth::user()->id)
             ->first();
     }
 
     public function getOrderByUser(int|null $userId) {
-        return $this->orderRepository
-            ->model
+        return Order::query()
             ->newQuery()
             ->where('user_id', $userId)
             ->where('status', 'Создан')
