@@ -70,10 +70,10 @@
                                 <p class="service-list_item-price">
                                     <span class="service-list_item-price_new">{{ $orderService->price }} ₽</span>
                                 </p>
-                                <a href="{{!in_array($orderService->id, $servicesIds) ?? route('add-order', ['service_id' => $orderService->id])}}">
+                                <a href="{{!in_array($orderService->id, ($servicesIds == 0 ? [] : $servicesIds) ) ?? route('add-order', ['service_id' => $orderService->id])}}">
                                     <button class="service-list_item-btn HOVER">
                                         <span></span>
-                                        <text>{{in_array($orderService->id, $servicesIds) ? 'В_корзине' : 'Заказать'}}</text>
+                                        <text>{{in_array($orderService->id, ($servicesIds == 0 ? [] : $servicesIds)) ? 'В_корзине' : 'Заказать'}}</text>
                                     </button>
                                 </a>
                             </div>

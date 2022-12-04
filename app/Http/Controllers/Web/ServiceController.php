@@ -25,8 +25,9 @@ class ServiceController extends Controller
     public function index(FilterRequest $request){
         /** @var User $user */
         $user = Auth::user();
-
-        $order = $this->orderServiceService->getOrderByUser($user->id);
+        if(isset($user)) {
+            $order = $this->orderServiceService->getOrderByUser($user->id);
+        }
         if (isset($order)) {
             $servicesByOrder = $order->orderPoints;
 
