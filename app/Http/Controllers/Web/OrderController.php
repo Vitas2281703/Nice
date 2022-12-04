@@ -49,7 +49,6 @@ class OrderController extends Controller
     public function addOrder(AddOrderRequest $request)
     {
         $data = $request->validated();
-
         /** @var User $user */
         $user = Auth::user();
 
