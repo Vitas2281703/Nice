@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FilterRequest;
+use App\Models\User;
 use App\Services\Contracts\CategoryService;
 use App\Services\Contracts\DeviceService;
 use App\Services\Contracts\OrderServiceService;
 use App\Services\FabricatorService;
+use Illuminate\Support\Facades\Auth;
 
 class ServiceController extends Controller
 {
@@ -21,6 +23,22 @@ class ServiceController extends Controller
     }
 
     public function index(FilterRequest $request){
+        /** @var User $user */
+        $user = Auth::user();
+
+        $order = $this->orderServiceService->getOrderByUser($user->id);
+        if (isset($order)) {
+            $servicesByOrder = $order->orderPoints;
+
+            $servicesIds = [];
+
+            foreach ($servicesByOrder as $service) {
+                $servicesIds[] = $service->orderService->id;
+            }
+        } else {
+            $servicesIds = 0;
+        }
+
 
         $data = $request->validated();
         if(!empty($data)){
@@ -55,12 +73,14 @@ class ServiceController extends Controller
                 'activeServiceFabricator' => $data['serviceFabricator'] ?? null,
                 'devices' => $devicesModels,
                 'activeServiceDevice'=> $data['serviceDevice'] ?? null,
+                'servicesIds' => $servicesIds
             ]);
 
         }else{
             return view('service', [
                 'orderServices' => $this->orderServiceService->getAllOrderService(),
                 'categories' => $this->categoryService->getAllCategories(),
+                'servicesIds' => $servicesIds
             ]);
         }
 

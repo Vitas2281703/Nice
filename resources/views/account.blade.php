@@ -40,80 +40,37 @@
                     </div>
                 </div>
             </aside>
-            <ul class="service-list" id="service-list">
-                <li class="service-list_item">
-                    <div class="service-list_item-order">
-                        <div class="service-list_item-order_title">
-                            <a href="{{ route('order') }}" class="service-list_item-name order-link">
-                                Заказ №120321
-                            </a>
-                            <button class="service-list_item-btn HOVER">
-                                <span></span>
-                                <text>Оплатить</text>
-                            </button>
-                        </div>
-                        <div class="service-list_item-status">
-                            <p class="service-list_item-status_item">
-                                <span>Статус выполнения: </span>
-                                <span class="status-progress">В работе</span>
-                            </p>
-                            <p class="service-list_item-status_item">
-                                <span>Статус оплаты:</span>
-                                <span class="status-payment">Не оплачен</span>
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="service-list_item">
-                    <div class="service-list_item-order">
-                        <div class="service-list_item-order_title">
-                            <a href="{{ route('order') }}" class="service-list_item-name order-link">
-                                Заказ №12023121
-                            </a>
-                            <button class="service-list_item-btn HOVER">
-                                <span></span>
-                                <text>Оплатить</text>
-                            </button>
-                        </div>
-                        <div class="service-list_item-status">
-                            <p class="service-list_item-status_item">
-                                <span>Статус выполнения: </span>
-                                <span class="status-progress">Завершен</span>
-                            </p>
-                            <p class="service-list_item-status_item">
-                                <span>Статус оплаты:</span>
-                                <span class="status-payment">Оплачен</span>
-                            </p>
-                        </div>
-                    </div>
-                </li>
 
-                <li class="service-list_item">
-                    <div class="service-list_item-order">
-                        <div class="service-list_item-order_title">
-                            <a href="{{ route('order') }}" class="service-list_item-name order-link">
-                                Заказ №12023121
-                            </a>
-                            <button class="service-list_item-btn HOVER">
-                                <span></span>
-                                <text>Оплатить</text>
-                            </button>
+                @if($orders->first() !== null)
+                <ul class="service-list" id="service-list">
+                @foreach($orders as $order)
+                    <li class="service-list_item">
+                        <div class="service-list_item-order">
+                            <div class="service-list_item-order_title">
+                                <a href="{{ route('order', ['order_id' => $order->id]) }}" class="service-list_item-name order-link">
+                                    Заказ №{{ $order->id }}
+                                </a>
+                                <button class="service-list_item-btn HOVER">
+                                    <span></span>
+                                    <text>Оплатить</text>
+                                </button>
+                            </div>
+                            <div class="service-list_item-status">
+                                <p class="service-list_item-status_item">
+                                    <span>Статус выполнения: </span>
+                                    <span class="status-progress">{{ $order->status }}</span>
+                                </p>
+                                <p class="service-list_item-status_item">
+                                    <span>Статус оплаты:</span>
+                                    <span class="status-payment">{{ $order->status_payment }}</span>
+                                </p>
+                            </div>
                         </div>
-                        <div class="service-list_item-status">
-                            <p class="service-list_item-status_item">
-                                <span>Статус выполнения: </span>
-                                <span class="status-progress">Готов к выдаче</span>
-                            </p>
-                            <p class="service-list_item-status_item">
-                                <span>Статус оплаты:</span>
-                                <span class="status-payment">Не оплачен</span>
-                            </p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                    @endforeach
+                </ul>
+                @endif
 
-
-            </ul>
         </div>
     </div>
 
