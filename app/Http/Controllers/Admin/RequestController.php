@@ -8,7 +8,24 @@ class RequestController extends BaseModuleController
 {
     protected $moduleName = 'requests';
 
-    protected $indexOptions = [
-        'permalink' => false,
+    protected $titleColumnKey = 'fio';
+
+    protected $indexColumns = [
+        'fio' => [ // field column
+            'title' => 'Имя клиента',
+            'field' => 'fio',
+        ],
+        'phone' => [
+            'title' => 'Телефон',
+            'field' => 'phone',
+        ],
+        'status' => [
+            'title' => 'Статус',
+            'field' => 'status'
+        ],
+        'created_at' => [
+            'title' => 'Дата и время',
+            'field' => 'formatted_created_at'
+        ]
     ];
 }

@@ -40,4 +40,8 @@ Route::get('/preorder', [\App\Http\Controllers\Web\OrderController::class, 'preo
 
 Route::view('/user-agreement', 'user-agreement')->name('user-agreement');
 
+
+Route::post('request-for-consultation', [\App\Http\Controllers\Web\RequestController::class, 'index'])->name('request-for-consultation');
+
 Route::get('/add-order', [\App\Http\Controllers\Web\OrderController::class, 'addOrder'])->name('add-order');
+
