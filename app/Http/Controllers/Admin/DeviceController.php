@@ -35,17 +35,19 @@ class DeviceController extends BaseModuleController
     }
 
     protected $indexColumns = [
-        'title' => [ // field column
+        'title' => [
             'title' => 'Устройство',
             'field' => 'title',
         ],
         'category' => [
             'title' => 'Категория',
-            'field' => 'category_id',
+            'field' => 'title',
+            'relationship' => 'category',
         ],
         'fabricator' => [
             'title' => 'Производитель',
-            'field' => 'fabricator_id'
+            'field' => 'title',
+            'relationship' => 'fabricator'
         ],
     ];
 }

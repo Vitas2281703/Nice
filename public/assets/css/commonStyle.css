@@ -58,6 +58,7 @@ button{
     position: relative;
     z-index: 5;
     transition: color var(--time);
+    white-space: nowrap
 }
 
 .HOVER:hover text {
