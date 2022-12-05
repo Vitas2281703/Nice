@@ -16,5 +16,7 @@ interface OrderServiceService
     public function getOrder($order_id);
 
     public function getOrderByUser(int $userId);
+
+    public function orderRegistration($servicesId, $amounts, $userId, int $bonuses = null);
 }
 

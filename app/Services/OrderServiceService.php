@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\OrderPoint;
 use App\Models\User;
 use App\Repositories\Contracts\OrderServiceRepository;
+use App\Repositories\Contracts\UserRepository;
 use App\Repositories\OrderPointRepository;
 use App\Repositories\OrderRepository;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,8 @@ class OrderServiceService implements Contracts\OrderServiceService
     public function __construct(
         public OrderServiceRepository $repository,
         public OrderPointRepository $orderPointRepository,
-        public OrderRepository $orderRepository
+        public OrderRepository $orderRepository,
+        public UserRepository $userRepository
     ) {
     }
 
@@ -88,5 +90,21 @@ class OrderServiceService implements Contracts\OrderServiceService
             ->where('user_id', $userId)
             ->where('status', 'Создан')
             ->first();
+    }
+
+    public function orderRegistration($servicesId, $amounts,  $userId, int $bonuses = null) {
+        $services = OrderPoint::query()->whereIn('id', $servicesId)->get();
+
+        foreach ($services as $key => $value) {
+            $value->update(['amount' => $amounts[$key]]);
+        }
+        $order = $this->getOrderByUser($userId);
+
+        $user = User::query()->where('id', $userId)->first();
+        if(($bonuses !== null) && ($user->bonus >= $bonuses)) {
+            $order->update(['bonuses' => $bonuses]);
+            $user->update(['bonus' => $user->bonus - $bonuses]);
+        }
+        $order->update(['status' => 'Принят']);
     }
 }

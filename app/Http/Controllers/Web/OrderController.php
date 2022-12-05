@@ -66,8 +66,19 @@ class OrderController extends Controller
     }
 
     public function orderRegistration(Request $request){
-        dd($request);
-        return 0;
+
+        /** @var User $user */
+        $user = Auth::user();
+
+        $services = $request->orderPointsIds;
+
+        $amounts = $request->amounts;
+
+        $bonuses = $request->bonuses;
+
+        $this->service->orderRegistration($services, $amounts, $user->id, $bonuses);
+
+        return redirect()->route('account');
     }
 
 }
