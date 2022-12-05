@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Repositories\OrderRepository;
 use App\Services\Contracts\WorkerService;
 use App\Services\OurClientService;
@@ -17,10 +18,11 @@ class AccountController extends Controller
     }
 
     public function account(){
-        $orders = $this->repository->get();
+        $user = Auth::user();
+        $orders = Order::query()->where('user_id', $user->id)->where('status', '!=', 'Создан')->get();
         if(Auth::user()) {
             return view('account', [
-                'name'=> Auth::user()->name,
+                'name'=> $user->name,
                 'orders' => $orders
             ]);
         }else{

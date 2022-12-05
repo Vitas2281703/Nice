@@ -18,6 +18,8 @@ class Order extends Model
         'title',
         'description',
         'user_id',
+        'bonuses',
+        'status'
     ];
 
     public function orderPoints(): HasMany
