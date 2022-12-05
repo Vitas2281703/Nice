@@ -9,7 +9,7 @@ window.onload = function (){
                  statusPaymentBtnList[i].innerText = 'Оплачен'
                  statusPaymentBtnList[i].style = 'pointer-events: none; background-color: var(--green);'
                  break;
-             case 'Не оплачен':
+             case 'Не оплачено':
                  statusPaymentList[i].style = 'color: var(--red);';
                  break;
              case 'Возврат':

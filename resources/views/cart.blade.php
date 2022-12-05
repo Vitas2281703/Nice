@@ -13,7 +13,6 @@
 
 @section('content')
     <div class="container">
-        <form class="preorder-form" action="">
 
             <div class="order-block">
                 @if(isset($order))
@@ -54,23 +53,52 @@
                                     <p class="service-list_item-price">
                                         <span class="service-list_item-price_new">{{ $point->orderService->price }} ₽</span>
                                     </p>
-                                    <p class="service-list_item-subtotal">9000 ₽</p>
+                                    <p class="service-list_item-subtotal"></p>
+                                    <a href="" class="service-list_item-delete">
+                                        <svg class="modal__cross js-modal-close "
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             viewBox="0 0 24 24">
+                                            <path
+                                                d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/>
+                                        </svg>
+                                    </a>
                                 </div>
                             </li>
                             @endforeach
 
                     </ul>
-                    <p class="order-total">Итого: 9430219 ₽</p>
+                    <div class="order-bonus_wrapper">
+                        <div class="order-bonus_block">
+                            <p>У вас 200 бонусов</p>
+                            <input id="bonus-input"
+                                   placeholder="Количество бонусов"
+                                   type="number"
+                                   class="form-auth_input"
+                                   min="0" max="200"
+                            >
+                        </div>
+                    </div>
+                    <p id="order-total" class="order-total"></p>
+
                     <div class="order-arrange_link-block">
-                        <a href="{{ route('preorder') }}" style="font-size: 13px;" class="HOVER preorder_btn">
-                            <span></span>
-                            <text>Оформить</text>
-                        </a>
+                        <form action="{{ route('order-registration') }}" method="POST">
+                                @csrf
+                                <input type="number" name="totalInput" id="totalInput" hidden>
+                                @foreach($order->orderPoints as $point)
+                                    <input type="number" name="orderPointsIds[]" value="{{ $point->id }}" hidden>
+                                    <input type="number" name="amounts[]" id="amounts" value="" hidden>
+                                @endforeach
+                                <input type="number" name="bonuses" id="bonuses" hidden>
+                                <button type="submit" style="font-size: 13px;" class="HOVER preorder_btn" id="preorder-btn">
+                                    <span></span>
+                                    <text>Оформить</text>
+                                </button>
+                        </form>
                     </div>
                 @endif
             </div>
-        </form>
     </div>
+
 
 @endsection
 
