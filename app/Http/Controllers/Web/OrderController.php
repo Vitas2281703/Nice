@@ -65,4 +65,9 @@ class OrderController extends Controller
         ]);
     }
 
+    public function orderRegistration(Request $request){
+        dd($request);
+        return 0;
+    }
+
 }

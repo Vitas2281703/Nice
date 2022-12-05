@@ -36,6 +36,7 @@ Route::get('/account', [\App\Http\Controllers\Web\AccountController::class, 'acc
 
 Route::get('/cart', [\App\Http\Controllers\Web\OrderController::class, 'cart'])->name('cart');
 Route::get('/order/{order_id}', [\App\Http\Controllers\Web\OrderController::class, 'getOrder'])->name('order');
+Route::post('/order-registration', [\App\Http\Controllers\Web\OrderController::class, 'orderRegistration'])->name('order-registration');
 Route::get('/preorder', [\App\Http\Controllers\Web\OrderController::class, 'preorder'])->name('preorder');
 
 Route::view('/user-agreement', 'user-agreement')->name('user-agreement');
