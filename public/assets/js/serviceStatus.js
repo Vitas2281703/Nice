@@ -25,6 +25,10 @@ window.onload = function (){
                 statusProgressList[i].style = 'color: var(--blue);';
                 statusPaymentBtnList[i].style = 'pointer-events: none; background-color: var(--grey-dark);';
                 break;
+            case 'Принят':
+                statusProgressList[i].style = 'color: var(--blue);';
+                statusPaymentBtnList[i].style = 'pointer-events: none; background-color: var(--grey-dark);';
+                break;
             case 'Обработан':
                 statusProgressList[i].style = 'color: var(--blue);';
                 statusPaymentBtnList[i].style = 'pointer-events: none; background-color: var(--grey-dark);';

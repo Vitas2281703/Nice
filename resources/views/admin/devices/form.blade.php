@@ -18,10 +18,4 @@
     'label' => 'Название устройства',
     'maxlength' => 100
     ])
-    @formField('input', [
-    'type' => 'textarea',
-    'name' => 'description',
-    'label' => 'Описание устройства',
-    'maxlength' => 1000
-    ])
 @stop

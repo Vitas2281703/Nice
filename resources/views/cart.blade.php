@@ -52,6 +52,9 @@
                                     </p>
                                     <p class="service-list_item-price">
                                         <span class="service-list_item-price_new">{{ $point->orderService->price }} ₽</span>
+                                        @if($point->orderService->old_price != 0)
+                                            <span class="service-list_item-price_old">{{ $point->orderService->old_price }} ₽</span>
+                                        @endif
                                     </p>
                                     <p class="service-list_item-subtotal"></p>
                                     <a href="" class="service-list_item-delete">

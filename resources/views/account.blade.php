@@ -14,23 +14,19 @@
 @section('content')
     <div class="container">
         <h1 class="account-title">Привет, <span>{{ $name }}!</span></h1>
-        <p>Здесь ты можешь посмотреть свою персональную скидку по реферальной
+        <p>Здесь ты можешь посмотреть сколько у тебя бонусов по реферальной
             программе и отслеживать свои заказы <img src="assets\images\okHand.svg" alt=""></p>
         <div class="service_block">
             <aside>
                 <div class="service-filter">
                     <h4 class="personal-discount_title">
-                        Ваша персональная скидка
+                        Ваши бонусы
                     </h4>
                     <span class="personal-discount_percent">
-                        5%
+                        200 бонусов
                     </span>
-                    <p class="personal-discount_p">
-                        Пригласите еще <strong>5</strong>
-                        пользователей для скидки <strong>7%</strong>
-                    </p>
                     <div class="referal">
-                        <input id="referal-link" class="form-auth_input" type="text" value="https://ya.ru">
+                        <input id="referal-link" class="form-auth_input" type="text" value="http://nice.local/registration/?refid=1">
                         <a id="ref-copylink" class="ref-copylink">
                             <span></span>
                             <text>
@@ -48,7 +44,7 @@
                         <div class="service-list_item-order">
                             <div class="service-list_item-order_title">
                                 <a href="{{ route('order', ['order_id' => $order->id]) }}" class="service-list_item-name order-link">
-                                    Заказ №{{ $order->id }}
+                                    Заказ №{{ $order->id }} от {{ date('d.m.Y', strtotime($order->created_at)) }}
                                 </a>
                                 <button class="service-list_item-btn HOVER">
                                     <span></span>

@@ -12,21 +12,15 @@
     'placeholder' => 'Выберите устройство',
     'options' => $devices
     ])
-    @formField('select', [
-    'name' => 'service_id',
-    'label' => 'Услуга',
-    'placeholder' => 'Выберите Услугу',
-    'options' => $services
-    ])
-    @formField('select', [
-    'name' => 'promotion_id',
-    'label' => 'Акция',
-    'placeholder' => 'Выберите Акцию',
-    'options' => $promotions
-    ])
+
     @formField('input', [
     'name' => 'price',
     'label' => 'Цена услуги',
+    'type' => 'number'
+    ])
+    @formField('input', [
+    'name' => 'old_price',
+    'label' => 'Старая цена',
     'type' => 'number'
     ])
 @stop

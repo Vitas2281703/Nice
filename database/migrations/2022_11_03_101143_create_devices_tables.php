@@ -18,11 +18,6 @@ class CreateDevicesTables extends Migration
 
         });
 
-
-
-
-
-
     }
 
     public function down()

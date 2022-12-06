@@ -19,7 +19,6 @@
         <div class="all-news_block">
 
             @foreach($news as $newsOne)
-                {{ dd($newsOne->created_at) }}
                 <div class="all-news_item">
                     <a href="{{ route('news', [
                                     'slug'=>$newsOne->slugs->first()->slug,
