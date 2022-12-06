@@ -3,16 +3,17 @@
 namespace App\Models;
 
 
+use A17\Twill\Models\Behaviors\HasRelated;
 use A17\Twill\Models\Model;
 
 class OrderService extends Model
 {
+    use HasRelated;
 
     protected $fillable = [
         'published',
         'title',
         'description',
-        'service_id',
         'device_id',
         'promotion_id',
         'price',

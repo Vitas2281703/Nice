@@ -2,6 +2,17 @@
 
 @section('contentFields')
 
+    <a17-textfield label="Имя заказчика" initial-value="{{ $fio }}" disabled></a17-textfield>
+    <a17-textfield label="Почта" initial-value="{{ $email }}" disabled></a17-textfield>
+    <a17-textfield label="Телефон" initial-value="{{ $phone }}" disabled></a17-textfield>
+
+    @formField('input', [
+    'name' => 'message',
+    'label' => 'Сообщение',
+    'type' => 'textarea',
+    'maxlength' => 500
+    ])
+
     @section('sideFieldsets')
         <a17-fieldset title="Статусы" id="statuses">
             @formField('select', [

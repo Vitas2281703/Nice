@@ -22,7 +22,6 @@ class OrderServiceController extends BaseModuleController
         parent::__construct($app, $request);
     }
 
-    protected $moduleName = 'orderServices';
 
     protected $indexOptions = [
         'permalink' => false,

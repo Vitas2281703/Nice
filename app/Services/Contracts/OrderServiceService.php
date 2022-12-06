@@ -13,6 +13,8 @@ interface OrderServiceService
 
     public function addOrder(User|null $user, $serviceId, $amount = null);
 
+    public function getAdminOrder($order_id);
+
     public function getOrder($order_id);
 
     public function getOrderByUser(int $userId);

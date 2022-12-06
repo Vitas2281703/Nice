@@ -17,9 +17,6 @@ class OrderServiceRepository extends ModuleRepository implements Contracts\Order
 
     public function afterSave($object, $fields): void
     {
-        if(isset($fields['service_id']) || isset($fields['device_id'])) {
-            $object->update(['service_id' => $fields['service_id'], 'device_id' => $fields['device_id']]);
-        }
 
         if(isset($fields['promotion_id'])) {
             $object->update(['promotion_id' => $fields['promotion_id']]);

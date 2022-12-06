@@ -77,6 +77,12 @@ class OrderServiceService implements Contracts\OrderServiceService
         }
     }
 
+    public function getAdminOrder($order_id) {
+        return Order::query()
+            ->where('id', $order_id)
+            ->first();
+    }
+
     public function getOrder($order_id) {
         return Order::query()
             ->where('id', $order_id)

@@ -7,6 +7,7 @@ use A17\Twill\Models\Model;
 
 class OrderPoint extends Model
 {
+
     protected $with = [
       'orderService'
     ];
@@ -23,4 +24,9 @@ class OrderPoint extends Model
     public function orderService() {
         return $this->belongsTo(OrderService::class);
     }
+    protected array $indexColumns = [
+        'title' => [
+            'field' => 'order_id',
+        ],
+    ];
 }

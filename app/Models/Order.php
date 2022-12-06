@@ -3,11 +3,13 @@
 namespace App\Models;
 
 
+use A17\Twill\Models\Behaviors\HasRelated;
 use A17\Twill\Models\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
 {
+    use HasRelated;
 
     protected $with = [
         'orderPoints'
