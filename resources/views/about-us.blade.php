@@ -19,18 +19,17 @@
 
         <div class="aboutUs">
             <p class="aboutUs_p">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                A consectetur corporis cupiditate debitis dolorum eaque, hic impedit
-                itaque iusto officiis placeat quasi quibusdam recusandae repellat rerum
-                sapiente sequi sunt temporibus. <br><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                A consectetur corporis cupiditate debitis dolorum eaque, hic impedit
-                itaque iusto officiis placeat quasi quibusdam recusandae repellat rerum
-                sapiente sequi sunt temporibus. <br><br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                A consectetur corporis cupiditate debitis dolorum eaque, hic impedit
-                itaque iusto officiis placeat quasi quibusdam recusandae repellat rerum
-                sapiente sequi sunt temporibus.
+                Ремонт компьютеров, ноутбуков, мониторов, смартфонов, планшетов любой сложности.
+                Бесплатная диагностика и консультация.<br>
+                <br>
+                8-951-585-8334<br>
+                <br>
+                Пр. Ленина 64а. Здание Ростелеком.<br>
+                Ул. Рукавишникова 9а. <br>
+                <br>
+                ПН-ПТ с 10:00 до 19:00<br>
+                СБ с 10:00 да 14:00<br>
+                ВС выходной.<br>
             </p>
             <img src="assets\images\logoWithHand.svg" alt="" class="aboutUs_img">
             <img src="assets\images\mobileLogo.svg" alt="" class="aboutUs_img aboutUs_img_for-mobile">

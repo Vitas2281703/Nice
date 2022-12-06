@@ -15,7 +15,6 @@ class Order extends Model
 
     protected $fillable = [
         'published',
-        'title',
         'description',
         'user_id',
         'bonuses',
@@ -26,4 +25,15 @@ class Order extends Model
     {
         return $this->hasMany(OrderPoint::class);
     }
+
+    public function getFormattedCreatedAtAttribute()
+    {
+        return $this->created_at->format('d.m.Y H:i');
+    }
+
+    public function getFormattedTitleAttribute()
+    {
+        return 'Заказ №'.$this->id;
+    }
+
 }

@@ -69,13 +69,23 @@
                                 <h2 class="service-list_item-name">{{ $orderService->title }}</h2>
                                 <p class="service-list_item-price">
                                     <span class="service-list_item-price_new">{{ $orderService->price }} ₽</span>
+                                    @if($orderService->old_price != 0)
+                                        <span class="service-list_item-price_old">{{ $orderService->old_price }} ₽</span>
+                                    @endif
                                 </p>
+                                @if(Auth::user())
                                 <a class="service-list_item-btn-a" href="{{!in_array($orderService->id, ($servicesIds == 0 ? [] : $servicesIds) ) ? route('add-order', ['service_id' => $orderService->id]) : ''}}">
                                     <button id="inCartBtn" class="service-list_item-btn HOVER">
                                         <span></span>
                                         <text>{{in_array($orderService->id, ($servicesIds == 0 ? [] : $servicesIds)) ? 'В корзине' : 'Заказать'}}</text>
                                     </button>
                                 </a>
+                                @else
+                                    <a style="font-size: 14px; font-weight: 500; letter-spacing: 0.03em;" class="service-list_item-btn-a js-open-modal HOVER" data-modal="1">
+                                        <span></span>
+                                        <text>Заказать</text>
+                                    </a>
+                                @endif
                             </div>
                             <div class="service-list_item-device-info">
                                 <span>Категория: {{ $orderService->device->category->title }}</span>

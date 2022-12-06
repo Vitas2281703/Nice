@@ -1,14 +1,28 @@
 <?php
 
 return [
-    'user-groups' => [
+    'users' => [
         'title' => 'Пользователи',
-        'route' => 'admin.user-groups.users.index',
+        'module' => true,
+    ],
+    'main-page' => [
+        'title' => 'Главная',
+        'route' => 'admin.main-page.promotions.index',
         'primary_navigation' => [
-            'users' => [
-                'title' => 'Пользователи',
+            'promotions' => [
+                'title' => 'Акции',
                 'module' => true,
             ],
+            'jobSteps' => [
+                'title' => 'Этапы',
+                'module' => true,
+            ],
+        ],
+    ],
+    'about-us' => [
+        'title' => 'О нас',
+        'route' => 'admin.about-us.workers.index',
+        'primary_navigation' => [
             'workers' => [
                 'title' => 'Сотрудники',
                 'module' => true,
@@ -17,8 +31,11 @@ return [
                 'title' => 'Отзывы',
                 'module' => true,
             ],
-
         ],
+    ],
+    'news' => [
+        'title' => 'Новости',
+        'module' => true,
     ],
     'products' => [
         'title' => 'Каталог',
@@ -36,38 +53,35 @@ return [
                 'title' => 'Устройства',
                 'module' => true,
             ],
-            'services' => [
-                'title' => 'Услуги',
-                'module' => true,
-            ],
             'orderServices' => [
                 'title' => 'Прайс-лист',
                 'module' => true,
             ],
         ],
     ],
-
-    'requests' => [
-        'title' => 'Заявки',
-        'module' => true,
-    ],
-
-    'promotions' => [
-        'title' => 'Акции',
-        'module' => true,
-    ],
-    'news' => [
-        'title' => 'Новости',
-        'module' => true,
-    ],
-
     'orders' => [
-        'title' => 'Заказы',
-        'module' => true,
+        'title' => 'Клиенты',
+        'route' => 'admin.orders.orders.index',
+        'primary_navigation' => [
+            'orders' => [
+                'title' => 'Заказы',
+                'module' => true,
+            ],
+            'requests' => [
+                'title' => 'Заявки',
+                'module' => true,
+            ],
+
+        ],
     ],
-    'jobSteps' => [
-        'title' => 'Этапы',
-        'module' => true,
-    ],
+
+
+
+
+
+
+
+
+
 
 ];

@@ -17,7 +17,7 @@
                 <div class="service-list_item-order">
 
                     <div class="service-list_item-order_title">
-                        <a class="service-list_item-name">Заказ №{{$order->id}}</a>
+                        <span class="service-list_item-name">Заказ №{{ $order->id }} от {{ date('d.m.Y', strtotime($order->created_at)) }}</span>
                         <button class="service-list_item-btn HOVER">
                             <span></span>
                             <text>Оплатить</text>

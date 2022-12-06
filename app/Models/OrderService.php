@@ -8,7 +8,6 @@ use A17\Twill\Models\Model;
 class OrderService extends Model
 {
 
-
     protected $fillable = [
         'published',
         'title',
@@ -16,7 +15,8 @@ class OrderService extends Model
         'service_id',
         'device_id',
         'promotion_id',
-        'price'
+        'price',
+        'old_price'
     ];
 
     public function device(){
