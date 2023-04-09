@@ -11,6 +11,7 @@ class RequestService implements Contracts\RequestService
 {
     public function __construct(
         private readonly RequestRepository $repository,
+        private readonly \App\Services\Contracts\TelegramService $telegramService,
     )
     {
     }
@@ -26,11 +27,19 @@ class RequestService implements Contracts\RequestService
             $phone = $data['phone'];
         }
 
-        $this->repository->create([
+        $newRequest = $this->repository->create([
             'fio' => $name,
             'phone' => $phone,
             'message' => $data['message'],
         ]);
 
+        $message = 'Поступила заявка на консультацию №' . $newRequest->id . PHP_EOL . PHP_EOL
+            . 'Имя клиента: ' . $user->name . PHP_EOL
+            . 'Телефон клиента: ' . $user->phone . PHP_EOL
+            . 'Email клиента: ' . $user->email . PHP_EOL
+            . 'Ссылка в админку: '
+            . config('app.url') . '/admin/orders/requests/'. $newRequest->id .'/edit';
+
+        $this->telegramService->sendMessage($message);
     }
 }

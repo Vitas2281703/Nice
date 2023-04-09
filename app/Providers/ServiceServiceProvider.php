@@ -25,6 +25,7 @@ class ServiceServiceProvider extends ServiceProvider
         \App\Services\Contracts\OurClientService::class => \App\Services\OurClientService::class,
         \App\Services\Contracts\UserService::class => \App\Services\UserService::class,
         \App\Services\Contracts\RequestService::class => \App\Services\RequestService::class,
+        \App\Services\Contracts\TelegramService::class => \App\Services\TelegramService::class,
     ];
 
 

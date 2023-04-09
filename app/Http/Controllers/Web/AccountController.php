@@ -22,6 +22,7 @@ class AccountController extends Controller
         $orders = Order::query()
             ->where('user_id', $user->id)
             ->where('status', '!=', 'Создан')
+            ->orderByDesc('updated_at')
             ->paginate(5);
         if(Auth::user()) {
             return view('account', [

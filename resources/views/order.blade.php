@@ -64,6 +64,8 @@
                     </li>
                 </ul>
                 <p class="order-total">Итого: {{ $allPrice }} ₽</p>
+                <p class="order-total">Итого учетом бонусов: {{ $allPrice -= $order->bonuses }} ₽</p>
+                <p class="order-total">Списанные бонусы: {{ $order->bonuses }} ₽</p>
             @else
             <p>Такого заказа нет, либо это не ваш заказ :(</p>
             @endif

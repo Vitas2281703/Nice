@@ -61,7 +61,6 @@
                 $('#feedbackForm-form_p').css({'display':'none',});
                 $('#feedbackForm-form').css({'display':'none',});
                 $('#feedbackForm_success-message').css({'display':'inherit',});
-
             }
         });
         e.preventDefault();

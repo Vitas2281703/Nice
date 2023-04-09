@@ -19,7 +19,8 @@ class OrderServiceService implements Contracts\OrderServiceService
         public OrderServiceRepository $repository,
         public OrderPointRepository $orderPointRepository,
         public OrderRepository $orderRepository,
-        public UserRepository $userRepository
+        public UserRepository $userRepository,
+        public \App\Services\Contracts\TelegramService $telegramService,
     ) {
     }
 
@@ -41,7 +42,7 @@ class OrderServiceService implements Contracts\OrderServiceService
                 ->where('status', 'Создан')
                 ->first();
         } else {
-            return new \Exception("Соси хуйца", 401);
+            return new \Exception("Отсутствует пользователь", 401);
         }
         if(isset($order)) {
 
@@ -112,5 +113,14 @@ class OrderServiceService implements Contracts\OrderServiceService
             $user->update(['bonus' => $user->bonus - $bonuses]);
         }
         $order->update(['status' => 'Принят']);
+
+        $message = 'Поступил заказ №' . $order->id . PHP_EOL . PHP_EOL
+            . 'Имя клиента: ' . $user->name . PHP_EOL
+            . 'Телефон клиента: ' . $user->phone . PHP_EOL
+            . 'Email клиента: ' . $user->email . PHP_EOL
+            . 'Ссылка в админку: '
+            . config('app.url') . '/admin/orders/orders/'. $order->id .'/edit';
+
+        $this->telegramService->sendMessage($message);
     }
 }

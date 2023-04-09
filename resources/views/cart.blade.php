@@ -72,12 +72,12 @@
                     </ul>
                     <div class="order-bonus_wrapper">
                         <div class="order-bonus_block">
-                            <p>У вас 200 бонусов</p>
+                            <p>У вас {{ $user->bonus }} бонусов</p>
                             <input id="bonus-input"
                                    placeholder="Количество бонусов"
                                    type="number"
                                    class="form-auth_input"
-                                   min="0" max="200"
+                                   min="0" max="{{ $user->bonus }}"
                             >
                         </div>
                     </div>
@@ -98,6 +98,8 @@
                                 </button>
                         </form>
                     </div>
+                @else
+                    <h1>Корзина пуста :(</h1>
                 @endif
             </div>
     </div>

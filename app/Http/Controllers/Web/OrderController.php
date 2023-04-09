@@ -31,7 +31,8 @@ class OrderController extends Controller
 
 
         return view('cart', [
-            'order' => $order
+            'order' => $order,
+            'user' => $user
         ]);
     }
 
