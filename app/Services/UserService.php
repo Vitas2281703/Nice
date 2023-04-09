@@ -17,9 +17,8 @@ class UserService implements Contracts\UserService
     {
     }
 
-    public function registration(array $data) {
+    public function registration(array $data, ?int $ref_id) {
         $user = $this->userRepository->getUser($data);
-
         if(!Auth::user()) {
             if(!isset($user)) {
                 $newUser = $this->userRepository->create([
@@ -29,6 +28,19 @@ class UserService implements Contracts\UserService
                     'password' => Hash::make($data['password']),
                     'role_id' => 1
                 ]);
+                if (isset($ref_id)) {
+                    $ref_user = $this->userRepository->find($ref_id);
+                    if ($ref_user) {
+                        $ref_user->update([
+                            'bonus' => $ref_user->bonuses + 200,
+                        ]);
+                        $newUser->update([
+                            'referer_id' => $ref_id,
+                        ]);
+                    } else {
+                        return view('registration', ['error'=>"Пользователь с таким рефферальным id не существует"]);
+                    }
+                }
                 /**
                  * @var User $newUser
                  */

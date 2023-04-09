@@ -12,7 +12,7 @@
 @section('content')
     <div class="container">
         <div class="wrapper form-auth_block">
-            <form method="POST" action="{{ route('registration-post') }}" class="form-auth">
+            <form method="POST" action="{{ route('registration-post', ['ref_id' => $ref_id ?? null]) }}" class="form-auth">
                 @csrf
                 <h2 class="form-auth_title">Регистрация</h2>
                 @if(isset($error))

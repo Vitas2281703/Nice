@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
     public function __construct(
-
         public OrderServiceService $service,
         public OrderRepository $repository,
     )

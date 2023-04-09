@@ -19,10 +19,13 @@ class AccountController extends Controller
 
     public function account(){
         $user = Auth::user();
-        $orders = Order::query()->where('user_id', $user->id)->where('status', '!=', 'Создан')->get();
+        $orders = Order::query()
+            ->where('user_id', $user->id)
+            ->where('status', '!=', 'Создан')
+            ->paginate(5);
         if(Auth::user()) {
             return view('account', [
-                'name'=> $user->name,
+                'user'=> $user,
                 'orders' => $orders
             ]);
         }else{

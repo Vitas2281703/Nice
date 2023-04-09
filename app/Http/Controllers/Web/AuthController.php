@@ -20,9 +20,10 @@ class AuthController extends Controller
     {
         return $this->userService->authorization($request->validated());
     }
-    public function registration(RegistrationRequest $request)
+
+    public function registration(RegistrationRequest $request, ?int $ref_id=null)
     {
-        return $this->userService->registration($request->validated());
+        return $this->userService->registration($request->validated(), $ref_id);
     }
     public function logout(){
         return $this->userService->logout();

@@ -6,14 +6,15 @@
         'commonStyle',
         'service',
         'account',
-        'auth'
+        'auth',
+        'paginate'
         ]
         ])
 @endsection
 
 @section('content')
     <div class="container">
-        <h1 class="account-title">Привет, <span>{{ $name }}!</span></h1>
+        <h1 class="account-title">Привет, <span>{{ $user->name }}!</span></h1>
         <p>Здесь ты можешь посмотреть сколько у тебя бонусов по реферальной
             программе и отслеживать свои заказы <img src="assets\images\okHand.svg" alt=""></p>
         <div class="service_block">
@@ -23,10 +24,10 @@
                         Ваши бонусы
                     </h4>
                     <span class="personal-discount_percent">
-                        200 бонусов
+                        {{ $user->bonus }} бонусов
                     </span>
                     <div class="referal">
-                        <input id="referal-link" class="form-auth_input" type="text" value="http://nice.local/registration/?refid=1">
+                        <input id="referal-link" class="form-auth_input" type="text" value="http://nice.local/registration/{{ $user->id }}">
                         <a id="ref-copylink" class="ref-copylink">
                             <span></span>
                             <text>
@@ -66,8 +67,8 @@
                     @endforeach
                 </ul>
                 @endif
-
         </div>
+        {{ $orders->links('inc/paginate') }}
     </div>
 
 @endsection

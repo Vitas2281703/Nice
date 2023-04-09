@@ -26,9 +26,9 @@ Route::get('/service', [\App\Http\Controllers\Web\ServiceController::class, 'ind
 
 
 Route::view('/login', 'login')->name('login');
-Route::view('/registration', 'registration')->name('registration');
+Route::view('/registration/{ref_id?}', 'registration')->name('registration');
 Route::post('/login', [\App\Http\Controllers\Web\AuthController::class, 'login'])->name('login-post');
-Route::post('/registration', [\App\Http\Controllers\Web\AuthController::class, 'registration'])->name('registration-post');
+Route::post('/registration/{ref_id?}', [\App\Http\Controllers\Web\AuthController::class, 'registration'])->name('registration-post');
 Route::get('/logout', [\App\Http\Controllers\Web\AuthController::class, 'logout'])->name('logout');
 
 

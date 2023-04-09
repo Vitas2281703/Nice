@@ -16,7 +16,7 @@ class NewsService implements Contracts\NewsService
     /** @inheritDoc */
 
     public function getAllNews(){
-        return $this->repository->orderByDesc('created_at')->paginate(3);
+        return $this->repository->orderByDesc('created_at')->paginate(12);
     }
 
     public function showNews($slug): View{

@@ -6,7 +6,7 @@ use Illuminate\Http\Client\RequestException;
 
 interface UserService
 {
-    public function registration(array $data);
+    public function registration(array $data, ?int $ref_id);
 
     public function authorization(array $data);
 
