@@ -1,4 +1,6 @@
-<div id = "map" style = "margin-bottom: -600px;"></div>
+<div id = "map" style = "margin-bottom: -600px;">
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A95fe19d9d9f2dea42c4c11cf4068a7d5d78e16a33ed50494ae52b34b3e2e3799&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
 <div class="container" style="    position: relative;
     z-index: 5; pointer-events: none;
     ">
@@ -31,7 +33,5 @@
         </div>
     </div>
 </div>
-<script src="assets/js/mapSettings.js"></script>
+{{--<script src="assets/js/mapSettings.js"></script>--}}
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACd3XBsFKu1FpzeWdLSrVJKXQgU6XdmuU&callback=initMap">
-</script>
