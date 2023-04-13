@@ -72,4 +72,9 @@ class UserService implements Contracts\UserService
         Auth::logout();
         return redirect()->route('home');
     }
+
+    public function getUsers()
+    {
+        return $this->userRepository->getAllUsers();
+    }
 }

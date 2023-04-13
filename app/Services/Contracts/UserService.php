@@ -11,5 +11,7 @@ interface UserService
     public function authorization(array $data);
 
     public function logout();
+
+    public function getUsers();
 }
 

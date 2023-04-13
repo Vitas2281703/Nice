@@ -24,6 +24,13 @@ class UserRepository extends ModuleRepository implements Contracts\UserRepositor
         return null;
     }
 
+    public function getAllUsers(): \Illuminate\Database\Eloquent\Collection|array
+    {
+        return $this->model->newQuery()
+            ->orderByDesc('created_at')
+            ->get();
+    }
+
     public function authorization(array $data) {
         $user = $this->model->newQuery();
         return $user->where('email', $data['email'])->first();

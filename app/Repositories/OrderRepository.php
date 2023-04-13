@@ -13,4 +13,11 @@ class OrderRepository extends ModuleRepository
     {
         $this->model = $model;
     }
+
+    public function getOrders()
+    {
+        return $this->model->newQuery()
+            ->orderByDesc('created_at')
+            ->get();
+    }
 }

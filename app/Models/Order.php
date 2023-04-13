@@ -5,6 +5,7 @@ namespace App\Models;
 
 use A17\Twill\Models\Behaviors\HasRelated;
 use A17\Twill\Models\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Order extends Model
@@ -23,6 +24,10 @@ class Order extends Model
         'status'
     ];
 
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
     public function orderPoints(): HasMany
     {
         return $this->hasMany(OrderPoint::class);

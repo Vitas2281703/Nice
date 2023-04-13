@@ -9,5 +9,7 @@ interface UserRepository
     public function getUser(array $data);
 
     public function authorization(array $data);
+
+    public function getAllUsers();
 }
 
