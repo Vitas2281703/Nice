@@ -22,6 +22,23 @@
     'disabled' => true
     ])
 
+    @formField('input', [
+    'name' => 'bonuses',
+    'label' => 'Бонусы'
+    ])
+
+    @formField('input', [
+    'name' => 'sum',
+    'label' => 'Сумма заказа',
+    'disabled' => true
+    ])
+
+    @formField('input', [
+    'name' => 'sum_with_bonuses',
+    'label' => 'Сумма заказа с учетом скидки',
+    'disabled' => true
+    ])
+
     @section('sideFieldsets')
         <a17-fieldset title="Статусы" id="statuses">
             @formField('select', [

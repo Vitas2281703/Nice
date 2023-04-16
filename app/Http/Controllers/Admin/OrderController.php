@@ -95,13 +95,17 @@ class OrderController extends BaseModuleController
         $itemId = $this->getItemIdentifier($item);
         $fields = $this->repository->getFormFields($item);
         $orderPoints = OrderPoint::query()->where('order_id', $id)->get();
+        $sum = 0;
         foreach ($orderPoints as $point) {
             $fields['browsers']['point'][] = [
                 'id' => $point->id,
                 'name' => $point->orderService->title.' Цена: '.$point->orderService->price
             ];
+            $sum += ($point->orderService->price * $point->amount);
         }
-
+        $order = $this->service->getAdminOrder($this->request->route()->parameters()['order']);
+        $fields['sum'] = ['name' => $sum];
+        $fields['sum_with_bonuses'] = ['name' => $sum - $order->bonuses];
         $data = [
                 'item' => $item,
                 'moduleName' => $this->moduleName,

@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::module('users');
 Route::group(['prefix' => 'main-page'], function () {
     Route::module('promotions');
     Route::module('jobSteps');
@@ -22,6 +21,7 @@ Route::group(['prefix' => 'products'], function () {
     Route::module('orderServices');
 });
 Route::group(['prefix' => 'orders'], function () {
+    Route::module('users');
     Route::module('orders');
     Route::module('requests');
 });

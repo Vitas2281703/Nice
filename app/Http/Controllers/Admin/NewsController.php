@@ -8,7 +8,16 @@ class NewsController extends BaseModuleController
 {
     protected $moduleName = 'news';
 
+    protected $previewView = 'news';
+
     protected $indexOptions = [
         'permalink' => false,
     ];
+
+    protected function previewData($item)
+    {
+        return [
+            'news' => $item
+        ];
+    }
 }

@@ -1,10 +1,6 @@
 <?php
 
 return [
-    'users' => [
-        'title' => 'Пользователи',
-        'module' => true,
-    ],
     'main-page' => [
         'title' => 'Главная',
         'route' => 'admin.main-page.promotions.index',
@@ -71,17 +67,10 @@ return [
                 'title' => 'Заявки',
                 'module' => true,
             ],
-
+            'users' => [
+                'title' => 'Пользователи',
+                'module' => true,
+            ],
         ],
     ],
-
-
-
-
-
-
-
-
-
-
 ];

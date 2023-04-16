@@ -88,6 +88,67 @@ return [
     'base_repository' => A17\Twill\Repositories\ModuleRepository::class,
     'base_request' => A17\Twill\Http\Requests\Admin\Request::class,
 
+    'dashboard' => [
+        'modules' => [
+            'App\Models\Order' => [ // module name if you added a morph map entry for it, otherwise FQN of the model (eg. App\Models\Project)
+                'name' => 'orders', // module name
+                'label' => 'Заказы', // optional, if the name of your module above does not work as a label
+                'label_singular' => 'Заказы', // optional, if the automated singular version of your name/label above does not work as a label
+                'routePrefix' => 'orders', // optional, if the module is living under a specific routes group
+                'count' => true, // show total count with link to index of this module
+                'activity' => true, // show activities on this module in activities list
+                'search' => true, // show results for this module in global search
+                'search_fields' => ['user.name', 'user.phone', 'user.email'],
+            ],
+            'App\Models\Request' => [ // module name if you added a morph map entry for it, otherwise FQN of the model (eg. App\Models\Project)
+                'name' => 'requests', // module name
+                'label' => 'Заявки', // optional, if the name of your module above does not work as a label
+                'label_singular' => 'Заявки', // optional, if the automated singular version of your name/label above does not work as a label
+                'routePrefix' => 'orders', // optional, if the module is living under a specific routes group
+                'count' => true, // show total count with link to index of this module
+                'activity' => true, // show activities on this module in activities list
+                'search' => true, // show results for this module in global search
+                'search_fields' => ['user.name', 'user.phone', 'user.email'],
+            ],
+            'App\Models\News' => [ // module name if you added a morph map entry for it, otherwise FQN of the model (eg. App\Models\Project)
+                'name' => 'news', // module name
+                'label' => 'Новости', // optional, if the name of your module above does not work as a label
+                'label_singular' => 'Новости', // optional, if the automated singular version of your name/label above does not work as a label
+                'count' => true, // show total count with link to index of this module
+                'create' => true, // show link in create new dropdown
+                'draft' => true,
+                'activity' => true, // show activities on this module in activities list
+                'search' => true, // show results for this module in global search
+                'search_fields' => ['title', 'description'],
+            ],
+            'App\Models\Promotion' => [ // module name if you added a morph map entry for it, otherwise FQN of the model (eg. App\Models\Project)
+                'name' => 'promotions', // module name
+                'label' => 'Акции', // optional, if the name of your module above does not work as a label
+                'label_singular' => 'Акции', // optional, if the automated singular version of your name/label above does not work as a label
+                'routePrefix' => 'main-page', // optional, if the module is living under a specific routes group
+                'count' => true, // show total count with link to index of this module
+                'create' => true, // show link in create new dropdown
+                'draft' => true,
+                'activity' => true, // show activities on this module in activities list
+                'search' => true, // show results for this module in global search
+                'search_fields' => ['title', 'description'],
+            ],
+            'App\Models\User' => [ // module name if you added a morph map entry for it, otherwise FQN of the model (eg. App\Models\Project)
+                'name' => 'users', // module name
+                'label' => 'Клиенты', // optional, if the name of your module above does not work as a label
+                'label_singular' => 'Клиенты', // optional, if the automated singular version of your name/label above does not work as a label
+                'routePrefix' => 'orders', // optional, if the module is living under a specific routes group
+                'count' => true, // show total count with link to index of this module
+                'activity' => true, // show activities on this module in activities list
+                'search' => true, // show results for this module in global search
+                'search_fields' => ['name', 'email', 'phone'],
+            ],
+        ],
+    ],
+
+    'frontend' => [
+        'views_path' => '/',
+    ],
 
 ];
 
