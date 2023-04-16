@@ -18,7 +18,7 @@ Route::group(['prefix' => 'products'], function () {
     Route::module('categories');
     Route::module('fabricators');
     Route::module('devices');
-//    Route::module('services');
+    Route::module('services');
     Route::module('orderServices');
 });
 Route::group(['prefix' => 'orders'], function () {

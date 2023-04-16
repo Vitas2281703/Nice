@@ -13,6 +13,15 @@
     'maxlength' => 500
     ])
 
+    @formField('browser', [
+    'moduleName' => 'orderPoints',
+    'name' => 'point',
+    'label' => 'Позиции в заказе',
+    'routePrefix' => '',
+    'itemLabel' => 'Позиция',
+    'disabled' => true
+    ])
+
     @section('sideFieldsets')
         <a17-fieldset title="Статусы" id="statuses">
             @formField('select', [

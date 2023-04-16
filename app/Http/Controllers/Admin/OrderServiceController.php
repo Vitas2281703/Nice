@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class OrderServiceController extends BaseModuleController
 {
+    protected $moduleName = 'orderServices';
     public function __construct(
         Application $app,
         Request $request,
