@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'export'], function (){
+Route::group(['prefix' => 'export', 'as' => 'export.'], function (){
     Route::get('/users', [\App\Http\Controllers\Api\ExportController::class, 'user'])->name('users');
     Route::get('/orders', [\App\Http\Controllers\Api\ExportController::class, 'order'])->name('orders');
 });

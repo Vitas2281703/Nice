@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'main-page'], function () {
     Route::module('promotions');
     Route::module('jobSteps');
-
 });
 Route::group(['prefix' => 'about-us'], function () {
     Route::module('workers');
@@ -26,7 +25,6 @@ Route::group(['prefix' => 'orders'], function () {
     Route::module('requests');
 });
 Route::module('orderPoints');
-
-
+Route::module('exports');
 
 

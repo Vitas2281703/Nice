@@ -12,7 +12,7 @@ return [
             'jobSteps' => [
                 'title' => 'Этапы',
                 'module' => true,
-            ],
+            ]
         ],
     ],
     'about-us' => [
@@ -72,5 +72,9 @@ return [
                 'module' => true,
             ],
         ],
+    ],
+    'exports' => [
+        'title' => 'Экспорт',
+        'module' => true,
     ],
 ];
