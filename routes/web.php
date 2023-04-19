@@ -41,6 +41,7 @@ Route::get('/preorder', [\App\Http\Controllers\Web\OrderController::class, 'preo
 
 Route::view('/user-agreement', 'user-agreement')->name('user-agreement');
 
+Route::get('payment-link/{id}', [\App\Http\Controllers\Api\PaymentController::class, 'redirectPaymentLink'])->name('pay');
 
 Route::post('request-for-consultation', [\App\Http\Controllers\Web\RequestController::class, 'index'])->name('request-for-consultation');
 
