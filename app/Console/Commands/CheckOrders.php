@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Console\Command;
 use YooKassa\Common\Exceptions\ApiException;
 use YooKassa\Common\Exceptions\BadApiRequestException;
@@ -50,8 +51,13 @@ class CheckOrders extends Command
             } catch (\Exception $e) {
                 continue;
             }
+
             if ($payment->status == 'succeeded') {
-                $order->update(['status_payment' => 'Оплачено']);
+                $order->update(['status_payment' => 'Оплачен']);
+                $user = User::find(User::find(26)->referer_id);
+                $user->update([
+                   'bonus' => $user->bonus + 500,
+                ]);
             }
         }
     }

@@ -6,7 +6,7 @@ window.onload = function (){
          switch (statusPaymentList[i].innerText){
              case 'Оплачен':
                  statusPaymentList[i].style = 'color: var(--green);';
-                 statusPaymentBtnList[i].innerText = 'Оплачен'
+                 statusPaymentBtnList[i].innerText = 'Оплачено'
                  statusPaymentBtnList[i].style = 'pointer-events: none; background-color: var(--green);'
                  break;
              case 'Не оплачено':

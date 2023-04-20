@@ -43,7 +43,7 @@
         <a17-fieldset title="Статусы" id="statuses">
             @formField('select', [
             'name' => 'status',
-            'label' => 'Статус',
+            'label' => 'Статус заказа',
             'placeholder' => 'Выберите статус заказа',
             'options' => [
             [
@@ -78,7 +78,7 @@
             ])
             @formField('select', [
             'name' => 'status_payment',
-            'label' => 'Статус',
+            'label' => 'Статус оплаты',
             'placeholder' => 'Выберите статус оплаты',
             'options' => [
             [

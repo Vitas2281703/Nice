@@ -20,6 +20,7 @@ class PaymentController extends Controller
         foreach ($order->orderPoints as $orderPoint) {
             $cast += $orderPoint->orderService->price * $orderPoint->amount;
         }
+        $cast = $cast - $order->bonuses;
         $payment = $client->createPayment(
             array(
                 'amount' => array(
