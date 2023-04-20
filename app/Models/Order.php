@@ -21,7 +21,9 @@ class Order extends Model
         'description',
         'user_id',
         'bonuses',
-        'status'
+        'status',
+        'payment_id',
+        'status_payment'
     ];
 
     public function user(): BelongsTo

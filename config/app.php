@@ -226,4 +226,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+
+    'yoocassa_login' => env('YOOCASSA_LOGIN'),
+    'yoocassa_password' => env('YOOCASSA_PASSWORD')
 ];

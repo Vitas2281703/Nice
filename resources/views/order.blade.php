@@ -18,10 +18,14 @@
 
                     <div class="service-list_item-order_title">
                         <span class="service-list_item-name">Заказ №{{ $order->id }} от {{ date('d.m.Y', strtotime($order->created_at)) }}</span>
-                        <button class="service-list_item-btn HOVER">
-                            <span></span>
-                            <text>Оплатить</text>
-                        </button>
+                        @if($order->status_payment != 'Оплачено')
+                            <a href="{{route('pay', ['id' => $order->id])}}">
+                                <button class="service-list_item-btn HOVER">
+                                    <span></span>
+                                    <text>Оплатить</text>
+                                </button>
+                            </a>
+                        @endif
                     </div>
                     <div class="service-list_item-status">
                         <p class="service-list_item-status_item">
