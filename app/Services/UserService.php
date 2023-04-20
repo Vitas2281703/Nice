@@ -26,16 +26,14 @@ class UserService implements Contracts\UserService
                     'email' => $data['email'],
                     'phone' => $data['phone'],
                     'password' => Hash::make($data['password']),
-                    'role_id' => 1
+                    'role_id' => 1,
+                    'referer_id' => $ref_id ?? null,
                 ]);
                 if (isset($ref_id)) {
                     $ref_user = $this->userRepository->find($ref_id);
                     if ($ref_user) {
                         $ref_user->update([
-                            'bonus' => $ref_user->bonuses + 200,
-                        ]);
-                        $newUser->update([
-                            'referer_id' => $ref_id,
+                            'bonus' => $ref_user->bonus + 200,
                         ]);
                     } else {
                         return view('registration', ['error'=>"Пользователь с таким рефферальным id не существует"]);
