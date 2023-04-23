@@ -274,7 +274,9 @@
     .slider-container {
         flex-direction: column-reverse;
         margin-top: 0px;
-        margin-bottom: 20vh;
+        margin-bottom: 0px;
+        height: 85%;
+        justify-content: center;
     }
 
     .mobile-slider-pag {
